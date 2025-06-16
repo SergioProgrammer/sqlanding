@@ -1,8 +1,18 @@
 ---
 import Layout from "@/layouts/Layout.astro"
 
+// Imagenes
 import HeroKeyLogo from "@/assets/hero-key-logo.png"
 import HeroKeyBackground from "@/assets/hero-key-background.webp"
+
+// logos
+import Logo1 from "@/assets/logos/logo1.svg"
+import Logo2 from "@/assets/logos/logo2.svg"
+import Logo3 from "@/assets/logos/logo3.svg"
+import Logo4 from "@/assets/logos/logo4.svg"
+import Logo5 from "@/assets/logos/logo5.svg"
+import Logo6 from "@/assets/logos/logo6.svg"
+import Logo7 from "@/assets/logos/logo7.svg"
 ---
 
 <Layout>
@@ -31,6 +41,125 @@ import HeroKeyBackground from "@/assets/hero-key-background.webp"
   >
     DISEÑO GRAFICO Y DESARROLLO WEB
   </span>
+  <div
+    id="after-hero"
+    class="fixed flex flex-col items-center justify-center top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-0 transition-opacity duration-700 z-50 text-center px-4"
+  >
+    <span class="text-lg sm:text-4xl font-semibold text-white drop-shadow mb-8">
+      Empresas que confían en nosotros
+    </span>
+    <div class="flex flex-wrap justify-center gap-4">
+      <img src={Logo1.src} alt="Logo 1" class="h-15 sm:h-18 filter grayscale" />
+      <img src={Logo2.src} alt="Logo 2" class="h-15 sm:h-18 filter grayscale" />
+      <img src={Logo3.src} alt="Logo 3" class="h-15 sm:h-18 filter grayscale" />
+      <img src={Logo4.src} alt="Logo 4" class="h-15 sm:h-18 filter grayscale" />
+      <img src={Logo5.src} alt="Logo 5" class="h-15 sm:h-18 filter grayscale" />
+      <img src={Logo6.src} alt="Logo 6" class="h-15 sm:h-18 filter grayscale" />
+      <img src={Logo7.src} alt="Logo 7" class="h-15 sm:h-18 filter grayscale" />
+    </div>
+  </div>
+
+  <div
+    id="pantalla-diseno"
+    class="fixed flex flex-col items-center justify-center top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-0 transition-opacity duration-700 z-40 text-center px-4"
+  >
+    <svg width="120" height="120" viewBox="0 0 120 120" class="mb-6">
+      <circle
+        cx="60"
+        cy="60"
+        r="50"
+        fill="#fff"
+        fill-opacity="0.1"
+        stroke="#fff"
+        stroke-width="4"
+      />
+      <text
+        x="50%"
+        y="54%"
+        text-anchor="middle"
+        fill="#fff"
+        font-size="22"
+        font-weight="bold"
+        dy=".3em"
+      >
+        🎨
+      </text>
+    </svg>
+    <span class="text-2xl sm:text-4xl font-bold text-white mb-2 drop-shadow">
+      Diseño gráfico
+    </span>
+    <span class="text-base sm:text-xl text-white/80">
+      Creatividad, identidad visual y comunicación efectiva para tu marca.
+    </span>
+  </div>
+
+  <div
+    id="pantalla-marketing"
+    class="fixed flex flex-col items-center justify-center top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-0 transition-opacity duration-700 z-40 text-center px-4"
+  >
+    <svg width="120" height="120" viewBox="0 0 120 120" class="mb-6">
+      <rect
+        x="20"
+        y="20"
+        width="80"
+        height="80"
+        rx="20"
+        fill="#fff"
+        fill-opacity="0.1"
+        stroke="#fff"
+        stroke-width="4"
+      />
+      <text
+        x="50%"
+        y="54%"
+        text-anchor="middle"
+        fill="#fff"
+        font-size="22"
+        font-weight="bold"
+        dy=".3em"
+      >
+        📈
+      </text>
+    </svg>
+    <span class="text-2xl sm:text-4xl font-bold text-white mb-2 drop-shadow">
+      Marketing
+    </span>
+    <span class="text-base sm:text-xl text-white/80">
+      Estrategias digitales para crecer y conectar con tu audiencia.
+    </span>
+  </div>
+
+  <div
+    id="pantalla-desarrollo"
+    class="fixed flex flex-col items-center justify-center top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-0 transition-opacity duration-700 z-40 text-center px-4"
+  >
+    <svg width="120" height="120" viewBox="0 0 120 120" class="mb-6">
+      <polygon
+        points="60,20 100,100 20,100"
+        fill="#fff"
+        fill-opacity="0.1"
+        stroke="#fff"
+        stroke-width="4"
+      />
+      <text
+        x="50%"
+        y="60%"
+        text-anchor="middle"
+        fill="#fff"
+        font-size="22"
+        font-weight="bold"
+        dy=".3em"
+      >
+        💻
+      </text>
+    </svg>
+    <span class="text-2xl sm:text-4xl font-bold text-white mb-2 drop-shadow">
+      Desarrollo web
+    </span>
+    <span class="text-base sm:text-xl text-white/80">
+      Sitios y aplicaciones modernas, rápidas y seguras.
+    </span>
+  </div>
 </Layout>
 
 <style>
@@ -70,7 +199,7 @@ import HeroKeyBackground from "@/assets/hero-key-background.webp"
     .to(
       "#logo-mask",
       {
-        maskSize: "clamp(10vh, 25%, 0.5vh)",
+        maskSize: "clamp(3vh, 25%, 0.5vh)",
       },
       0.15
     )
@@ -86,8 +215,75 @@ import HeroKeyBackground from "@/assets/hero-key-background.webp"
       "#final-message",
       {
         opacity: 1,
-        duration: 1,
-        
+        duration: 0.7,
+      }
+    )
+    .to(
+      "#final-message",
+      {
+        opacity: 0,
+        duration: 0.5,
+        delay: 0.7,
+      }
+    )
+    .to(
+      "#after-hero",
+      {
+        opacity: 1,
+        duration: 0.7,
+      }
+    )
+    .to(
+      "#hero-key-logo",
+      {
+        opacity: 0,
+        duration: 0.5,
+      },
+      "<"
+    )
+    .to(
+      "#after-hero",
+      {
+        opacity: 0,
+        duration: 0.5,
+        delay: 1.2,
+      }
+    )
+    .to(
+      "#pantalla-diseno",
+      {
+        opacity: 1,
+        duration: 0.7,
+      }
+    )
+    .to(
+      "#pantalla-diseno",
+      {
+        opacity: 0,
+        duration: 0.5,
+        delay: 1.5,
+      }
+    )
+    .to(
+      "#pantalla-marketing",
+      {
+        opacity: 1,
+        duration: 0.7,
+      }
+    )
+    .to(
+      "#pantalla-marketing",
+      {
+        opacity: 0,
+        duration: 0.5,
+        delay: 1.5,
+      }
+    )
+    .to(
+      "#pantalla-desarrollo",
+      {
+        opacity: 1,
+        duration: 0.7,
       }
     )
 </script>
