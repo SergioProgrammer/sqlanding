@@ -1,0 +1,94 @@
+---
+import Layout from "@/layouts/Layout.astro"
+
+import HeroKeyLogo from "@/assets/hero-key-logo.png"
+import HeroKeyBackground from "@/assets/hero-key-background.webp"
+---
+
+<Layout>
+  <div id="logo-mask" class="fixed top-0 left-0 w-full h-screen">
+    <section>
+      <picture
+        id="hero-key"
+        class="h-screen scale-150 block overflow-hidden fixed w-full"
+      >
+        <img
+          id="hero-key-logo"
+          src={HeroKeyLogo.src}
+          class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-24 sm:w-36 md:w-44 opacity-100 transition-opacity duration-100 filter invert brightness-200 drop-shadow-[0_0_24px_white]"
+        />
+        <img
+          id="hero-key-background"
+          src={HeroKeyBackground.src}
+          class="w-full h-full object-cover"
+        />
+      </picture>
+    </section>
+  </div>
+  <span
+    id="final-message"
+    class="fixed flex justify-center items-center top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-2xl sm:text-4xl md:text-6xl font-semibold text-white opacity-0 transition-opacity duration-700 z-50 text-center px-4"
+  >
+    DISEÑO GRAFICO Y DESARROLLO WEB
+  </span>
+</Layout>
+
+<style>
+  #logo-mask {
+    background: white;
+    mask-image: url("/logo-stack.png");
+    mask-position: center 82%;
+    mask-repeat: no-repeat;
+    mask-size: clamp(10000vh, 3500%, 0vh);
+  }
+
+  @media (max-width: 640px) {
+    #logo-mask {
+      mask-size: clamp(5000vh, 900%, 0vh);
+      mask-position: center 79%;
+    }
+  }
+</style>
+
+<script>
+  import { gsap } from "gsap"
+  import { ScrollTrigger } from "gsap/ScrollTrigger"
+
+  gsap.registerPlugin(ScrollTrigger)
+
+  const tl = gsap.timeline({
+    ease: "power2.out",
+    scrollTrigger: {
+      scrub: 1,
+    },
+  })
+
+  tl.to("#hero-key", { duration: 1, scale: 1 })
+    .to("#hero-key-logo", { opacity: 0 }, "<")
+    .to("#hero-footer", { opacity: 0 }, "<")
+    .to("#hero-play-button", { opacity: 0 }, "<")
+    .to(
+      "#logo-mask",
+      {
+        maskSize: "clamp(10vh, 25%, 0.5vh)",
+      },
+      0.15
+    )
+    .to(
+      "#hero-key",
+      {
+        opacity: 0,
+        duration: 0.2,
+      },
+      0.5
+    )
+    .to(
+      "#final-message",
+      {
+        opacity: 1,
+        duration: 1,
+        
+      }
+    )
+</script>
+
