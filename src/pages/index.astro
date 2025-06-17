@@ -1,6 +1,5 @@
 ---
 import Layout from "@/layouts/Layout.astro"
-
 // Imagenes
 import HeroKeyLogo from "@/assets/hero-key-logo.png"
 import HeroKeyBackground from "@/assets/hero-key-background.webp"
@@ -26,11 +25,13 @@ import Logo7 from "@/assets/logos/logo7.svg"
           id="hero-key-logo"
           src={HeroKeyLogo.src}
           class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-24 sm:w-36 md:w-44 opacity-100 transition-opacity duration-100 filter invert brightness-200 drop-shadow-[0_0_24px_white]"
+          alt="Hero Key Logo"
         />
         <img
           id="hero-key-background"
           src={HeroKeyBackground.src}
           class="w-full h-full object-cover"
+          alt="Hero Key Background"
         />
       </picture>
     </section>
@@ -39,7 +40,7 @@ import Logo7 from "@/assets/logos/logo7.svg"
     id="final-message"
     class="fixed flex justify-center items-center top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-2xl sm:text-4xl md:text-6xl font-semibold text-white opacity-0 transition-opacity duration-700 z-50 text-center px-4"
   >
-    DISEÑO GRAFICO Y DESARROLLO WEB
+    DISEÑO GRÁFICO Y DESARROLLO WEB
   </span>
   <div
     id="after-hero"
@@ -61,42 +62,62 @@ import Logo7 from "@/assets/logos/logo7.svg"
 
   <div
     id="pantalla-diseno"
-    class="fixed flex flex-col items-center justify-center top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-0 transition-opacity duration-700 z-40 text-center px-4"
+    class="fixed w-full h-screen flex flex-col items-center justify-center top-0 left-0 opacity-0 transition-opacity duration-700 z-40 text-center px-4 bg-orange-500"
   >
-    <svg width="120" height="120" viewBox="0 0 120 120" class="mb-6">
-      <circle
-        cx="60"
-        cy="60"
-        r="50"
-        fill="#fff"
-        fill-opacity="0.1"
-        stroke="#fff"
-        stroke-width="4"
-      />
-      <text
-        x="50%"
-        y="54%"
-        text-anchor="middle"
-        fill="#fff"
-        font-size="22"
-        font-weight="bold"
-        dy=".3em"
-      >
-        🎨
-      </text>
+    <svg id="figura-circulo" width="100" height="100" class="absolute left-8 top-8 opacity-0">
+      <circle cx="50" cy="50" r="40" fill="#FFD700" fill-opacity="0.8" />
     </svg>
-    <span class="text-2xl sm:text-4xl font-bold text-white mb-2 drop-shadow">
-      Diseño gráfico
-    </span>
-    <span class="text-base sm:text-xl text-white/80">
-      Creatividad, identidad visual y comunicación efectiva para tu marca.
-    </span>
+    <svg id="figura-triangulo" width="80" height="80" class="absolute right-1/4 top-1/4 opacity-0">
+      <polygon points="40,10 70,70 10,70" fill="#00BFFF" fill-opacity="0.8" />
+    </svg>
+    <svg id="figura-curva" width="120" height="60" class="absolute left-1/3 bottom-1/4 opacity-0">
+      <path d="M10 50 Q60 10 110 50" stroke="#FF4500" stroke-width="5" fill="none" stroke-opacity="0.8"/>
+    </svg>
+    <div class="relative z-10 flex flex-col items-center">
+      <svg width="120" height="120" viewBox="0 0 120 120" class="mb-6">
+        <circle
+          cx="60"
+          cy="60"
+          r="50"
+          fill="#fff"
+          fill-opacity="0.1"
+          stroke="#fff"
+          stroke-width="4"
+        />
+        <text
+          x="50%"
+          y="54%"
+          text-anchor="middle"
+          fill="#fff"
+          font-size="22"
+          font-weight="bold"
+          dy=".3em"
+        >
+          🎨
+        </text>
+      </svg>
+      <span class="text-2xl sm:text-4xl font-bold text-white mb-2 drop-shadow">
+        Diseño gráfico
+      </span>
+      <span class="text-base sm:text-xl text-white/80">
+        Creatividad, identidad visual y comunicación efectiva para tu marca.
+      </span>
+    </div>
   </div>
 
   <div
     id="pantalla-marketing"
-    class="fixed flex flex-col items-center justify-center top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-0 transition-opacity duration-700 z-40 text-center px-4"
+    class="fixed flex flex-col items-center justify-center top-0 left-0 w-full h-screen opacity-0 transition-opacity duration-700 z-40 text-center px-4 bg-blue-300"
   >
+    <svg id="figura-estrella" width="80" height="80" class="absolute left-1/4 top-8 opacity-0">
+      <polygon points="40,5 50,30 75,30 55,45 65,70 40,55 15,70 25,45 5,30 30,30" fill="#FF1493" fill-opacity="0.8"/>
+    </svg>
+    <svg id="figura-flecha" width="100" height="100" class="absolute right-8 top-1/3 opacity-0">
+      <polygon points="20,50 80,50 80,20 100,60 80,100 80,70 20,70" fill="#32CD32" fill-opacity="0.8"/>
+    </svg>
+    <svg id="figura-ondas" width="150" height="80" class="absolute right-1/4 bottom-8 opacity-0">
+      <path d="M5 40 Q40 10 75 40 T145 40" stroke="#FFD700" stroke-width="6" fill="none" stroke-opacity="0.8"/>
+    </svg>
     <svg width="120" height="120" viewBox="0 0 120 120" class="mb-6">
       <rect
         x="20"
@@ -131,8 +152,24 @@ import Logo7 from "@/assets/logos/logo7.svg"
 
   <div
     id="pantalla-desarrollo"
-    class="fixed flex flex-col items-center justify-center top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-0 transition-opacity duration-700 z-40 text-center px-4"
+    class="fixed flex flex-col items-center justify-center top-0 left-0 w-full h-screen opacity-0 transition-opacity duration-700 z-40 text-center px-4 bg-yellow-400"
   >
+    <svg id="figura-llaves" width="70" height="70" class="absolute left-8 top-8 opacity-0">
+      <path d="M10 20 L20 10 L30 20 L20 30 Z M40 40 L50 30 L60 40 L50 50 Z" fill="#ADFF2F" fill-opacity="0.8"/>
+    </svg>
+    <svg id="figura-corchetes" width="70" height="70" class="absolute right-8 top-8 opacity-0">
+      <path d="M20 10 L10 20 L20 30 M50 10 L60 20 L50 30" stroke="#ADFF2F" stroke-width="4" fill="none" stroke-opacity="0.8"/>
+    </svg>
+    <svg id="figura-bits" width="100" height="30" class="absolute left-1/4 bottom-1/4 opacity-0">
+      <circle cx="15" cy="15" r="10" fill="#8A2BE2" fill-opacity="0.7"/>
+      <circle cx="50" cy="15" r="10" fill="#8A2BE2" fill-opacity="0.7"/>
+      <circle cx="85" cy="15" r="10" fill="#8A2BE2" fill-opacity="0.7"/>
+    </svg>
+    <svg id="figura-conexion" width="150" height="100" class="absolute right-1/4 top-1/2 opacity-0">
+      <line x1="20" y1="20" x2="130" y2="80" stroke="#F0E68C" stroke-width="3" stroke-dasharray="5,5" stroke-opacity="0.8"/>
+      <circle cx="20" cy="20" r="5" fill="#F0E68C" fill-opacity="0.8"/>
+      <circle cx="130" cy="80" r="5" fill="#F0E68C" fill-opacity="0.8"/>
+    </svg>
     <svg width="120" height="120" viewBox="0 0 120 120" class="mb-6">
       <polygon
         points="60,20 100,100 20,100"
@@ -185,23 +222,46 @@ import Logo7 from "@/assets/logos/logo7.svg"
 
   gsap.registerPlugin(ScrollTrigger)
 
+  // Define propiedades de animación comunes para las figuras
+  const figureEnterProps = {
+    opacity: 1,
+    scale: 1.1, // Ligeramente más grande al entrar
+    rotate: "random(-360, 360)", // Rotación aleatoria
+    x: "random(-50, 50)", // Movimiento aleatorio en X
+    y: "random(-50, 50)", // Movimiento aleatorio en Y
+    duration: 1.5,
+    ease: "power3.out", // Easing más pronunciado
+  };
+
+  const figureExitProps = {
+    opacity: 0,
+    scale: 0.7, // Más pequeño al salir
+    rotate: "random(-180, 180)", // Rotación aleatoria al salir
+    x: "random(-30, 30)",
+    y: "random(-30, 30)",
+    duration: 0.8,
+    ease: "power2.in",
+  };
+
   const tl = gsap.timeline({
     ease: "power2.out",
     scrollTrigger: {
       scrub: 1,
+      // start: "top top", // Puedes ajustar esto según el inicio de tu scroll
+      // end: "bottom bottom", // Puedes ajustar esto según el final de tu scroll
+      // markers: true, // Descomenta para depurar los puntos de ScrollTrigger
     },
-  })
+  });
 
   tl.to("#hero-key", { duration: 1, scale: 1 })
     .to("#hero-key-logo", { opacity: 0 }, "<")
-    .to("#hero-footer", { opacity: 0 }, "<")
-    .to("#hero-play-button", { opacity: 0 }, "<")
+    .to("#hero-footer", { opacity: 0 }, "<") // Asegúrate de que estos IDs existen en tu HTML o quítalos
+    .to("#hero-play-button", { opacity: 0 }, "<") // Asegúrate de que estos IDs existen en tu HTML o quítalos
     .to(
       "#logo-mask",
       {
         maskSize: "clamp(3vh, 25%, 0.5vh)",
         duration: 1.5,
-       
       },
       0.15
     )
@@ -236,14 +296,6 @@ import Logo7 from "@/assets/logos/logo7.svg"
       }
     )
     .to(
-      "#hero-key-logo",
-      {
-        opacity: 0,
-        duration: 0.5,
-      },
-      "<"
-    )
-    .to(
       "#after-hero",
       {
         opacity: 0,
@@ -251,6 +303,8 @@ import Logo7 from "@/assets/logos/logo7.svg"
         delay: 1.2,
       }
     )
+
+    // --- PANTALLA DISEÑO GRÁFICO ---
     .to(
       "#pantalla-diseno",
       {
@@ -258,14 +312,21 @@ import Logo7 from "@/assets/logos/logo7.svg"
         duration: 0.7,
       }
     )
+    // Animar figuras EN cuando la pantalla aparece
+    .to("#figura-circulo", { ...figureEnterProps, x: -80, y: -80, rotate: 720 }, "<")
+    .to("#figura-triangulo", { ...figureEnterProps, x: 50, y: -50, rotate: -360 }, "<0.1")
+    .to("#figura-curva", { ...figureEnterProps, x: 30, y: 30, scale: 1.3 }, "<0.2")
+
+    // Animar figuras OUT cuando la pantalla se desvanece
     .to(
       "#pantalla-diseno",
-      {
-        opacity: 0,
-        duration: 0.5,
-        delay: 1.5,
-      }
+      { opacity: 0, duration: 0.5, delay: 1.5 }
     )
+    .to("#figura-circulo", figureExitProps, "<")
+    .to("#figura-triangulo", figureExitProps, "<0.1")
+    .to("#figura-curva", figureExitProps, "<0.2")
+
+    // --- PANTALLA MARKETING ---
     .to(
       "#pantalla-marketing",
       {
@@ -273,14 +334,21 @@ import Logo7 from "@/assets/logos/logo7.svg"
         duration: 0.7,
       }
     )
+    // Animar figuras EN para la pantalla de marketing
+    .to("#figura-estrella", { ...figureEnterProps, rotate: 540, x: -70 }, "<")
+    .to("#figura-flecha", { ...figureEnterProps, x: 70, y: -30, scale: 1.0 }, "<0.1")
+    .to("#figura-ondas", { ...figureEnterProps, y: 70, scale: 1.2, rotate: -270 }, "<0.2")
+
+    // Animar figuras OUT para la pantalla de marketing
     .to(
       "#pantalla-marketing",
-      {
-        opacity: 0,
-        duration: 0.5,
-        delay: 1.5,
-      }
+      { opacity: 0, duration: 0.5, delay: 1.5 }
     )
+    .to("#figura-estrella", figureExitProps, "<")
+    .to("#figura-flecha", figureExitProps, "<0.1")
+    .to("#figura-ondas", figureExitProps, "<0.2")
+
+    // --- PANTALLA DESARROLLO WEB ---
     .to(
       "#pantalla-desarrollo",
       {
@@ -288,5 +356,22 @@ import Logo7 from "@/assets/logos/logo7.svg"
         duration: 0.7,
       }
     )
-</script>
+    // Animar figuras EN para la pantalla de desarrollo
+    .to("#figura-llaves", { ...figureEnterProps, x: -60, rotate: 180 }, "<")
+    .to("#figura-corchetes", { ...figureEnterProps, x: 60, rotate: -180 }, "<0.1")
+    .to("#figura-bits", { ...figureEnterProps, y: 50, scale: 1.5 }, "<0.2")
+    .to("#figura-conexion", { ...figureEnterProps, x: -50, y: 50, rotate: 90 }, "<0.3")
 
+    // Si quieres que la pantalla de desarrollo web también se desvanezca y sus figuras,
+    // puedes añadir un bloque similar a los anteriores:
+    /*
+    .to(
+      "#pantalla-desarrollo",
+      { opacity: 0, duration: 0.5, delay: 1.5 }
+    )
+    .to("#figura-llaves", figureExitProps, "<")
+    .to("#figura-corchetes", figureExitProps, "<0.1")
+    .to("#figura-bits", figureExitProps, "<0.2")
+    .to("#figura-conexion", figureExitProps, "<0.3");
+    */
+</script>
