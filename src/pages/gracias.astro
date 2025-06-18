@@ -1,0 +1,38 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout>
+  <div class="min-h-screen w-full flex flex-col items-center justify-center bg-[#fbd04a] px-4">
+    <div class="bg-[#042e36]/90 rounded-xl shadow-lg p-8 flex flex-col items-center gap-4 max-w-md w-full">
+      <span class="text-4xl sm:text-6xl font-bold text-[#fbd04a] drop-shadow mb-2">¡Gracias!</span>
+      <span class="text-base sm:text-2xl text-[#fbd04a]/80 text-center mb-4">
+        Hemos recibido tu mensaje.<br />
+        Te responderemos lo antes posible.
+      </span>
+      <a
+        href="/"
+        class="mt-2 bg-[#fbd04a] text-[#042e36] font-semibold rounded-md px-6 py-2 hover:bg-[#ffe066] transition text-lg"
+      >
+        Volver al inicio
+      </a>
+    </div>
+    <footer class="w-full flex flex-col items-center justify-center py-6 bg-[#fbd04a] text-[#042e36] text-center z-50 relative mt-10">
+      <span class="text-base sm:text-lg mb-2">© {new Date().getFullYear()} SQ Studio</span>
+      <a
+        href="https://instagram.com/sqstudiodm"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center gap-2 text-[#042e36] hover:text-[#ffe066] transition font-semibold"
+        aria-label="Instagram SQ Studio"
+      >
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <rect width="18" height="18" x="3" y="3" rx="5" stroke="currentColor" />
+          <circle cx="12" cy="12" r="4" stroke="currentColor" />
+          <circle cx="17" cy="7" r="1.5" fill="currentColor" />
+        </svg>
+        @sqstudiodm
+      </a>
+    </footer>
+  </div>
+</Layout>
