@@ -1,8 +1,10 @@
 ---
 import Layout from "@/layouts/Layout.astro"
 // Imagenes
-import HeroKeyLogo from "@/assets/hero-key-logo.svg"
-import HeroKeyBackground from "@/assets/hero-key-background.webp"
+import HeroKeyLogo from "@/assets/hero-key-logo.svg" // Este es el logo inicial
+
+// IMPORTANTE: NO NECESITAMOS HeroKeyBackground.webp AQUÍ SI EL MASCARADO ES UN COLOR
+// import HeroKeyBackground from "@/assets/hero-key-background.webp" 
 
 // logos
 import Logo1 from "@/assets/logos/logo1.svg"
@@ -15,36 +17,41 @@ import Logo7 from "@/assets/logos/logo7.svg"
 ---
 
 <Layout>
-   <div id="logo-mask" class="fixed top-0 left-0 w-full h-screen">
+  <div id="intro-animation-container" class="fixed top-0 left-0 w-full h-screen z-50">
     <section>
       <picture
         id="hero-key"
         class="h-screen scale-150 block overflow-hidden fixed w-full"
       >
         <div
-          id="hero-key-background"
+          id="hero-background-color"
           class="w-full h-full absolute top-0 left-0"
-          style="background: #fefba4;"
+          style="background: #fefba4;" 
         ></div>
         <img
           id="hero-key-logo"
           src={HeroKeyLogo.src}
-          class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 sm:w-56 md:w-94 opacity-100 transition-opacity duration-100 z-10"
-          alt="Hero Key Logo"
+          class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 sm:w-56 md:w-94 opacity-100 z-20"
+          alt="Initial Hero Logo"
         />
       </picture>
+
+      <div id="logo-mask" class="fixed top-0 left-0 w-full h-screen z-10">
+          </div>
     </section>
   </div>
+
   <span
     id="final-message"
-    class="fixed flex justify-center items-center top-0 left-0 w-full h-screen text-2xl sm:text-4xl md:text-6xl font-semibold opacity-0 transition-opacity duration-700 z-50 text-center"
+    class="fixed flex justify-center items-center top-0 left-0 w-full h-screen text-2xl sm:text-4xl md:text-6xl font-semibold opacity-0 z-40 text-center"
     style="background: #042e36; color: #fbd04a;"
   >
     DISEÑO GRÁFICO Y DESARROLLO WEB
   </span>
+
   <div
     id="after-hero"
-    class="fixed flex flex-col items-center justify-center top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-0 transition-opacity duration-700 z-50 text-center px-4"
+    class="fixed flex flex-col items-center justify-center top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-0 z-40 text-center px-4"
   >
     <span class="text-lg sm:text-4xl font-semibold text-white drop-shadow mb-8">
       Empresas que confían en nosotros
@@ -62,16 +69,16 @@ import Logo7 from "@/assets/logos/logo7.svg"
 
   <div
     id="pantalla-diseno"
-    class="fixed w-full h-screen flex flex-col items-center justify-center top-0 left-0 opacity-0 transition-opacity duration-700 z-40 text-center px-4"
+    class="fixed w-full h-screen flex flex-col items-center justify-center top-0 left-0 opacity-0 z-30 text-center px-4"
     style="background: #fefba4"
   >
-    <svg id="figura-circulo" width="100" height="100" class="absolute left-8 top-8 opacity-0 z-0">
+    <svg id="figura-circulo" width="100" height="100" class="absolute left-8 top-8 opacity-0">
       <circle cx="50" cy="50" r="40" fill="#FFD700" fill-opacity="0.8" />
     </svg>
-    <svg id="figura-triangulo" width="80" height="80" class="absolute right-1/4 top-1/4 opacity-0 z-0">
+    <svg id="figura-triangulo" width="80" height="80" class="absolute right-1/4 top-1/4 opacity-0">
       <polygon points="40,10 70,70 10,70" fill="#00BFFF" fill-opacity="0.8" />
     </svg>
-    <svg id="figura-curva" width="120" height="60" class="absolute left-1/3 bottom-1/4 opacity-0 z-0">
+    <svg id="figura-curva" width="120" height="60" class="absolute left-1/3 bottom-1/4 opacity-0">
       <path d="M10 50 Q60 10 110 50" stroke="#FF4500" stroke-width="5" fill="none" stroke-opacity="0.8"/>
     </svg>
     <div class="relative z-10 flex flex-col items-center">
@@ -108,7 +115,7 @@ import Logo7 from "@/assets/logos/logo7.svg"
 
   <div
     id="pantalla-marketing"
-    class="fixed flex flex-col items-center justify-center top-0 left-0 w-full h-screen opacity-0 transition-opacity duration-700 z-40 text-center px-4"
+    class="fixed flex flex-col items-center justify-center top-0 left-0 w-full h-screen opacity-0 z-30 text-center px-4"
     style="background: #fbd04a"
   >
     <svg id="figura-estrella" width="80" height="80" class="absolute left-1/4 top-8 opacity-0">
@@ -154,7 +161,7 @@ import Logo7 from "@/assets/logos/logo7.svg"
 
   <div
     id="pantalla-desarrollo"
-    class="fixed flex flex-col items-center justify-center top-0 left-0 w-full h-screen opacity-0 transition-opacity duration-700 z-40 text-center px-4"
+    class="fixed flex flex-col items-center justify-center top-0 left-0 w-full h-screen opacity-0 z-30 text-center px-4"
     style="background: #f79b33"
   >
     <svg id="figura-llaves" width="70" height="70" class="absolute left-8 top-8 opacity-0">
@@ -204,11 +211,12 @@ import Logo7 from "@/assets/logos/logo7.svg"
 
 <style>
   #logo-mask {
-    background: white;
+    /* Establece el color de fondo que será visible a través de la máscara */
+    background: #fefba4; /* <-- Color de fondo para la máscara */
     mask-image: url("/logo-stack.svg");
     mask-position: center 10%;
     mask-repeat: no-repeat;
-    mask-size: clamp(10000vh, 3500%, 0vh);
+    mask-size: clamp(10000vh, 3500%, 0vh); /* Tamaño inicial de la máscara */
   }
 
   @media (max-width: 640px) {
@@ -246,33 +254,49 @@ import Logo7 from "@/assets/logos/logo7.svg"
     ease: "power2.in",
   };
 
+  // --- UNA ÚNICA LÍNEA DE TIEMPO PARA TODA LA ANIMACIÓN (SCRUBBED) ---
   const tl = gsap.timeline({
     ease: "power2.out",
     scrollTrigger: {
-      scrub: 1,
+      trigger: "body", // Vincula el trigger al cuerpo del documento
+      start: "top top", // La animación comienza cuando el top del body alcanza el top del viewport
+      end: "bottom bottom", // La animación termina cuando el bottom del body alcanza el bottom del viewport (o ajusta si necesitas más "espacio" para el scroll)
+      scrub: 1, // Permite controlar la animación con el scroll
+      // markers: true, // Descomenta para depurar los puntos de ScrollTrigger
     },
   });
 
+  // Animaciones iniciales: hero-key-logo y logo-mask
   tl.to("#hero-key", { duration: 1, scale: 1 })
-    .to("#hero-key-logo", { opacity: 0 }, "<")
-    .to("#hero-key-logo", { display: "none" }, ">") 
+    .to("#hero-key-logo", { opacity: 0, duration: 0.5 }, "<") // El logo inicial se desvanece
     .to(
-      "#logo-mask",
+      "#logo-mask", // Animamos el tamaño de la máscara
       {
-        maskSize: "clamp(7vh, 25%, 0.5vh)",
+        maskSize: "clamp(7vh, 25%, 0.5vh)", // Tamaño final de la máscara
         duration: 1.5,
       },
-      0.3
+      0.3 // Comienza 0.3 segundos después del inicio de la línea de tiempo
     )
     .to(
-      "#hero-key",
+      "#hero-key", // Aseguramos que hero-key también se desvanece
       {
-        opacity: 1,
-        duration: 1,
+        opacity: 0,
+        duration: 0.7,
       },
-      0.5
+      "<0.5" // Comienza 0.5 segundos antes del final de la animación anterior
     )
     .to(
+      "#intro-animation-container", // El contenedor que encapsula la intro
+      {
+        opacity: 0, // Desvanecemos el contenedor
+        pointerEvents: "none", // Desactiva los eventos de ratón/táctil cuando es invisible
+        duration: 0.5,
+      },
+      ">" // Comienza justo después de que la animación anterior (hero-key fade out) termina
+    );
+
+  // --- Añadimos las animaciones para las siguientes pantallas al MISMO timeline ---
+  tl.to(
       "#final-message",
       {
         opacity: 1,
@@ -305,7 +329,7 @@ import Logo7 from "@/assets/logos/logo7.svg"
 
     // --- PANTALLA DISEÑO GRÁFICO ---
     .to(
-      "#pantalla-diseno", // CORREGIDO: era #pantalla_diseno
+      "#pantalla-diseno",
       {
         opacity: 1,
         duration: 0.7,
@@ -318,7 +342,7 @@ import Logo7 from "@/assets/logos/logo7.svg"
 
     // Animar figuras OUT cuando la pantalla se desvanece
     .to(
-      "#pantalla-diseno", // CORREGIDO: era #pantalla_diseno
+      "#pantalla-diseno",
       { opacity: 0, duration: 0.5, delay: 1.5 }
     )
     .to("#figura-circulo", figureExitProps, "<")
