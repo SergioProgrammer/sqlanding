@@ -95,7 +95,11 @@ import SvgDesarrollo5 from "@/assets/objects2/azul4.svg"
   <!-- Sección DISEÑO -->
   <div
     id="pantalla-diseno"
+<<<<<<< HEAD
     class="fixed pointer-events-none w-full h-screen flex flex-col items-center justify-center top-0 left-0 opacity-0 z-30 text-center px-4"
+=======
+    class="fixed pointer-events-none  w-full h-screen flex flex-col items-center justify-center top-0 left-0 opacity-0 z-30 text-center px-4"
+>>>>>>> 5e782cf... commit 13
     style="background: #fefba4"
   >
     <img id="svg-diseno-1" src={SvgDiseno1.src} class="absolute left-8 top-8 opacity-0 w-[10vw] h-[10vw] max-w-[2.5rem] max-h-[2.5rem] sm:w-[30vw] sm:h-[30vw] sm:max-w-[14rem] sm:max-h-[14rem]" alt="Decorativo 1" />
@@ -363,6 +367,7 @@ import SvgDesarrollo5 from "@/assets/objects2/azul4.svg"
       {
         opacity: 1,
         duration: 0.7,
+        onStart: () => activarPantalla("pantalla-diseno"),
       }
     )
     // Animar entrada de los 5 SVG de diseño
@@ -371,7 +376,11 @@ import SvgDesarrollo5 from "@/assets/objects2/azul4.svg"
     .to("#svg-diseno-3", { ...figureEnterProps }, "<0.2")
     .to("#svg-diseno-4", { ...figureEnterProps }, "<0.3")
     .to("#svg-diseno-5", { ...figureEnterProps }, "<0.4")
+<<<<<<< HEAD
     
+=======
+   
+>>>>>>> 5e782cf... commit 13
 
     // --- PANTALLA MARKETING ---
     .to(
@@ -379,6 +388,7 @@ import SvgDesarrollo5 from "@/assets/objects2/azul4.svg"
       {
         opacity: 1,
         duration: 0.7,
+        onStart: () => activarPantalla("pantalla-marketing"),
       }
     )
     // Animar entrada de los 5 SVG de marketing
@@ -387,8 +397,12 @@ import SvgDesarrollo5 from "@/assets/objects2/azul4.svg"
     .to("#svg-marketing-3", { ...figureEnterProps }, "<0.2")
     .to("#svg-marketing-4", { ...figureEnterProps }, "<0.3")
     .to("#svg-marketing-5", { ...figureEnterProps }, "<0.4")
+<<<<<<< HEAD
  
     
+=======
+   
+>>>>>>> 5e782cf... commit 13
 
     // --- PANTALLA DESARROLLO WEB ---
     .to(
@@ -396,6 +410,7 @@ import SvgDesarrollo5 from "@/assets/objects2/azul4.svg"
       {
         opacity: 1,
         duration: 0.7,
+        onStart: () => activarPantalla("pantalla-desarrollo"),
       }
     )
     // Animar entrada de los 5 SVG de desarrollo
@@ -405,7 +420,10 @@ import SvgDesarrollo5 from "@/assets/objects2/azul4.svg"
     .to("#svg-desarrollo-4", { ...figureEnterProps }, "<0.3")
     .to("#svg-desarrollo-5", { ...figureEnterProps }, "<0.4")
     
+<<<<<<< HEAD
     
+=======
+>>>>>>> 5e782cf... commit 13
 
     // --- PANTALLA CONTACTO ---
     .to(
@@ -413,6 +431,7 @@ import SvgDesarrollo5 from "@/assets/objects2/azul4.svg"
       {
         opacity: 1,
         duration: 0.7,
+        onStart: () => activarPantalla("pantalla-contacto"),
       }
     )
     .to(
@@ -434,6 +453,7 @@ import SvgDesarrollo5 from "@/assets/objects2/azul4.svg"
     pantalla.classList.add("pointer-events-auto");
   }
 }
+<<<<<<< HEAD
 
 tl
   // --- FINAL MESSAGE ---
@@ -522,4 +542,6 @@ tl
     opacity: 1,
     duration: 0.7,
   });
+=======
+>>>>>>> 5e782cf... commit 13
 </script>
