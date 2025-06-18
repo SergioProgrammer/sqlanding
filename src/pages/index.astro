@@ -37,7 +37,7 @@ import SvgDesarrollo5 from "@/assets/objects2/azul4.svg"
 ---
 
 <Layout>
-  <div id="intro-animation-container" class="fixed top-0 left-0 w-full h-screen z-50">
+  <div id="intro-animation-container" class="fixed pointer-events-none top-0 left-0 w-full h-screen z-50">
     <section>
       <picture
         id="hero-key"
@@ -63,7 +63,7 @@ import SvgDesarrollo5 from "@/assets/objects2/azul4.svg"
 
   <span
     id="final-message"
-    class="fixed flex justify-center items-center top-0 left-0 w-full h-screen text-2xl sm:text-4xl md:text-6xl font-semibold opacity-0 z-40 text-center"
+    class="fixed pointer-events-none flex justify-center items-center top-0 left-0 w-full h-screen text-2xl sm:text-4xl md:text-6xl font-semibold opacity-0 z-40 text-center"
     style="background: #042e36; color: #fbd04a;"
   >
     DISEÑO GRÁFICO Y DESARROLLO WEB
@@ -71,7 +71,7 @@ import SvgDesarrollo5 from "@/assets/objects2/azul4.svg"
 
   <div
   id="after-hero"
-  class="fixed flex flex-col items-center justify-center top-0 left-0 w-full h-screen opacity-0 z-40 text-center px-4"
+  class="fixed pointer-events-none flex flex-col items-center justify-center top-0 left-0 w-full h-screen opacity-0 z-40 text-center px-4"
   style="background: #042e36; color: #fbd04a;"
 >
   <span class="text-lg sm:text-6xl font-semibold drop-shadow mb-19">
@@ -95,7 +95,7 @@ import SvgDesarrollo5 from "@/assets/objects2/azul4.svg"
   <!-- Sección DISEÑO -->
   <div
     id="pantalla-diseno"
-    class="fixed w-full h-screen flex flex-col items-center justify-center top-0 left-0 opacity-0 z-30 text-center px-4"
+    class="fixed pointer-events-none w-full h-screen flex flex-col items-center justify-center top-0 left-0 opacity-0 z-30 text-center px-4"
     style="background: #fefba4"
   >
     <img id="svg-diseno-1" src={SvgDiseno1.src} class="absolute left-8 top-8 opacity-0 w-[10vw] h-[10vw] max-w-[2.5rem] max-h-[2.5rem] sm:w-[30vw] sm:h-[30vw] sm:max-w-[14rem] sm:max-h-[14rem]" alt="Decorativo 1" />
@@ -116,7 +116,7 @@ import SvgDesarrollo5 from "@/assets/objects2/azul4.svg"
   <!-- Sección MARKETING -->
   <div
     id="pantalla-marketing"
-    class="fixed flex flex-col items-center justify-center top-0 left-0 w-full h-screen opacity-0 z-30 text-center px-4"
+    class="fixed pointer-events-none flex flex-col items-center justify-center top-0 left-0 w-full h-screen opacity-0 z-30 text-center px-4"
     style="background: #fbd04a"
   >
     <img id="svg-marketing-1" src={SvgMarketing1.src} class="absolute left-8 top-8 opacity-0 w-[10vw] h-[10vw] max-w-[2.5rem] max-h-[2.5rem] sm:w-[30vw] sm:h-[30vw] sm:max-w-[14rem] sm:max-h-[14rem]" alt="Decorativo 1" />
@@ -137,7 +137,7 @@ import SvgDesarrollo5 from "@/assets/objects2/azul4.svg"
   <!-- Sección DESARROLLO -->
   <div
     id="pantalla-desarrollo"
-    class="fixed flex flex-col items-center justify-center top-0 left-0 w-full h-screen opacity-0 z-30 text-center px-4"
+    class="fixed pointer-events-none flex flex-col items-center justify-center top-0 left-0 w-full h-screen opacity-0 z-30 text-center px-4"
     style="background: #f79b33"
   >
     <img id="svg-desarrollo-1" src={SvgDesarrollo1.src} class="absolute left-8 top-8 opacity-0 w-[10vw] h-[10vw] max-w-[2.5rem] max-h-[2.5rem] sm:w-[30vw] sm:h-[30vw] sm:max-w-[14rem] sm:max-h-[14rem]" alt="Decorativo 1" />
@@ -158,7 +158,7 @@ import SvgDesarrollo5 from "@/assets/objects2/azul4.svg"
   <!-- Sección CONTACTO -->
 <div
   id="pantalla-contacto"
-  class="fixed flex flex-col items-center justify-center top-0 left-0 w-full h-screen z-30 text-center px-4 opacity-0"
+  class="fixed pointer-events-none flex flex-col items-center justify-center top-0 left-0 w-full h-screen z-30 text-center px-4 opacity-0"
   style="background: #042e36; color: #fbd04a;"
 >
   <div class="w-full max-w-md bg-[#042e36]/80 rounded-xl shadow-lg p-6 flex flex-col gap-4 items-center">
@@ -246,6 +246,13 @@ import SvgDesarrollo5 from "@/assets/objects2/azul4.svg"
       mask-size: clamp(5000vh, 900%, 0vh); /* Reducido del 5000vh/900% */
       mask-position: center 19%;
     }
+  }
+
+  .fixed {
+    pointer-events: none;
+  }
+  .fixed.pointer-events-auto {
+    pointer-events: auto;
   }
 </style>
 
@@ -366,16 +373,7 @@ import SvgDesarrollo5 from "@/assets/objects2/azul4.svg"
     .to("#svg-diseno-3", { ...figureEnterProps }, "<0.2")
     .to("#svg-diseno-4", { ...figureEnterProps }, "<0.3")
     .to("#svg-diseno-5", { ...figureEnterProps }, "<0.4")
-    // Animar salida
-    .to(
-      "#pantalla-diseno",
-      { opacity: 0, duration: 0.5, delay: 1.5 }
-    )
-    .to("#svg-diseno-1", figureExitProps, "<")
-    .to("#svg-diseno-2", figureExitProps, "<0.1")
-    .to("#svg-diseno-3", figureExitProps, "<0.2")
-    .to("#svg-diseno-4", figureExitProps, "<0.3")
-    .to("#svg-diseno-5", figureExitProps, "<0.4")
+    
 
     // --- PANTALLA MARKETING ---
     .to(
@@ -391,16 +389,8 @@ import SvgDesarrollo5 from "@/assets/objects2/azul4.svg"
     .to("#svg-marketing-3", { ...figureEnterProps }, "<0.2")
     .to("#svg-marketing-4", { ...figureEnterProps }, "<0.3")
     .to("#svg-marketing-5", { ...figureEnterProps }, "<0.4")
-    // Animar salida
-    .to(
-      "#pantalla-marketing",
-      { opacity: 0, duration: 0.5, delay: 1.5 }
-    )
-    .to("#svg-marketing-1", figureExitProps, "<")
-    .to("#svg-marketing-2", figureExitProps, "<0.1")
-    .to("#svg-marketing-3", figureExitProps, "<0.2")
-    .to("#svg-marketing-4", figureExitProps, "<0.3")
-    .to("#svg-marketing-5", figureExitProps, "<0.4")
+ 
+    
 
     // --- PANTALLA DESARROLLO WEB ---
     .to(
@@ -416,18 +406,8 @@ import SvgDesarrollo5 from "@/assets/objects2/azul4.svg"
     .to("#svg-desarrollo-3", { ...figureEnterProps }, "<0.2")
     .to("#svg-desarrollo-4", { ...figureEnterProps }, "<0.3")
     .to("#svg-desarrollo-5", { ...figureEnterProps }, "<0.4")
-    // Animar salida (opcional, si quieres ocultar la pantalla al final)
-    /*
-    .to(
-      "#pantalla-desarrollo",
-      { opacity: 0, duration: 0.5, delay: 1.5 }
-    )
-    .to("#svg-desarrollo-1", figureExitProps, "<")
-    .to("#svg-desarrollo-2", figureExitProps, "<0.1")
-    .to("#svg-desarrollo-3", figureExitProps, "<0.2")
-    .to("#svg-desarrollo-4", figureExitProps, "<0.3")
-    .to("#svg-desarrollo-5", figureExitProps, "<0.4")
-    */
+    
+    
 
     // --- PANTALLA CONTACTO ---
     .to(
@@ -444,4 +424,104 @@ import SvgDesarrollo5 from "@/assets/objects2/azul4.svg"
         duration: 0.7,
       }
     )
+
+    function activarPantalla(id: string) {
+  document.querySelectorAll(".fixed").forEach(el => {
+    el.classList.remove("pointer-events-auto");
+    el.classList.add("pointer-events-none");
+  });
+  const pantalla = document.getElementById(id);
+  if (pantalla) {
+    pantalla.classList.remove("pointer-events-none");
+    pantalla.classList.add("pointer-events-auto");
+  }
+}
+
+tl
+  // --- FINAL MESSAGE ---
+  .to("#final-message", {
+    opacity: 1,
+    duration: 0.7,
+    onStart: () => activarPantalla("final-message"),
+  })
+  .to("#final-message", {
+    opacity: 0,
+    duration: 0.5,
+    delay: 0.7,
+    onStart: () => activarPantalla("after-hero"),
+  })
+  // --- AFTER HERO ---
+  .to("#after-hero", {
+    opacity: 1,
+    duration: 0.7,
+    onStart: () => activarPantalla("after-hero"),
+  })
+  .to("#after-hero", {
+    opacity: 0,
+    duration: 0.5,
+    delay: 1.2,
+    onStart: () => activarPantalla("pantalla-diseno"),
+  })
+  // --- PANTALLA DISEÑO GRÁFICO ---
+  .to("#pantalla-diseno", {
+    opacity: 1,
+    duration: 0.7,
+    onStart: () => activarPantalla("pantalla-diseno"),
+  })
+  .to("#svg-diseno-1", { ...figureEnterProps }, "<")
+  .to("#svg-diseno-2", { ...figureEnterProps }, "<0.1")
+  .to("#svg-diseno-3", { ...figureEnterProps }, "<0.2")
+  .to("#svg-diseno-4", { ...figureEnterProps }, "<0.3")
+  .to("#svg-diseno-5", { ...figureEnterProps }, "<0.4")
+  .to("#pantalla-diseno", {
+    opacity: 0,
+    duration: 0.5,
+    delay: 1.2,
+    onStart: () => activarPantalla("pantalla-marketing"),
+  })
+  // --- PANTALLA MARKETING ---
+  .to("#pantalla-marketing", {
+    opacity: 1,
+    duration: 0.7,
+    onStart: () => activarPantalla("pantalla-marketing"),
+  })
+  .to("#svg-marketing-1", { ...figureEnterProps }, "<")
+  .to("#svg-marketing-2", { ...figureEnterProps }, "<0.1")
+  .to("#svg-marketing-3", { ...figureEnterProps }, "<0.2")
+  .to("#svg-marketing-4", { ...figureEnterProps }, "<0.3")
+  .to("#svg-marketing-5", { ...figureEnterProps }, "<0.4")
+  .to("#pantalla-marketing", {
+    opacity: 0,
+    duration: 0.5,
+    delay: 1.2,
+    onStart: () => activarPantalla("pantalla-desarrollo"),
+  })
+  // --- PANTALLA DESARROLLO WEB ---
+  .to("#pantalla-desarrollo", {
+    opacity: 1,
+    duration: 0.7,
+    onStart: () => activarPantalla("pantalla-desarrollo"),
+  })
+  .to("#svg-desarrollo-1", { ...figureEnterProps }, "<")
+  .to("#svg-desarrollo-2", { ...figureEnterProps }, "<0.1")
+  .to("#svg-desarrollo-3", { ...figureEnterProps }, "<0.2")
+  .to("#svg-desarrollo-4", { ...figureEnterProps }, "<0.3")
+  .to("#svg-desarrollo-5", { ...figureEnterProps }, "<0.4")
+  .to("#pantalla-desarrollo", {
+    opacity: 0,
+    duration: 0.5,
+    delay: 1.2,
+    onStart: () => activarPantalla("pantalla-contacto"),
+  })
+  // --- PANTALLA CONTACTO ---
+  .to("#pantalla-contacto", {
+    opacity: 1,
+    duration: 0.7,
+    onStart: () => activarPantalla("pantalla-contacto"),
+  })
+  // --- FOOTER ---
+  .to("#footer", {
+    opacity: 1,
+    duration: 0.7,
+  });
 </script>
