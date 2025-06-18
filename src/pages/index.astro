@@ -15,6 +15,25 @@ import Logo8 from "@/assets/logos/logo8.svg"
 import Logo9 from "@/assets/logos/logo9.svg"
 import Logo10 from "@/assets/logos/logo10.svg"
 import Logo11 from "@/assets/logos/logo11.svg"
+
+// SVGs para las nuevas secciones
+import SvgDiseno1 from "@/assets/objects1/azul1.svg"
+import SvgDiseno2 from "@/assets/objects1/azul2.svg"
+import SvgDiseno3 from "@/assets/objects1/naranja3.svg"
+import SvgDiseno4 from "@/assets/objects1/naranja1.svg"
+import SvgDiseno5 from "@/assets/objects1/naranja2.svg"
+
+import SvgMarketing1 from "@/assets/objects2/ama1.svg"
+import SvgMarketing2 from "@/assets/objects2/ama2.svg"
+import SvgMarketing3 from "@/assets/objects2/ama3.svg"
+import SvgMarketing4 from "@/assets/objects2/azul3.svg"
+import SvgMarketing5 from "@/assets/objects2/azul4.svg"
+
+import SvgDesarrollo1 from "@/assets/objects2/ama1.svg"
+import SvgDesarrollo2 from "@/assets/objects2/ama2.svg"
+import SvgDesarrollo3 from "@/assets/objects2/ama3.svg"
+import SvgDesarrollo4 from "@/assets/objects2/azul3.svg"
+import SvgDesarrollo5 from "@/assets/objects2/azul4.svg"
 ---
 
 <Layout>
@@ -51,167 +70,89 @@ import Logo11 from "@/assets/logos/logo11.svg"
   </span>
 
   <div
-    id="after-hero"
-    class="fixed flex flex-col items-center justify-center top-0 left-0 w-full h-screen opacity-0 z-40 text-center px-4"
-    style="background: #042e36; color: #fbd04a;"
-  >
-    <span class="text-lg sm:text-6xl font-semibold drop-shadow mb-32">
-      Empresas que confían en nosotros
-    </span>
-    <div class="flex flex-wrap justify-center gap-4">
-      <img src={Logo1.src} alt="Logo 1" class="h-15 sm:h-18 filter grayscale" />
-      <img src={Logo2.src} alt="Logo 2" class="h-15 sm:h-18 filter grayscale" />
-      <img src={Logo3.src} alt="Logo 3" class="h-15 sm:h-18 filter grayscale" />
-      <img src={Logo4.src} alt="Logo 4" class="h-15 sm:h-18 filter grayscale" />
-      <img src={Logo5.src} alt="Logo 5" class="h-15 sm:h-18 filter grayscale" />
-      <img src={Logo6.src} alt="Logo 6" class="h-15 sm:h-18 filter grayscale" />
-      <img src={Logo7.src} alt="Logo 7" class="h-15 sm:h-18 filter grayscale" />
-      <img src={Logo8.src} alt="Logo 8" class="h-15 sm:h-18 filter grayscale" />
-      <img src={Logo9.src} alt="Logo 9" class="h-15 sm:h-18 filter grayscale" />
-      <img src={Logo10.src} alt="Logo 10" class="h-15 sm:h-18 filter grayscale" />
-      <img src={Logo11.src} alt="Logo 11" class="h-15 sm:h-18 filter grayscale" />
-    </div>
+  id="after-hero"
+  class="fixed flex flex-col items-center justify-center top-0 left-0 w-full h-screen opacity-0 z-40 text-center px-4"
+  style="background: #042e36; color: #fbd04a;"
+>
+  <span class="text-lg sm:text-6xl font-semibold drop-shadow mb-19">
+    Empresas que confían en nosotros
+  </span>
+  <div class="grid grid-cols-2 sm:grid-cols-3 gap-6">
+    <img src={Logo1.src} alt="Logo 1" class="h-12 sm:h-16 filter grayscale mx-auto" />
+    <img src={Logo2.src} alt="Logo 2" class="h-12 sm:h-16 filter grayscale mx-auto" />
+    <img src={Logo3.src} alt="Logo 3" class="h-12 sm:h-16 filter grayscale mx-auto" />
+    <img src={Logo4.src} alt="Logo 4" class="h-12 sm:h-16 filter grayscale mx-auto" />
+    <img src={Logo5.src} alt="Logo 5" class="h-12 sm:h-16 filter grayscale mx-auto" />
+    <img src={Logo6.src} alt="Logo 6" class="h-12 sm:h-16 filter grayscale mx-auto" />
+    <img src={Logo7.src} alt="Logo 7" class="h-12 sm:h-16 filter grayscale mx-auto" />
+    <img src={Logo8.src} alt="Logo 8" class="h-12 sm:h-16 filter grayscale mx-auto" />
+    <img src={Logo9.src} alt="Logo 9" class="h-12 sm:h-16 filter grayscale mx-auto" />
+    <img src={Logo10.src} alt="Logo 10" class="h-12 sm:h-16 filter grayscale mx-auto" />
+    <img src={Logo11.src} alt="Logo 11" class="h-12 sm:h-16 filter grayscale mx-auto" />
   </div>
+</div>
 
+  <!-- Sección DISEÑO -->
   <div
     id="pantalla-diseno"
     class="fixed w-full h-screen flex flex-col items-center justify-center top-0 left-0 opacity-0 z-30 text-center px-4"
     style="background: #fefba4"
   >
-    <svg id="figura-circulo" width="100" height="100" class="absolute left-8 top-8 opacity-0">
-      <circle cx="50" cy="50" r="40" fill="#FFD700" fill-opacity="0.8" />
-    </svg>
-    <svg id="figura-triangulo" width="80" height="80" class="absolute right-1/4 top-1/4 opacity-0">
-      <polygon points="40,10 70,70 10,70" fill="#00BFFF" fill-opacity="0.8" />
-    </svg>
-    <svg id="figura-curva" width="120" height="60" class="absolute left-1/3 bottom-1/4 opacity-0">
-      <path d="M10 50 Q60 10 110 50" stroke="#FF4500" stroke-width="5" fill="none" stroke-opacity="0.8"/>
-    </svg>
+    <img id="svg-diseno-1" src={SvgDiseno1.src} class="absolute left-8 top-8 opacity-0 w-40 h-40 sm:w-56 sm:h-56" alt="Decorativo 1" />
+    <img id="svg-diseno-2" src={SvgDiseno5.src} class="absolute right-8 top-8 opacity-0 w-40 h-40 sm:w-56 sm:h-56" alt="Decorativo 2" />
+    <img id="svg-diseno-3" src={SvgDiseno3.src} class="absolute left-1/4 bottom-8 opacity-0 w-40 h-40 sm:w-56 sm:h-56" alt="Decorativo 3" />
+    <img id="svg-diseno-4" src={SvgDiseno4.src} class="absolute right-1/4 bottom-8 opacity-0 w-40 h-40 sm:w-56 sm:h-56" alt="Decorativo 4" />
+    <img id="svg-diseno-5" src={SvgDiseno2.src} class="absolute left-1/2 top-1/4 -translate-x-1/2 -translate-y-1/2 opacity-0 w-40 h-40 sm:w-56 sm:h-56 pointer-events-none" alt="Decorativo 5" />
     <div class="relative z-10 flex flex-col items-center">
-      <svg width="120" height="120" viewBox="0 0 120 120" class="mb-6">
-        <circle
-          cx="60"
-          cy="60"
-          r="50"
-          fill="#fff"
-          fill-opacity="0.1"
-          stroke="#fff"
-          stroke-width="4"
-        />
-        <text
-          x="50%"
-          y="54%"
-          text-anchor="middle"
-          fill="#fff"
-          font-size="22"
-          font-weight="bold"
-          dy=".3em"
-        >
-          🎨
-        </text>
-      </svg>
-      <span class="text-2xl sm:text-4xl font-bold text-white mb-2 drop-shadow">
+      <span class="text-3xl sm:text-5xl font-bold text-[#f79b33] mb-2 drop-shadow">
         Diseño gráfico
       </span>
-      <span class="text-base sm:text-xl text-white/80">
+      <span class="text-base sm:text-xl text-[#f79b33]/80">
         Creatividad, identidad visual y comunicación efectiva para tu marca.
       </span>
     </div>
   </div>
 
+  <!-- Sección MARKETING -->
   <div
     id="pantalla-marketing"
     class="fixed flex flex-col items-center justify-center top-0 left-0 w-full h-screen opacity-0 z-30 text-center px-4"
     style="background: #fbd04a"
   >
-    <svg id="figura-estrella" width="80" height="80" class="absolute left-1/4 top-8 opacity-0">
-      <polygon points="40,5 50,30 75,30 55,45 65,70 40,55 15,70 25,45 5,30 30,30" fill="#FF1493" fill-opacity="0.8"/>
-    </svg>
-    <svg id="figura-flecha" width="100" height="100" class="absolute right-8 top-1/3 opacity-0">
-      <polygon points="20,50 80,50 80,20 100,60 80,100 80,70 20,70" fill="#32CD32" fill-opacity="0.8"/>
-    </svg>
-    <svg id="figura-ondas" width="150" height="80" class="absolute right-1/4 bottom-8 opacity-0">
-      <path d="M5 40 Q40 10 75 40 T145 40" stroke="#FFD700" stroke-width="6" fill="none" stroke-opacity="0.8"/>
-    </svg>
-    <svg width="120" height="120" viewBox="0 0 120 120" class="mb-6">
-      <rect
-        x="20"
-        y="20"
-        width="80"
-        height="80"
-        rx="20"
-        fill="#fff"
-        fill-opacity="0.1"
-        stroke="#fff"
-        stroke-width="4"
-      />
-      <text
-        x="50%"
-        y="54%"
-        text-anchor="middle"
-        fill="#fff"
-        font-size="22"
-        font-weight="bold"
-        dy=".3em"
-      >
-        📈
-      </text>
-    </svg>
-    <span class="text-2xl sm:text-4xl font-bold text-white mb-2 drop-shadow">
-      Marketing
-    </span>
-    <span class="text-base sm:text-xl text-white/80">
-      Estrategias digitales para crecer y conectar con tu audiencia.
-    </span>
+    <img id="svg-marketing-1" src={SvgMarketing1.src} class="absolute left-8 top-8 opacity-0 w-40 h-40 sm:w-56 sm:h-56" alt="Decorativo 1" />
+    <img id="svg-marketing-2" src={SvgMarketing2.src} class="absolute right-8 top-8 opacity-0 w-40 h-40 sm:w-56 sm:h-56" alt="Decorativo 2" />
+    <img id="svg-marketing-3" src={SvgMarketing3.src} class="absolute left-1/4 bottom-8 opacity-0 w-40 h-40 sm:w-56 sm:h-56" alt="Decorativo 3" />
+    <img id="svg-marketing-4" src={SvgMarketing4.src} class="absolute right-1/4 bottom-8 opacity-0 w-40 h-40 sm:w-56 sm:h-56" alt="Decorativo 4" />
+    <img id="svg-marketing-5" src={SvgMarketing5.src} class="absolute left-1/2 top-1/4 -translate-x-1/2 -translate-y-1/2 opacity-0 w-40 h-40 sm:w-56 sm:h-56 pointer-events-none" alt="Decorativo 5" />
+    <div class="relative z-10 flex flex-col items-center">
+      <span class="text-3xl sm:text-5xl font-bold text-[#042e36] mb-2 drop-shadow">
+        Marketing
+      </span>
+      <span class="text-base sm:text-xl text-[#042e36]/80">
+        Estrategias digitales para crecer y conectar con tu audiencia.
+      </span>
+    </div>
   </div>
 
+  <!-- Sección DESARROLLO -->
   <div
     id="pantalla-desarrollo"
     class="fixed flex flex-col items-center justify-center top-0 left-0 w-full h-screen opacity-0 z-30 text-center px-4"
     style="background: #f79b33"
   >
-    <svg id="figura-llaves" width="70" height="70" class="absolute left-8 top-8 opacity-0">
-      <path d="M10 20 L20 10 L30 20 L20 30 Z M40 40 L50 30 L60 40 L50 50 Z" fill="#ADFF2F" fill-opacity="0.8"/>
-    </svg>
-    <svg id="figura-corchetes" width="70" height="70" class="absolute right-8 top-8 opacity-0">
-      <path d="M20 10 L10 20 L20 30 M50 10 L60 20 L50 30" stroke="#ADFF2F" stroke-width="4" fill="none" stroke-opacity="0.8"/>
-    </svg>
-    <svg id="figura-bits" width="100" height="30" class="absolute left-1/4 bottom-1/4 opacity-0">
-      <circle cx="15" cy="15" r="10" fill="#8A2BE2" fill-opacity="0.7"/>
-      <circle cx="50" cy="15" r="10" fill="#8A2BE2" fill-opacity="0.7"/>
-      <circle cx="85" cy="15" r="10" fill="#8A2BE2" fill-opacity="0.7"/>
-    </svg>
-    <svg id="figura-conexion" width="150" height="100" class="absolute right-1/4 top-1/2 opacity-0">
-      <line x1="20" y1="20" x2="130" y2="80" stroke="#F0E68C" stroke-width="3" stroke-dasharray="5,5" stroke-opacity="0.8"/>
-      <circle cx="20" cy="20" r="5" fill="#F0E68C" fill-opacity="0.8"/>
-      <circle cx="130" cy="80" r="5" fill="#F0E68C" fill-opacity="0.8"/>
-    </svg>
-    <svg width="120" height="120" viewBox="0 0 120 120" class="mb-6">
-      <polygon
-        points="60,20 100,100 20,100"
-        fill="#fff"
-        fill-opacity="0.1"
-        stroke="#fff"
-        stroke-width="4"
-      />
-      <text
-        x="50%"
-        y="60%"
-        text-anchor="middle"
-        fill="#fff"
-        font-size="22"
-        font-weight="bold"
-        dy=".3em"
-      >
-        💻
-      </text>
-    </svg>
-    <span class="text-2xl sm:text-4xl font-bold text-white mb-2 drop-shadow">
-      Desarrollo web
-    </span>
-    <span class="text-base sm:text-xl text-white/80">
-      Sitios y aplicaciones modernas, rápidas y seguras.
-    </span>
+    <img id="svg-desarrollo-1" src={SvgDesarrollo1.src} class="absolute left-8 top-8 opacity-0 w-40 h-40 sm:w-56 sm:h-56" alt="Decorativo 1" />
+    <img id="svg-desarrollo-2" src={SvgDesarrollo2.src} class="absolute right-8 top-8 opacity-0 w-40 h-40 sm:w-56 sm:h-56" alt="Decorativo 2" />
+    <img id="svg-desarrollo-3" src={SvgDesarrollo3.src} class="absolute left-1/4 bottom-8 opacity-0 w-40 h-40 sm:w-56 sm:h-56" alt="Decorativo 3" />
+    <img id="svg-desarrollo-4" src={SvgDesarrollo4.src} class="absolute right-1/4 bottom-8 opacity-0 w-40 h-40 sm:w-56 sm:h-56" alt="Decorativo 4" />
+    <img id="svg-desarrollo-5" src={SvgDesarrollo5.src} class="absolute left-1/2 top-1/4 -translate-x-1/2 -translate-y-1/2 opacity-0 w-40 h-40 sm:w-56 sm:h-56 pointer-events-none" alt="Decorativo 5" />
+    <div class="relative z-10 flex flex-col items-center">
+      <span class="text-3xl sm:text-5xl font-bold text-[#fefba4] mb-2 drop-shadow">
+        Desarrollo web
+      </span>
+      <span class="text-base sm:text-xl text-[#fefba4]/80">
+        Sitios y aplicaciones modernas, rápidas y seguras.
+      </span>
+    </div>
   </div>
 </Layout>
 
@@ -345,16 +286,22 @@ import Logo11 from "@/assets/logos/logo11.svg"
         duration: 0.7,
       }
     )
-    .to("#figura-circulo", { ...figureEnterProps, x: -80, y: -80, rotate: 720 }, "<")
-    .to("#figura-triangulo", { ...figureEnterProps, x: 50, y: -50, rotate: -360 }, "<0.1")
-    .to("#figura-curva", { ...figureEnterProps, x: 30, y: 30, scale: 1.3 }, "<0.2")
+    // Animar entrada de los 5 SVG de diseño
+    .to("#svg-diseno-1", { ...figureEnterProps }, "<")
+    .to("#svg-diseno-2", { ...figureEnterProps }, "<0.1")
+    .to("#svg-diseno-3", { ...figureEnterProps }, "<0.2")
+    .to("#svg-diseno-4", { ...figureEnterProps }, "<0.3")
+    .to("#svg-diseno-5", { ...figureEnterProps }, "<0.4")
+    // Animar salida
     .to(
       "#pantalla-diseno",
       { opacity: 0, duration: 0.5, delay: 1.5 }
     )
-    .to("#figura-circulo", figureExitProps, "<")
-    .to("#figura-triangulo", figureExitProps, "<0.1")
-    .to("#figura-curva", figureExitProps, "<0.2")
+    .to("#svg-diseno-1", figureExitProps, "<")
+    .to("#svg-diseno-2", figureExitProps, "<0.1")
+    .to("#svg-diseno-3", figureExitProps, "<0.2")
+    .to("#svg-diseno-4", figureExitProps, "<0.3")
+    .to("#svg-diseno-5", figureExitProps, "<0.4")
 
     // --- PANTALLA MARKETING ---
     .to(
@@ -364,16 +311,22 @@ import Logo11 from "@/assets/logos/logo11.svg"
         duration: 0.7,
       }
     )
-    .to("#figura-estrella", { ...figureEnterProps, rotate: 540, x: -70 }, "<")
-    .to("#figura-flecha", { ...figureEnterProps, x: 70, y: -30, scale: 1.0 }, "<0.1")
-    .to("#figura-ondas", { ...figureEnterProps, y: 70, scale: 1.2, rotate: -270 }, "<0.2")
+    // Animar entrada de los 5 SVG de marketing
+    .to("#svg-marketing-1", { ...figureEnterProps }, "<")
+    .to("#svg-marketing-2", { ...figureEnterProps }, "<0.1")
+    .to("#svg-marketing-3", { ...figureEnterProps }, "<0.2")
+    .to("#svg-marketing-4", { ...figureEnterProps }, "<0.3")
+    .to("#svg-marketing-5", { ...figureEnterProps }, "<0.4")
+    // Animar salida
     .to(
       "#pantalla-marketing",
       { opacity: 0, duration: 0.5, delay: 1.5 }
     )
-    .to("#figura-estrella", figureExitProps, "<")
-    .to("#figura-flecha", figureExitProps, "<0.1")
-    .to("#figura-ondas", figureExitProps, "<0.2")
+    .to("#svg-marketing-1", figureExitProps, "<")
+    .to("#svg-marketing-2", figureExitProps, "<0.1")
+    .to("#svg-marketing-3", figureExitProps, "<0.2")
+    .to("#svg-marketing-4", figureExitProps, "<0.3")
+    .to("#svg-marketing-5", figureExitProps, "<0.4")
 
     // --- PANTALLA DESARROLLO WEB ---
     .to(
@@ -383,20 +336,22 @@ import Logo11 from "@/assets/logos/logo11.svg"
         duration: 0.7,
       }
     )
-    .to("#figura-llaves", { ...figureEnterProps, x: -60, rotate: 180 }, "<")
-    .to("#figura-corchetes", { ...figureEnterProps, x: 60, rotate: -180 }, "<0.1")
-    .to("#figura-bits", { ...figureEnterProps, y: 50, scale: 1.5 }, "<0.2")
-    .to("#figura-conexion", { ...figureEnterProps, x: -50, y: 50, rotate: 90 }, "<0.3")
-
-    // Optional: Fade out final screen
+    // Animar entrada de los 5 SVG de desarrollo
+    .to("#svg-desarrollo-1", { ...figureEnterProps }, "<")
+    .to("#svg-desarrollo-2", { ...figureEnterProps }, "<0.1")
+    .to("#svg-desarrollo-3", { ...figureEnterProps }, "<0.2")
+    .to("#svg-desarrollo-4", { ...figureEnterProps }, "<0.3")
+    .to("#svg-desarrollo-5", { ...figureEnterProps }, "<0.4")
+    // Animar salida (opcional, si quieres ocultar la pantalla al final)
     /*
     .to(
       "#pantalla-desarrollo",
       { opacity: 0, duration: 0.5, delay: 1.5 }
     )
-    .to("#figura-llaves", figureExitProps, "<")
-    .to("#figura-corchetes", figureExitProps, "<0.1")
-    .to("#figura-bits", figureExitProps, "<0.2")
-    .to("#figura-conexion", figureExitProps, "<0.3");
+    .to("#svg-desarrollo-1", figureExitProps, "<")
+    .to("#svg-desarrollo-2", figureExitProps, "<0.1")
+    .to("#svg-desarrollo-3", figureExitProps, "<0.2")
+    .to("#svg-desarrollo-4", figureExitProps, "<0.3")
+    .to("#svg-desarrollo-5", figureExitProps, "<0.4")
     */
 </script>
