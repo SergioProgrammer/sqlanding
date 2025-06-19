@@ -9,7 +9,7 @@ import Logo2 from "@/assets/logos/logo2.svg"
 import Logo3 from "@/assets/logos/logo3.svg"
 import Logo4 from "@/assets/logos/logo4.svg"
 import Logo5 from "@/assets/logos/logo5.svg"
-import Logo6 from "@/assets/logos/logo6.svg"
+import Logo6 from "@/assets/logos/logo6.svg" 
 import Logo7 from "@/assets/logos/logo7.svg"
 import Logo8 from "@/assets/logos/logo8.svg"
 import Logo9 from "@/assets/logos/logo9.svg"
@@ -439,91 +439,4 @@ import SvgDesarrollo5 from "@/assets/objects2/azul4.svg"
   }
 }
 
-tl
-  // --- FINAL MESSAGE ---
-  .to("#final-message", {
-    opacity: 1,
-    duration: 0.7,
-    onStart: () => activarPantalla("final-message"),
-  })
-  .to("#final-message", {
-    opacity: 0,
-    duration: 0.5,
-    delay: 0.7,
-    onStart: () => activarPantalla("after-hero"),
-  })
-  // --- AFTER HERO ---
-  .to("#after-hero", {
-    opacity: 1,
-    duration: 0.7,
-    onStart: () => activarPantalla("after-hero"),
-  })
-  .to("#after-hero", {
-    opacity: 0,
-    duration: 0.5,
-    delay: 1.2,
-    onStart: () => activarPantalla("pantalla-diseno"),
-  })
-  // --- PANTALLA DISEÑO GRÁFICO ---
-  .to("#pantalla-diseno", {
-    opacity: 1,
-    duration: 0.7,
-    onStart: () => activarPantalla("pantalla-diseno"),
-  })
-  .to("#svg-diseno-1", { ...figureEnterProps }, "<")
-  .to("#svg-diseno-2", { ...figureEnterProps }, "<0.1")
-  .to("#svg-diseno-3", { ...figureEnterProps }, "<0.2")
-  .to("#svg-diseno-4", { ...figureEnterProps }, "<0.3")
-  .to("#svg-diseno-5", { ...figureEnterProps }, "<0.4")
-  .to("#pantalla-diseno", {
-    opacity: 0,
-    duration: 0.5,
-    delay: 1.2,
-    onStart: () => activarPantalla("pantalla-marketing"),
-  })
-  // --- PANTALLA MARKETING ---
-  .to("#pantalla-marketing", {
-    opacity: 1,
-    duration: 0.7,
-    onStart: () => activarPantalla("pantalla-marketing"),
-  })
-  .to("#svg-marketing-1", { ...figureEnterProps }, "<")
-  .to("#svg-marketing-2", { ...figureEnterProps }, "<0.1")
-  .to("#svg-marketing-3", { ...figureEnterProps }, "<0.2")
-  .to("#svg-marketing-4", { ...figureEnterProps }, "<0.3")
-  .to("#svg-marketing-5", { ...figureEnterProps }, "<0.4")
-  .to("#pantalla-marketing", {
-    opacity: 0,
-    duration: 0.5,
-    delay: 1.2,
-    onStart: () => activarPantalla("pantalla-desarrollo"),
-  })
-  // --- PANTALLA DESARROLLO WEB ---
-  .to("#pantalla-desarrollo", {
-    opacity: 1,
-    duration: 0.7,
-    onStart: () => activarPantalla("pantalla-desarrollo"),
-  })
-  .to("#svg-desarrollo-1", { ...figureEnterProps }, "<")
-  .to("#svg-desarrollo-2", { ...figureEnterProps }, "<0.1")
-  .to("#svg-desarrollo-3", { ...figureEnterProps }, "<0.2")
-  .to("#svg-desarrollo-4", { ...figureEnterProps }, "<0.3")
-  .to("#svg-desarrollo-5", { ...figureEnterProps }, "<0.4")
-  .to("#pantalla-desarrollo", {
-    opacity: 0,
-    duration: 0.5,
-    delay: 1.2,
-    onStart: () => activarPantalla("pantalla-contacto"),
-  })
-  // --- PANTALLA CONTACTO ---
-  .to("#pantalla-contacto", {
-    opacity: 1,
-    duration: 0.7,
-    onStart: () => activarPantalla("pantalla-contacto"),
-  })
-  // --- FOOTER ---
-  .to("#footer", {
-    opacity: 1,
-    duration: 0.7,
-  });
 </script>
