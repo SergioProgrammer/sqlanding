@@ -1,7 +1,7 @@
 ---
 import Layout from "@/layouts/Layout.astro"
 // Imagenes
-import HeroKeyLogo from "@/assets/hero-key-logo.svg" // Este es el logo inicial
+import HeroKeyLogo from "@/assets/hero-key-logo.svg" 
 
 // logos
 import Logo1 from "@/assets/logos/logo1.svg"
@@ -16,7 +16,7 @@ import Logo9 from "@/assets/logos/logo9.svg"
 import Logo10 from "@/assets/logos/logo10.svg"
 import Logo11 from "@/assets/logos/logo11.svg"
 
-// SVGs para las nuevas secciones
+// SVGs objetos
 import SvgDiseno1 from "@/assets/objects1/azul1.svg"
 import SvgDiseno2 from "@/assets/objects1/azul2.svg"
 import SvgDiseno3 from "@/assets/objects1/naranja3.svg"
@@ -98,7 +98,7 @@ import SvgDesarrollo5 from "@/assets/objects2/azul4.svg"
     class="fixed pointer-events-none w-full h-screen flex flex-col items-center justify-center top-0 left-0 opacity-0 z-30 text-center px-4"
     style="background: #fefba4"
   >
-    <img id="svg-diseno-1" src={SvgDiseno1.src} class="absolute left-8 top-8 opacity-0 w-[10vw] h-[10vw] max-w-[2.5rem] max-h-[2.5rem] sm:w-[30vw] sm:h-[30vw] sm:max-w-[14rem] sm:max-h-[14rem]" alt="Decorativo 1" />
+      <img id="svg-diseno-1" src={SvgDiseno1.src} class="absolute left-8 top-8 opacity-0 w-[10vw] h-[10vw] max-w-[2.5rem] max-h-[2.5rem] sm:w-[30vw] sm:h-[30vw] sm:max-w-[14rem] sm:max-h-[14rem]" alt="Decorativo 1" />
       <img id="svg-diseno-2" src={SvgDiseno2.src} class="absolute right-8 top-8 opacity-0 w-[10vw] h-[10vw] max-w-[2.5rem] max-h-[2.5rem] sm:w-[30vw] sm:h-[30vw] sm:max-w-[14rem] sm:max-h-[14rem]" alt="Decorativo 2" />
       <img id="svg-diseno-3" src={SvgDiseno3.src} class="absolute left-1/4 bottom-8 opacity-0 w-[10vw] h-[10vw] max-w-[2.5rem] max-h-[2.5rem] sm:w-[30vw] sm:h-[30vw] sm:max-w-[14rem] sm:max-h-[14rem]" alt="Decorativo 3" />
       <img id="svg-diseno-4" src={SvgDiseno4.src} class="absolute right-1/4 bottom-8 opacity-0 w-[10vw] h-[10vw] max-w-[2.5rem] max-h-[2.5rem] sm:w-[30vw] sm:h-[30vw] sm:max-w-[14rem] sm:max-h-[14rem]" alt="Decorativo 4" />
@@ -194,7 +194,7 @@ import SvgDesarrollo5 from "@/assets/objects2/azul4.svg"
         class="rounded-md px-4 py-2 bg-[#fefba4] text-[#042e36] placeholder-[#042e36]/60 focus:outline-none resize-none"
         required
       ></textarea>
-      <!-- evitar captcha de FormSubmit -->
+      <!-- captcha -->
       <input type="hidden" name="_captcha" value="false">
       <!-- redirección tras enviar -->
       <input type="hidden" name="_next" value="https://sqstudio.es/gracias">
@@ -283,32 +283,31 @@ import SvgDesarrollo5 from "@/assets/objects2/azul4.svg"
     ease: "power2.in",
   };
 
-  // --- UNA ÚNICA LÍNEA DE TIEMPO PARA TODA LA ANIMACIÓN (SCRUBBED) ---
+  // --- LÍNEA DE TIEMPO PARA TODA LA ANIMACIÓN ---
   const tl = gsap.timeline({
     ease: "power2.out",
     scrollTrigger: {
       trigger: "body",
       start: "top top",
-      end: "bottom bottom", // ← así estaba antes
+      end: "bottom bottom", 
       scrub: 1,
       // markers: true,
     },
   });
 
-  // Animaciones iniciales: hero-key-logo y logo-mask
+  // Animaciones iniciales: 
   tl.to("#hero-key", { duration: 1, scale: 1 })
     .to("#hero-key-logo", { opacity: 0, duration: 0.5 }, "<")
     .to(
-      "#logo-mask", // Animamos el tamaño de la máscara
+      "#logo-mask", 
       {
-        // Optimización: valores finales más sensatos para desktop
         maskSize: "clamp(7vh, 25%, 0.5vh)",
         duration: 1.5,
       },
       0.3
     )
     .to(
-      "#hero-key", // Aseguramos que hero-key también se desvanece
+      "#hero-key", 
       {
         opacity: 0,
         duration: 0.7,
@@ -316,7 +315,7 @@ import SvgDesarrollo5 from "@/assets/objects2/azul4.svg"
       "<0.5"
     )
     .to(
-      "#intro-animation-container", // El contenedor que encapsula la intro
+      "#intro-animation-container", 
       {
         opacity: 0,
         pointerEvents: "none",
@@ -325,7 +324,6 @@ import SvgDesarrollo5 from "@/assets/objects2/azul4.svg"
       ">"
     );
 
-  // --- Añadimos las animaciones para las siguientes pantallas al MISMO timeline ---
   tl.to(
       "#final-message",
       {
@@ -366,7 +364,6 @@ import SvgDesarrollo5 from "@/assets/objects2/azul4.svg"
         onStart: () => activarPantalla("pantalla-diseno"),
       }
     )
-    // Animar entrada de los 5 SVG de diseño
     .to("#svg-diseno-1", { ...figureEnterProps }, "<")
     .to("#svg-diseno-2", { ...figureEnterProps }, "<0.1")
     .to("#svg-diseno-3", { ...figureEnterProps }, "<0.2")
@@ -383,7 +380,6 @@ import SvgDesarrollo5 from "@/assets/objects2/azul4.svg"
         onStart: () => activarPantalla("pantalla-marketing"),
       }
     )
-    // Animar entrada de los 5 SVG de marketing
     .to("#svg-marketing-1", { ...figureEnterProps }, "<")
     .to("#svg-marketing-2", { ...figureEnterProps }, "<0.1")
     .to("#svg-marketing-3", { ...figureEnterProps }, "<0.2")
@@ -401,7 +397,6 @@ import SvgDesarrollo5 from "@/assets/objects2/azul4.svg"
         onStart: () => activarPantalla("pantalla-desarrollo"),
       }
     )
-    // Animar entrada de los 5 SVG de desarrollo
     .to("#svg-desarrollo-1", { ...figureEnterProps }, "<")
     .to("#svg-desarrollo-2", { ...figureEnterProps }, "<0.1")
     .to("#svg-desarrollo-3", { ...figureEnterProps }, "<0.2")
