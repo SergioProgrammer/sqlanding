@@ -1,0 +1,161 @@
+---
+import '../styles/global.css';
+---
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cursos de Diseño y Web | SQ Studio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      html { scroll-behavior: smooth; }
+      body {
+        font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+      }
+      /* Optional: Add a general min-height to body if needed, though main should handle it */
+      body {
+          min-height: 100vh; /* Ensures body takes full viewport height */
+          background-color: #042e36; /* Move background color here for consistency */
+          overflow-y: scroll; /* Ensure scrollbar is always visible if content overflows */
+          overflow-x: hidden; /* Prevent horizontal scroll */
+      }
+    </style>
+</head>
+<body>
+  <main class="min-h-screen w-full flex flex-col items-center py-12 px-4 sm:px-6 lg:px-8">
+
+    <section class="w-full max-w-4xl text-center mb-16">
+      <h1 class="text-6xl sm:text-8xl font-extrabold text-[#fbd04a] mb-8 leading-tight drop-shadow-lg">
+        Potencia tu Creatividad con <span class="text-[#f79b33]">SQ Studio</span>
+      </h1>
+      <p class="text-2xl sm:text-4xl text-[#fefba4] font-semibold mb-12 max-w-3xl mx-auto">
+        Descubre nuestros <span class="font-bold text-[#f79b33]">cursos prácticos</span> y orientados a resultados en diseño gráfico, branding y desarrollo web.<br>¡Tu aprendizaje empieza aquí!
+      </p>
+      <a href="#nuestros-cursos" class="inline-flex items-center px-10 py-5 bg-[#f79b33] text-[#042e36] text-2xl font-bold rounded-full shadow-xl hover:bg-[#fbd04a] hover:text-[#042e36] transition-all duration-300 transform hover:scale-105 group border-2 border-[#f79b33]">
+        Explorar Cursos
+        <svg class="ml-4 w-7 h-7 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+      </a>
+    </section>
+
+    <div class="w-full max-w-6xl bg-white/10 rounded-3xl shadow-2xl p-10 sm:p-16 flex flex-col gap-16 items-center border-4 border-[#f79b33]/40" id="nuestros-cursos">
+
+      <h2 class="text-5xl sm:text-6xl font-extrabold text-[#fbd04a] text-center mb-10 drop-shadow">
+        Nuestros Cursos
+      </h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 w-full">
+
+        <div class="bg-[#fefba4] rounded-2xl p-8 flex flex-col items-start shadow-xl border-b-8 border-[#f79b33] hover:scale-105 transition-transform duration-300">
+          <h3 class="text-3xl font-bold text-[#042e36] mb-4">Branding para Emprendedores</h3>
+          <p class="text-xl text-[#042e36]/90 mb-6 flex-grow">
+            Aprende a <span class="font-semibold text-[#f79b33]">crear la identidad visual y voz de tu marca desde cero</span>. Este curso práctico incluye ejercicios de diseño, estrategia de marca y feedback personalizado para que tu negocio destaque.
+          </p>
+          <ul class="text-lg text-[#042e36]/95 mb-6 list-disc pl-6">
+            <li>Diseño de logotipo y paleta de colores.</li>
+            <li>Definición de voz y mensaje de marca.</li>
+            <li>Uso de herramientas esenciales.</li>
+          </ul>
+          <div class="mt-auto w-full">
+            <span class="inline-block bg-[#fbd04a] text-[#042e36] font-semibold rounded-full px-5 py-2 text-base mb-4 shadow-md">
+              Próximamente
+            </span>
+            <button disabled class="w-full bg-[#042e36]/30 text-[#042e36]/60 font-semibold rounded-lg px-6 py-3 cursor-not-allowed text-xl">
+              Inscripciones pronto
+            </button>
+          </div>
+        </div>
+
+        <div class="bg-[#fefba4] rounded-2xl p-8 flex flex-col items-start shadow-xl border-b-8 border-[#f79b33] hover:scale-105 transition-transform duration-300">
+          <h3 class="text-3xl font-bold text-[#042e36] mb-4">Diseño con Canva: Nivel Pro</h3>
+          <p class="text-xl text-[#042e36]/90 mb-6 flex-grow">
+            Domina Canva para crear <span class="font-semibold text-[#f79b33]">piezas visuales profesionales y atractivas</span> para redes sociales, presentaciones, marketing y más. Ideal para emprendedores y creadores de contenido.
+          </p>
+          <ul class="text-lg text-[#042e36]/95 mb-6 list-disc pl-6">
+            <li>Diseño de posts y stories impactantes.</li>
+            <li>Creación de plantillas personalizadas.</li>
+            <li>Trucos y atajos de Canva.</li>
+          </ul>
+          <div class="mt-auto w-full">
+            <span class="inline-block bg-[#fbd04a] text-[#042e36] font-semibold rounded-full px-5 py-2 text-base mb-4 shadow-md">
+              Próximamente
+            </span>
+            <button disabled class="w-full bg-[#042e36]/30 text-[#042e36]/60 font-semibold rounded-lg px-6 py-3 cursor-not-allowed text-xl">
+              Inscripciones pronto
+            </button>
+          </div>
+        </div>
+
+        <div class="bg-[#fefba4] rounded-2xl p-8 flex flex-col items-start shadow-xl border-b-8 border-[#f79b33] hover:scale-105 transition-transform duration-300">
+          <h3 class="text-3xl font-bold text-[#042e36] mb-4">Introducción al Desarrollo Web</h3>
+          <p class="text-xl text-[#042e36]/90 mb-6 flex-grow">
+            Construye tus primeras páginas web desde cero. Aprende los <span class="font-semibold text-[#f79b33]">fundamentos de HTML y CSS</span> para estructurar y dar estilo a tu contenido digital.
+          </p>
+          <ul class="text-lg text-[#042e36]/95 mb-6 list-disc pl-6">
+            <li>Estructura con HTML semántico.</li>
+            <li>Estilizado con CSS.</li>
+            <li>Creación de layouts básicos.</li>
+          </ul>
+          <div class="mt-auto w-full">
+            <span class="inline-block bg-[#fbd04a] text-[#042e36] font-semibold rounded-full px-5 py-2 text-base mb-4 shadow-md">
+              Próximamente
+            </span>
+            <button disabled class="w-full bg-[#042e36]/30 text-[#042e36]/60 font-semibold rounded-lg px-6 py-3 cursor-not-allowed text-xl">
+              Inscripciones pronto
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <section class="w-full mt-16">
+        <h2 class="text-4xl sm:text-5xl font-extrabold text-[#f79b33] text-center mb-10 drop-shadow">
+          Lo que dicen nuestros alumnos
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+          <div class="bg-[#fefba4] rounded-2xl p-8 shadow-xl border-l-8 border-[#f79b33]">
+            <p class="text-2xl text-[#042e36]/90 italic mb-6">
+              "El curso de Branding me dio las herramientas que necesitaba para lanzar mi negocio con una imagen profesional. ¡Sergio y Sara son geniales explicando!"
+            </p>
+            <p class="text-xl text-[#042e36] font-semibold">- María G., Emprendedora</p>
+          </div>
+          <div class="bg-[#fefba4] rounded-2xl p-8 shadow-xl border-l-8 border-[#f79b33]">
+            <p class="text-2xl text-[#042e36]/90 italic mb-6">
+              "Pensaba que Canva era solo para cosas básicas, pero con este curso aprendí a crear diseños increíbles que antes solo veía en agencias. ¡Muy recomendado!"
+            </p>
+            <p class="text-xl text-[#042e36] font-semibold">- Javier R., Community Manager</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="w-full mt-16">
+        <h2 class="text-4xl sm:text-5xl font-extrabold text-[#f79b33] text-center mb-10 drop-shadow">
+          Preguntas Frecuentes
+        </h2>
+        <div class="flex flex-col gap-6">
+          <div class="bg-[#fefba4] rounded-xl p-6 shadow-md border-l-4 border-[#f79b33]">
+            <h3 class="text-2xl font-bold text-[#042e36] mb-3">¿Necesito conocimientos previos para los cursos?</h3>
+            <p class="text-xl text-[#042e36]/90">No, nuestros cursos están diseñados para principiantes y personas con poca experiencia. Empezamos desde lo más básico y avanzamos paso a paso.</p>
+          </div>
+          <div class="bg-[#fefba4] rounded-xl p-6 shadow-md border-l-4 border-[#f79b33]">
+            <h3 class="text-2xl font-bold text-[#042e36] mb-3">¿Cómo se imparten los cursos?</h3>
+            <p class="text-xl text-[#042e36]/90">Nuestros cursos son online, con acceso a videos pregrabados, materiales de apoyo descargables y sesiones de preguntas y respuestas en vivo.</p>
+          </div>
+          <div class="bg-[#fefba4] rounded-xl p-6 shadow-md border-l-4 border-[#f79b33]">
+            <h3 class="text-2xl font-bold text-[#042e36] mb-3">¿Recibiré un certificado?</h3>
+            <p class="text-xl text-[#042e36]/90">Sí, al finalizar cada curso y completar los proyectos, recibirás un certificado de finalización de SQ Studio.</p>
+          </div>
+        </div>
+      </section>
+
+      <div class="mt-20 text-center">
+        <p class="text-4xl sm:text-5xl text-[#fbd04a] mb-6 font-extrabold">¿Listo para impulsar tu carrera creativa?</p>
+        <p class="text-2xl text-[#fefba4] mb-10">Si tienes alguna pregunta o quieres mantenerte al tanto de nuestros próximos lanzamientos:</p>
+        <a href="/contacto" class="inline-block bg-[#f79b33] text-[#042e36] font-bold rounded-full px-12 py-6 hover:bg-[#fbd04a] hover:text-[#042e36] transition-all duration-300 transform hover:scale-105 shadow-xl text-2xl border-2 border-[#f79b33]">
+          ¡Contáctanos!
+        </a>
+      </div>
+
+    </div>
+  </main>
+</body>
+</html>

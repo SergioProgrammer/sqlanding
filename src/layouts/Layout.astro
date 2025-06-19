@@ -28,9 +28,8 @@ import KeepScrolling from "@/assets/keep-scrolling.svg"
     <KeepScrolling
       class="fixed bottom-3 right-0 left-0 mx-auto text-orange-300 drop-shadow-2xl animate-bounce-pulse"
     />
-    <!-- Menú hamburguesa y menú desplegable -->
-    <div x-data="{ open: false }" class="fixed top-4 right-4 z-[100]">
-      <!-- Botón hamburguesa -->
+    <!-- Menú hamburguesa y menú desplegable SIEMPRE al final del body -->
+    <div x-data="{ open: false }" class="fixed top-4 right-4 z-[99999]">
       <button
         @click="open = !open"
         class="flex flex-col justify-center items-center w-12 h-12 rounded-full bg-yellow-200 shadow-lg hover:bg-yellow-300 transition"
@@ -40,11 +39,10 @@ import KeepScrolling from "@/assets/keep-scrolling.svg"
         <span class="block w-8 h-1 bg-[#f79b33] rounded mb-1"></span>
         <span class="block w-8 h-1 bg-[#f79b33] rounded"></span>
       </button>
-      <!-- Menú desplegable -->
       <div
         x-show="open"
         @click.away="open = false"
-        class="mt-3 w-48 bg-yellow-200 rounded-xl shadow-xl flex flex-col gap-2 p-4 text-right absolute right-0 top-14 border border-[#f79b33] transition"
+        class="mt-3 w-48 bg-yellow-200 rounded-xl shadow-xl flex flex-col gap-2 p-4 text-right absolute right-0 top-14 border border-[#f79b33] transition z-[99999]"
         x-transition
       >
         <a href="/cursos" class="text-[#042e36] text-2xl font-semibold hover:underline">Cursos</a>
