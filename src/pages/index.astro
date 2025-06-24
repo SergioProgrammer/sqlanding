@@ -3,6 +3,9 @@ import Layout from "@/layouts/Layout.astro"
 import Cursos from "@/pages/cursos.astro"
 // Imagenes
 import HeroKeyLogo from "@/assets/hero-key-logo.svg" 
+import disenoImg from "@/assets/diseño.jpg";
+import webImg from "@/assets/web.jpg";
+import dgrafico from "@/assets/dgrafico.jpg";
 
 // logos
 import Logo1 from "@/assets/logos/logo1.svg"
@@ -16,25 +19,6 @@ import Logo8 from "@/assets/logos/logo8.svg"
 import Logo9 from "@/assets/logos/logo9.svg"
 import Logo10 from "@/assets/logos/logo10.svg"
 import Logo11 from "@/assets/logos/logo11.svg"
-
-// SVGs objetos
-import SvgDiseno1 from "@/assets/objects1/azul1.svg"
-import SvgDiseno2 from "@/assets/objects1/azul2.svg"
-import SvgDiseno3 from "@/assets/objects1/naranja3.svg"
-import SvgDiseno4 from "@/assets/objects1/naranja1.svg"
-import SvgDiseno5 from "@/assets/objects1/naranja2.svg"
-
-import SvgMarketing1 from "@/assets/objects2/ama1.svg"
-import SvgMarketing2 from "@/assets/objects2/ama2.svg"
-import SvgMarketing3 from "@/assets/objects2/ama3.svg"
-import SvgMarketing4 from "@/assets/objects2/azul3.svg"
-import SvgMarketing5 from "@/assets/objects2/azul4.svg"
-
-import SvgDesarrollo1 from "@/assets/objects2/ama1.svg"
-import SvgDesarrollo2 from "@/assets/objects2/ama2.svg"
-import SvgDesarrollo3 from "@/assets/objects2/ama3.svg"
-import SvgDesarrollo4 from "@/assets/objects2/azul3.svg"
-import SvgDesarrollo5 from "@/assets/objects2/azul4.svg"
 ---
 
 <Layout>
@@ -93,17 +77,18 @@ import SvgDesarrollo5 from "@/assets/objects2/azul4.svg"
   </div>
 </div>
 
-  <!-- Sección DISEÑO -->
-  <div
-    id="pantalla-diseno"
-    class="fixed pointer-events-none w-full h-screen flex flex-col items-center justify-center top-0 left-0 opacity-0 z-30 text-center px-4"
-    style="background: #fefba4"
-  >
-      <img id="svg-diseno-1" src={SvgDiseno1.src} class="absolute left-8 top-8 opacity-0 w-[10vw] h-[10vw] max-w-[2.5rem] max-h-[2.5rem] sm:w-[30vw] sm:h-[30vw] sm:max-w-[14rem] sm:max-h-[14rem]" alt="Decorativo 1" />
-      <img id="svg-diseno-2" src={SvgDiseno2.src} class="absolute right-8 top-8 opacity-0 w-[10vw] h-[10vw] max-w-[2.5rem] max-h-[2.5rem] sm:w-[30vw] sm:h-[30vw] sm:max-w-[14rem] sm:max-h-[14rem]" alt="Decorativo 2" />
-      <img id="svg-diseno-3" src={SvgDiseno3.src} class="absolute left-1/4 bottom-8 opacity-0 w-[10vw] h-[10vw] max-w-[2.5rem] max-h-[2.5rem] sm:w-[30vw] sm:h-[30vw] sm:max-w-[14rem] sm:max-h-[14rem]" alt="Decorativo 3" />
-      <img id="svg-diseno-4" src={SvgDiseno4.src} class="absolute right-1/4 bottom-8 opacity-0 w-[10vw] h-[10vw] max-w-[2.5rem] max-h-[2.5rem] sm:w-[30vw] sm:h-[30vw] sm:max-w-[14rem] sm:max-h-[14rem]" alt="Decorativo 4" />
-      <img id="svg-diseno-5" src={SvgDiseno5.src} class="absolute left-1/2 top-1/4 -translate-x-1/2 -translate-y-1/2 opacity-0 w-[10vw] h-[10vw] max-w-[2.5rem] max-h-[2.5rem] sm:w-[30vw] sm:h-[30vw] sm:max-w-[14rem] sm:max-h-[14rem] pointer-events-none" alt="Decorativo 5" />
+  <!-- Sección DISEÑO GRÁFICO -->
+<div
+  id="pantalla-diseno"
+  class="fixed pointer-events-none flex flex-col lg:flex-row items-center justify-center top-0 left-0 w-full h-screen opacity-0 z-30 text-center px-0"
+  style="background: #fefba4"
+>
+  <!-- Mitad izquierda: Imagen (arriba en mobile, izquierda en desktop) -->
+  <div class="w-full h-1/2 lg:w-1/2 lg:h-full flex-shrink-0">
+    <img src={dgrafico.src} alt="Diseño gráfico" class="object-cover w-full h-full" />
+  </div>
+  <!-- Mitad derecha: Contenido (abajo en mobile, derecha en desktop) -->
+  <div class="w-full h-1/2 lg:w-1/2 lg:h-full flex flex-col items-center justify-center relative px-4">
     <div class="relative z-10 flex flex-col items-center">
       <span class="text-3xl sm:text-6xl font-bold text-[#f79b33] mb-6 drop-shadow">
         Diseño gráfico
@@ -113,48 +98,54 @@ import SvgDesarrollo5 from "@/assets/objects2/azul4.svg"
       </span>
     </div>
   </div>
+</div>
 
   <!-- Sección MARKETING -->
   <div
     id="pantalla-marketing"
-    class="fixed pointer-events-none flex flex-col items-center justify-center top-0 left-0 w-full h-screen opacity-0 z-30 text-center px-4"
+    class="fixed pointer-events-none flex flex-col lg:flex-row items-center justify-center top-0 left-0 w-full h-screen opacity-0 z-30 text-center px-0"
     style="background: #fbd04a"
   >
-    <img id="svg-marketing-1" src={SvgMarketing1.src} class="absolute left-8 top-8 opacity-0 w-[10vw] h-[10vw] max-w-[2.5rem] max-h-[2.5rem] sm:w-[30vw] sm:h-[30vw] sm:max-w-[14rem] sm:max-h-[14rem]" alt="Decorativo 1" />
-    <img id="svg-marketing-2" src={SvgMarketing2.src} class="absolute right-8 top-8 opacity-0 w-[10vw] h-[10vw] max-w-[2.5rem] max-h-[2.5rem] sm:w-[30vw] sm:h-[30vw] sm:max-w-[14rem] sm:max-h-[14rem]" alt="Decorativo 2" />
-    <img id="svg-marketing-3" src={SvgMarketing3.src} class="absolute left-1/4 bottom-8 opacity-0 w-[10vw] h-[10vw] max-w-[2.5rem] max-h-[2.5rem] sm:w-[30vw] sm:h-[30vw] sm:max-w-[14rem] sm:max-h-[14rem]" alt="Decorativo 3" />
-    <img id="svg-marketing-4" src={SvgMarketing4.src} class="absolute right-1/4 bottom-8 opacity-0 w-[10vw] h-[10vw] max-w-[2.5rem] max-h-[2.5rem] sm:w-[30vw] sm:h-[30vw] sm:max-w-[14rem] sm:max-h-[14rem]" alt="Decorativo 4" />
-    <img id="svg-marketing-5" src={SvgMarketing5.src} class="absolute left-1/2 top-1/4 -translate-x-1/2 -translate-y-1/2 opacity-0 w-[10vw] h-[10vw] max-w-[2.5rem] max-h-[2.5rem] sm:w-[30vw] sm:h-[30vw] sm:max-w-[14rem] sm:max-h-[14rem] pointer-events-none" alt="Decorativo 5" />
-    <div class="relative z-10 flex flex-col items-center">
-      <span class="text-3xl sm:text-6xl font-bold text-[#042e36] mb-2 drop-shadow">
-        Marketing
-      </span>
-      <span class="text-base sm:text-4xl text-[#042e36]/80">
-        Estrategias digitales para crecer y conectar con tu audiencia.
-      </span>
+    <!-- Mitad izquierda: Imagen (arriba en mobile, izquierda en desktop) -->
+    <div class="w-full h-1/2 lg:w-1/2 lg:h-full flex-shrink-0">   
+     <img src={disenoImg.src} alt="Diseño" class="object-cover w-full h-full" />             
+    </div>
+    <!-- Mitad derecha: Contenido (abajo en mobile, derecha en desktop) -->
+    <div class="w-full h-1/2 lg:w-1/2 lg:h-full flex flex-col items-center justify-center relative px-4">
+     
+      <div class="relative z-10 flex flex-col items-center">
+        <span class="text-3xl sm:text-6xl font-bold text-[#042e36] mb-2 drop-shadow">
+          Marketing
+        </span>
+        <span class="text-base sm:text-4xl text-[#042e36]/80">
+          Estrategias digitales para crecer y conectar con tu audiencia.
+        </span>
+      </div>
     </div>
   </div>
 
-  <!-- Sección DESARROLLO -->
-  <div
-    id="pantalla-desarrollo"
-    class="fixed pointer-events-none flex flex-col items-center justify-center top-0 left-0 w-full h-screen opacity-0 z-30 text-center px-4"
-    style="background: #f79b33"
-  >
-    <img id="svg-desarrollo-1" src={SvgDesarrollo1.src} class="absolute left-8 top-8 opacity-0 w-[10vw] h-[10vw] max-w-[2.5rem] max-h-[2.5rem] sm:w-[30vw] sm:h-[30vw] sm:max-w-[14rem] sm:max-h-[14rem]" alt="Decorativo 1" />
-    <img id="svg-desarrollo-2" src={SvgDesarrollo2.src} class="absolute right-8 top-8 opacity-0 w-[10vw] h-[10vw] max-w-[2.5rem] max-h-[2.5rem] sm:w-[30vw] sm:h-[30vw] sm:max-w-[14rem] sm:max-h-[14rem]" alt="Decorativo 2" />
-    <img id="svg-desarrollo-3" src={SvgDesarrollo3.src} class="absolute left-1/4 bottom-8 opacity-0 w-[10vw] h-[10vw] max-w-[2.5rem] max-h-[2.5rem] sm:w-[30vw] sm:h-[30vw] sm:max-w-[14rem] sm:max-h-[14rem]" alt="Decorativo 3" />
-    <img id="svg-desarrollo-4" src={SvgDesarrollo4.src} class="absolute right-1/4 bottom-8 opacity-0 w-[10vw] h-[10vw] max-w-[2.5rem] max-h-[2.5rem] sm:w-[30vw] sm:h-[30vw] sm:max-w-[14rem] sm:max-h-[14rem]" alt="Decorativo 4" />
-    <img id="svg-desarrollo-5" src={SvgDesarrollo5.src} class="absolute left-1/2 top-1/4 -translate-x-1/2 -translate-y-1/2 opacity-0 w-[10vw] h-[10vw] max-w-[2.5rem] max-h-[2.5rem] sm:w-[30vw] sm:h-[30vw] sm:max-w-[14rem] sm:max-h-[14rem] pointer-events-none" alt="Decorativo 5" />
+  <!-- Sección DESARROLLO WEB -->
+<div
+  id="pantalla-desarrollo"
+  class="fixed pointer-events-none flex flex-col lg:flex-row items-center justify-center top-0 left-0 w-full h-screen opacity-0 z-30 text-center px-0"
+  style="background: #fbd04a"
+>
+  <!-- Mitad izquierda: Imagen (arriba en mobile, izquierda en desktop) -->
+  <div class="w-full h-1/2 lg:w-1/2 lg:h-full flex-shrink-0">
+    <img src={webImg.src} alt="Desarrollo web" class="object-cover w-full h-full" />             
+  </div>
+  <!-- Mitad derecha: Contenido (abajo en mobile, derecha en desktop) -->
+  <div class="w-full h-1/2 lg:w-1/2 lg:h-full flex flex-col items-center justify-center relative px-4">
     <div class="relative z-10 flex flex-col items-center">
-      <span class="text-3xl sm:text-6xl font-bold text-[#fefba4] mb-2 drop-shadow">
+      <span class="text-3xl sm:text-6xl font-bold text-[#042e36] mb-2 drop-shadow">
         Desarrollo web
       </span>
-      <span class="text-base sm:text-4xl text-[#fefba4]/80">
-        Sitios y aplicaciones modernas, rápidas y seguras.
+      <span class="text-base sm:text-4xl text-[#042e36]/80">
+        Creamos sitios modernos, rápidos y a medida para tu marca.
       </span>
     </div>
   </div>
+</div>
 
   <!-- Sección CONTACTO -->
 <div
@@ -162,6 +153,7 @@ import SvgDesarrollo5 from "@/assets/objects2/azul4.svg"
   class="fixed pointer-events-none flex flex-col items-center justify-center top-0 left-0 w-full h-screen z-30 text-center px-4 opacity-0"
   style="background: #042e36; color: #fbd04a;"
 >
+<!-- 
 <div class="w-full max-w-3xl bg-[#fefba4] rounded-xl shadow-lg p-8 flex flex-col gap-4 items-center mb-8">
   <h2 class="text-2xl sm:text-3xl font-bold text-[#042e36] text-center mb-2">
     ¿Por qué es importante tu branding?
@@ -172,7 +164,7 @@ import SvgDesarrollo5 from "@/assets/objects2/azul4.svg"
   <a href="/branding" class="bg-[#fbd04a] text-[#042e36] font-semibold rounded-md px-6 py-3 hover:bg-[#fbd04a] hover:text-white transition text-lg">
     Descubre más sobre branding
   </a>
-</div>
+</div> --> 
   <div class="w-full max-w-md bg-[#042e36]/80 rounded-xl shadow-lg p-6 flex flex-col gap-4 items-center">
     <span class="text-4xl sm:text-6xl font-bold mb-2 drop-shadow text-[#fbd04a]">
       Contáctanos
