@@ -1,6 +1,7 @@
 ---
 import Layout from "@/layouts/Layout.astro"
 import Cursos from "@/pages/cursos.astro"
+
 // Imagenes
 import HeroKeyLogo from "@/assets/hero-key-logo.svg" 
 import disenoImg from "@/assets/Marketing.png";
@@ -48,7 +49,7 @@ import Logo11 from "@/assets/logos/logo11.svg"
 
   <span
     id="final-message"
-    class="fixed pointer-events-none flex justify-center items-center top-0 left-0 w-full h-screen text-2xl sm:text-4xl md:text-6xl font-semibold opacity-0 z-40 text-center"
+    class="fixed pointer-events-none sm:px-6 flex justify-center items-center top-0 left-0 w-full h-screen text-2xl sm:text-4xl md:text-6xl font-semibold opacity-0 z-40 text-center"
     style="background: #042e36; color: #fbd04a;"
   >
     DISEÑO GRÁFICO Y DESARROLLO WEB
@@ -62,7 +63,7 @@ import Logo11 from "@/assets/logos/logo11.svg"
   <span class="text-lg sm:text-6xl font-semibold drop-shadow mb-19">
     EMPRESAS QUE CONFIAN EN NOSOTROS
   </span>
-  <div class="grid grid-cols-2 sm:grid-cols-3 gap-6">
+  <div class="grid grid-cols-3 sm:grid-cols-2 gap-6 px-6">
     <img src={Logo1.src} alt="Logo 1" class="h-12 sm:h-16 filter grayscale mx-auto" />
     <img src={Logo2.src} alt="Logo 2" class="h-12 sm:h-16 filter grayscale mx-auto" />
     <img src={Logo3.src} alt="Logo 3" class="h-12 sm:h-16 filter grayscale mx-auto" />
@@ -73,32 +74,32 @@ import Logo11 from "@/assets/logos/logo11.svg"
     <img src={Logo8.src} alt="Logo 8" class="h-12 sm:h-16 filter grayscale mx-auto" />
     <img src={Logo9.src} alt="Logo 9" class="h-12 sm:h-16 filter grayscale mx-auto" />
     <img src={Logo10.src} alt="Logo 10" class="h-12 sm:h-16 filter grayscale mx-auto" />
-    <img src={Logo11.src} alt="Logo 11" class="h-12 sm:h-16 filter grayscale mx-auto" />
+    <img src={Logo11.src} alt="Logo 11" class="h-18 sm:h-36 filter grayscale mx-auto" />
   </div>
 </div>
 
   <!-- Sección DISEÑO GRÁFICO -->
-<div
-  id="pantalla-diseno"
-  class="fixed pointer-events-none flex flex-col lg:flex-row items-center justify-center top-0 left-0 w-full h-screen opacity-0 z-30 text-center px-0"
-  style="background: #fefba4"
->
-  <!-- Mitad izquierda: Imagen (arriba en mobile, izquierda en desktop) -->
-  <div class="w-full h-1/2 lg:w-1/2 lg:h-full flex-shrink-0">
-    <img src={dgrafico.src} alt="Diseño gráfico" class="object-cover w-full h-full" />
-  </div>
-  <!-- Mitad derecha: Contenido (abajo en mobile, derecha en desktop) -->
-  <div class="w-full h-1/2 lg:w-1/2 lg:h-full flex flex-col items-center justify-center relative px-4">
-    <div class="relative z-10 flex flex-col items-center">
-      <span class="text-3xl sm:text-6xl font-bold text-[#f79b33] mb-6 drop-shadow">
-        Diseño gráfico
-      </span>
-      <span class="text-base sm:text-4xl text-[#f79b33]/80">
-        Creatividad, identidad visual y comunicación efectiva para tu marca.
-      </span>
+  <div
+    id="pantalla-diseno"
+    class="fixed pointer-events-none flex flex-col lg:flex-row items-center justify-center top-0 left-0 w-full h-screen opacity-0 z-30 text-center px-0"
+    style="background: #fefba4"
+  >
+    <!-- Mitad izquierda: Imagen (arriba en mobile, izquierda en desktop) -->
+    <div class="w-full h-1/2 lg:w-1/2 lg:h-full flex-shrink-0">
+      <img src={dgrafico.src} alt="Diseño gráfico" class="object-cover w-full h-full" />
+    </div>
+    <!-- Mitad derecha: Contenido (abajo en mobile, derecha en desktop) -->
+    <div class="w-full h-1/2 lg:w-1/2 lg:h-full flex flex-col items-center justify-center relative px-4">
+      <div class="relative z-10 flex flex-col items-center">
+        <span class="text-3xl sm:text-6xl font-bold text-[#f79b33] mb-6 drop-shadow">
+          Diseño gráfico
+        </span>
+        <span class="text-base sm:text-4xl text-[#f79b33]/80 px-8">
+          Creatividad, identidad visual y comunicación efectiva para tu marca.
+        </span>
+      </div>
     </div>
   </div>
-</div>
 
   <!-- Sección MARKETING -->
   <div
@@ -117,7 +118,7 @@ import Logo11 from "@/assets/logos/logo11.svg"
         <span class="text-3xl sm:text-6xl font-bold text-[#042e36] mb-2 drop-shadow">
           Marketing
         </span>
-        <span class="text-base sm:text-4xl text-[#042e36]/80">
+        <span class="text-base sm:text-4xl text-[#042e36]/80 px-6">
           Estrategias digitales para crecer y conectar con tu audiencia.
         </span>
       </div>
@@ -140,7 +141,7 @@ import Logo11 from "@/assets/logos/logo11.svg"
       <span class="text-3xl sm:text-6xl font-bold text-[#042e36] mb-2 drop-shadow">
         Desarrollo web
       </span>
-      <span class="text-base sm:text-4xl text-[#042e36]/80">
+      <span class="text-base sm:text-4xl text-[#042e36]/80 px-6">
         Creamos sitios modernos, rápidos y a medida para tu marca.
       </span>
     </div>
