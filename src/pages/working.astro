@@ -1,0 +1,41 @@
+---
+// Si estás usando Astro, mantén esto. Si es HTML puro, ignóralo.
+import '../styles/global.css';
+import Footer from '../pages/footer.astro';
+---
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Proyectos | SQ Studio</title>
+  <meta name="description" content="Explora los proyectos de SQ Studio. Estamos actualizando esta sección con nuevos trabajos.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: ui-sans-serif, system-ui;
+      background-color: #042e36;
+      color: #fff;
+      margin: 0;
+      padding: 0;
+    }
+  </style>
+</head>
+<body class="flex flex-col min-h-screen">
+
+  <main class="flex flex-col justify-center items-center text-center px-6 py-24 flex-grow">
+    <h1 class="text-4xl md:text-5xl font-bold text-[#fbd04a] mb-6">¡Estamos trabajando en ello!</h1>
+    <p class="text-lg md:text-xl max-w-xl mb-8 text-white/80">
+      Debido a la cantidad de proyectos que tenemos entre manos, esta sección está en proceso de actualización.
+      Muy pronto podrás ver aquí todo lo que hemos creado para nuestros clientes.
+    </p>
+    <a href="/" class="mt-4 inline-block bg-[#fbd04a] text-[#042e36] font-semibold px-6 py-3 rounded-full hover:bg-yellow-300 transition">
+      Volver al inicio
+    </a>
+  </main>
+
+  <Footer />
+
+</body>
+</html>

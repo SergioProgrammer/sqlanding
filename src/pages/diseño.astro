@@ -1,0 +1,179 @@
+---
+import '../styles/global.css';
+import Footer from '../pages/footer.astro'; 
+import d1 from '@/assets/diseño/1.webp';
+import d2 from '@/assets/diseño/padel.png';
+import d3 from '@/assets/diseño/2.webp';
+import d4 from '@/assets/diseño/3.webp';
+import d5 from '@/assets/diseño/4.webp';
+import d6 from '@/assets/diseño/6.webp';
+import d7 from '@/assets/diseño/9.webp';
+import d8 from '@/assets/diseño/10.webp';
+import d9 from '@/assets/diseño/18.webp';
+import d10 from '@/assets/diseño/20.webp';
+import d11 from '@/assets/diseño/21.webp';
+---
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cursos de Diseño y Web | SQ Studio</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.png" />
+    <meta name="description" content="Descubre nuestros cursos prácticos en diseño gráfico, branding y desarrollo web. Aprende con SQ Studio y potencia tu creatividad.">
+    <meta name="keywords" content="cursos diseño gráfico, cursos branding, cursos desarrollo web, SQ Studio, cursos online, creatividad, diseño, branding, web">
+    <meta name="author" content="SQ Studio">
+    <meta property="og:title" content="Cursos de Diseño y Web | SQ Studio">
+    <meta property="og:description" content="Descubre nuestros cursos prácticos en diseño gráfico, branding y desarrollo web. Aprende con SQ Studio y potencia tu creatividad.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://sqstudio.es/cursos">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      html { scroll-behavior: smooth; }
+      body {
+        font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+      }
+      body {
+          min-height: 100vh;
+          background-color: #042e36;
+          overflow-y: scroll;
+          overflow-x: hidden;
+      }
+      /* Custom utility for larger rounded corners not in default Tailwind */
+      .rounded-2xl-lg {
+        border-radius: 1.5rem; /* 24px */
+      }
+      /* Slightly larger height for images for better impact */
+      .h-image-lg {
+        height: 20rem; /* Adjust as needed, e.g., 320px */
+      }
+      @media (min-width: 768px) { /* md breakpoint */
+        .h-image-lg {
+          height: 24rem; /* Adjust for larger screens */
+        }
+      }
+    </style>
+</head>
+<body>
+  <section class="min-h-screen bg-[#fbd04a] py-16 px-4 md:px-12 flex flex-col items-center">
+    <h2 class="text-5xl sm:text-6xl font-extrabold text-[#042e36] text-center mb-16 md:mb-24 leading-tight">
+      Estos son Algunos de Nuestros Diseños
+    </h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+      
+      <div class="bg-white rounded-2xl-lg overflow-hidden shadow-2xl transition-transform duration-300 hover:scale-105 flex flex-col">
+        <img src={d1.src} alt="Proyecto de Diseño Gráfico" class="w-full h-image-lg object-cover" />
+        <div class="bg-[#042e36] text-white p-6 flex flex-col flex-grow justify-between items-center text-center">
+          <h3 class="text-2xl font-bold mb-4">Maquetación libro</h3>
+          <p class="text-sm text-gray-300 mb-6">Creamos identidades visuales que impactan y comunican.</p>
+          <a href="/diseño" target="_blank" class="bg-[#fbd04a] text-[#042e36] px-8 py-3 rounded-full font-bold uppercase text-sm tracking-wide hover:bg-yellow-200 transition-colors duration-300 transform hover:scale-105">
+            Ver Proyecto
+          </a>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-2xl-lg overflow-hidden shadow-2xl transition-transform duration-300 hover:scale-105 flex flex-col">
+        <img src={d2.src} alt="Proyecto de Desarrollo Web" class="w-full h-image-lg object-cover" />
+        <div class="bg-[#042e36] text-white p-6 flex flex-col flex-grow justify-between items-center text-center">
+          <h3 class="text-2xl font-bold mb-4">Cartelería Power Padel</h3>
+          <p class="text-sm text-gray-300 mb-6">Plataformas intuitivas y funcionales que impulsan tu negocio.</p>
+          <a href="/web" target="_blank" class="bg-[#fbd04a] text-[#042e36] px-8 py-3 rounded-full font-bold uppercase text-sm tracking-wide hover:bg-yellow-200 transition-colors duration-300 transform hover:scale-105">
+            Ver Proyecto
+          </a>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-2xl-lg overflow-hidden shadow-2xl transition-transform duration-300 hover:scale-105 flex flex-col">
+        <img src={d3.src} alt="Proyecto de Redes Sociales" class="w-full h-image-lg object-cover" />
+        <div class="bg-[#042e36] text-white p-6 flex flex-col flex-grow justify-between items-center text-center">
+          <h3 class="text-2xl font-bold mb-4">Maquetación Libro</h3>
+          <p class="text-sm text-gray-300 mb-6">Estrategias de contenido que conectan y crecen tu comunidad.</p>
+          <a href="/redes" target="_blank" class="bg-[#fbd04a] text-[#042e36] px-8 py-3 rounded-full font-bold uppercase text-sm tracking-wide hover:bg-yellow-200 transition-colors duration-300 transform hover:scale-105">
+            Ver Proyecto
+          </a>
+        </div>
+      </div>
+       <div class="bg-white rounded-2xl-lg overflow-hidden shadow-2xl transition-transform duration-300 hover:scale-105 flex flex-col">
+        <img src={d4.src} alt="Proyecto de Diseño Gráfico" class="w-full h-image-lg object-cover" />
+        <div class="bg-[#042e36] text-white p-6 flex flex-col flex-grow justify-between items-center text-center">
+          <h3 class="text-2xl font-bold mb-4">Rebranding</h3>
+          <p class="text-sm text-gray-300 mb-6">Creamos identidades visuales que impactan y comunican.</p>
+          <a href="/diseño" target="_blank" class="bg-[#fbd04a] text-[#042e36] px-8 py-3 rounded-full font-bold uppercase text-sm tracking-wide hover:bg-yellow-200 transition-colors duration-300 transform hover:scale-105">
+            Ver Proyecto
+          </a>
+        </div>
+      </div>
+
+     
+
+      <div class="bg-white rounded-2xl-lg overflow-hidden shadow-2xl transition-transform duration-300 hover:scale-105 flex flex-col">
+        <img src={d6.src} alt="Proyecto de Redes Sociales" class="w-full h-image-lg object-cover" />
+        <div class="bg-[#042e36] text-white p-6 flex flex-col flex-grow justify-between items-center text-center">
+          <h3 class="text-2xl font-bold mb-4">Branding</h3>
+          <p class="text-sm text-gray-300 mb-6">Estrategias de contenido que conectan y crecen tu comunidad.</p>
+          <a href="/redes" target="_blank" class="bg-[#fbd04a] text-[#042e36] px-8 py-3 rounded-full font-bold uppercase text-sm tracking-wide hover:bg-yellow-200 transition-colors duration-300 transform hover:scale-105">
+            Ver Proyecto
+          </a>
+        </div>
+      </div>
+      <div class="bg-white rounded-2xl-lg overflow-hidden shadow-2xl transition-transform duration-300 hover:scale-105 flex flex-col">
+        <img src={d7.src} alt="Proyecto de Desarrollo Web" class="w-full h-image-lg object-cover" />
+        <div class="bg-[#042e36] text-white p-6 flex flex-col flex-grow justify-between items-center text-center">
+          <h3 class="text-2xl font-bold mb-4">Portada</h3>
+          <p class="text-sm text-gray-300 mb-6">Plataformas intuitivas y funcionales que impulsan tu negocio.</p>
+          <a href="/web" target="_blank" class="bg-[#fbd04a] text-[#042e36] px-8 py-3 rounded-full font-bold uppercase text-sm tracking-wide hover:bg-yellow-200 transition-colors duration-300 transform hover:scale-105">
+            Ver Proyecto
+          </a>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-2xl-lg overflow-hidden shadow-2xl transition-transform duration-300 hover:scale-105 flex flex-col">
+        <img src={d8.src} alt="Proyecto de Redes Sociales" class="w-full h-image-lg object-cover" />
+        <div class="bg-[#042e36] text-white p-6 flex flex-col flex-grow justify-between items-center text-center">
+          <h3 class="text-2xl font-bold mb-4">Branding</h3>
+          <p class="text-sm text-gray-300 mb-6">Estrategias de contenido que conectan y crecen tu comunidad.</p>
+          <a href="/redes" target="_blank" class="bg-[#fbd04a] text-[#042e36] px-8 py-3 rounded-full font-bold uppercase text-sm tracking-wide hover:bg-yellow-200 transition-colors duration-300 transform hover:scale-105">
+            Ver Proyecto
+          </a>
+        </div>
+      </div>
+       <div class="bg-white rounded-2xl-lg overflow-hidden shadow-2xl transition-transform duration-300 hover:scale-105 flex flex-col">
+        <img src={d9.src} alt="Proyecto de Diseño Gráfico" class="w-full h-image-lg object-cover" />
+        <div class="bg-[#042e36] text-white p-6 flex flex-col flex-grow justify-between items-center text-center">
+          <h3 class="text-2xl font-bold mb-4">Infografías</h3>
+          <p class="text-sm text-gray-300 mb-6">Creamos identidades visuales que impactan y comunican.</p>
+          <a href="/diseño" target="_blank" class="bg-[#fbd04a] text-[#042e36] px-8 py-3 rounded-full font-bold uppercase text-sm tracking-wide hover:bg-yellow-200 transition-colors duration-300 transform hover:scale-105">
+            Ver Proyecto
+          </a>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-2xl-lg overflow-hidden shadow-2xl transition-transform duration-300 hover:scale-105 flex flex-col">
+        <img src={d10.src} alt="Proyecto de Desarrollo Web" class="w-full h-image-lg object-cover" />
+        <div class="bg-[#042e36] text-white p-6 flex flex-col flex-grow justify-between items-center text-center">
+          <h3 class="text-2xl font-bold mb-4">Cartelería</h3>
+          <p class="text-sm text-gray-300 mb-6">Plataformas intuitivas y funcionales que impulsan tu negocio.</p>
+          <a href="/web" target="_blank" class="bg-[#fbd04a] text-[#042e36] px-8 py-3 rounded-full font-bold uppercase text-sm tracking-wide hover:bg-yellow-200 transition-colors duration-300 transform hover:scale-105">
+            Ver Proyecto
+          </a>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-2xl-lg overflow-hidden shadow-2xl transition-transform duration-300 hover:scale-105 flex flex-col">
+        <img src={d11.src} alt="Proyecto de Redes Sociales" class="w-full h-image-lg object-cover" />
+        <div class="bg-[#042e36] text-white p-6 flex flex-col flex-grow justify-between items-center text-center">
+          <h3 class="text-2xl font-bold mb-4">Desarrollo de Producto</h3>
+          <p class="text-sm text-gray-300 mb-6">Estrategias de contenido que conectan y crecen tu comunidad.</p>
+          <a href="/redes" target="_blank" class="bg-[#fbd04a] text-[#042e36] px-8 py-3 rounded-full font-bold uppercase text-sm tracking-wide hover:bg-yellow-200 transition-colors duration-300 transform hover:scale-105">
+            Ver Proyecto
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+  <Footer />
+</body>
+</html>

@@ -1,13 +1,15 @@
 ---
 import Layout from "@/layouts/Layout.astro"
-import Cursos from "@/pages/cursos.astro"
-
 // Imagenes
 import HeroKeyLogo from "@/assets/hero-key-logo.svg" 
 import disenoImg from "@/assets/Marketing.png";
-import webImg from "@/assets/web.png";
-import dgrafico from "@/assets/diseño.png";
-
+import webImg from "@/assets/2.webp";
+import icon1 from "@/assets/icon1.png";
+import icon2 from "@/assets/icon2.png";
+import icon3 from "@/assets/icon3.png";
+import icon4 from "@/assets/icon4.png";
+import icon5 from "@/assets/icon5.png";
+import icon6 from "@/assets/icon6.png";
 // logos
 import Logo1 from "@/assets/logos/logo1.svg"
 import Logo2 from "@/assets/logos/logo2.svg"
@@ -21,7 +23,6 @@ import Logo9 from "@/assets/logos/logo9.svg"
 import Logo10 from "@/assets/logos/logo10.svg"
 import Logo11 from "@/assets/logos/logo11.svg"
 ---
-
 <Layout>
   <div id="intro-animation-container" class="fixed pointer-events-none top-0 left-0 w-full h-screen z-50">
     <section>
@@ -50,7 +51,7 @@ import Logo11 from "@/assets/logos/logo11.svg"
   <span
     id="final-message"
     class="fixed pointer-events-none sm:px-6 flex justify-center items-center top-0 left-0 w-full h-screen text-2xl sm:text-4xl md:text-6xl font-semibold opacity-0 z-40 text-center"
-    style="background: #042e36; color: #fbd04a;"
+    style="background: #042e36; color: #f79b33;"
   >
     DISEÑO GRÁFICO Y DESARROLLO WEB
   </span>
@@ -58,7 +59,7 @@ import Logo11 from "@/assets/logos/logo11.svg"
   <div
   id="after-hero"
   class="fixed pointer-events-none flex flex-col items-center justify-center top-0 left-0 w-full h-screen opacity-0 z-40 text-center px-4"
-  style="background: #042e36; color: #fbd04a;"
+  style="background: #042e36; color: #f79b33;"
 >
   <span class="text-lg sm:text-6xl font-semibold drop-shadow mb-19">
     EMPRESAS QUE CONFIAN EN NOSOTROS
@@ -80,73 +81,137 @@ import Logo11 from "@/assets/logos/logo11.svg"
 
   <!-- Sección DISEÑO GRÁFICO -->
   <div
-    id="pantalla-diseno"
-    class="fixed pointer-events-none flex flex-col lg:flex-row items-center justify-center top-0 left-0 w-full h-screen opacity-0 z-30 text-center px-0"
-    style="background: #fefba4"
-  >
-    <!-- Mitad izquierda: Imagen (arriba en mobile, izquierda en desktop) -->
-    <div class="w-full h-1/2 lg:w-1/2 lg:h-full flex-shrink-0">
-      <img src={dgrafico.src} alt="Diseño gráfico" class="object-cover w-full h-full" />
+  id="pantalla-diseno"
+  class="fixed top-0 left-0 w-full h-screen z-30 opacity-0 pointer-events-none"
+  style="background: #fefba4"
+>
+  <div class="grid grid-cols-1 md:grid-cols-3 grid-rows-6 md:grid-rows-2 w-full h-full">
+
+    <!-- Servicio 1 -->
+    <div class="servicio-box flex flex-col justify-center items-center text-center p-6 border bg-[#f79b33] border-black">
+      <img src={icon1.src} alt="Branding" class="w-16 h-16 mb-4" />
+      <h3 class="text-2xl font-semibold">
+        <span class="block text-3xl text-[#042e36]">Branding</span>
+        <span class="block text-3xl text-[#042e36]">Estratégico</span>
+      </h3>
+      <p class="text-zinc-800 text-sm mt-2">Creamos marcas con intención, no solo logos bonitos.</p>
     </div>
-    <!-- Mitad derecha: Contenido (abajo en mobile, derecha en desktop) -->
-    <div class="w-full h-1/2 lg:w-1/2 lg:h-full flex flex-col items-center justify-center relative px-4">
-      <div class="relative z-10 flex flex-col items-center">
-        <span class="text-3xl sm:text-6xl font-bold text-[#f79b33] mb-6 drop-shadow">
-          Diseño gráfico
-        </span>
-        <span class="text-base sm:text-4xl text-[#f79b33]/80 px-8">
-          Creatividad, identidad visual y comunicación efectiva para tu marca
-        </span>
-      </div>
+
+    <!-- Servicio 2 -->
+    <div class="servicio-box flex flex-col justify-center items-center text-center p-6 border bg-[#042e36] border-black">
+      <img src={icon4.src} alt="Maquetación" class="w-16 h-16 mb-4" />
+      <h3 class="text-2xl font-semibold">
+        <span class="block text-3xl text-[#f79b33]">Diseño</span>
+        <span class="block text-3xl text-[#f79b33]">Integral</span>
+      </h3>
+      <p class="text-white text-sm mt-2">Identidad, piezas publicitarias y más.</p>
     </div>
+
+    <!-- Servicio 3 -->
+    <div class="servicio-box flex flex-col justify-center items-center text-center p-6 border bg-[#f79b33] border-black">
+      <img src={icon2.src} alt="Web" class="w-16 h-16 mb-4" />
+      <h3 class="text-2xl font-semibold">
+        <span class="block text-3xl text-[#042e36]">Desarrollo</span>
+        <span class="block text-3xl text-[#042e36]">Web</span>
+      </h3>
+      <p class="text-zinc-800 text-sm mt-2">Webs modernas listas para vender.</p>
+    </div>
+
+    <!-- Servicio 4 -->
+    <div class="servicio-box flex flex-col justify-center items-center text-center p-6 border bg-[#042e36] border-black">
+      <img src={icon5.src} alt="Campañas" class="w-16 h-16 mb-4" />
+      <h3 class="text-2xl font-semibold">
+        <span class="block text-3xl text-[#f79b33]">Campañas</span>
+        <span class="block text-3xl text-[#f79b33]">Visuales</span>
+      </h3>
+      <p class="text-white text-sm mt-2">Diseño que comunica y convierte.</p>
+    </div>
+
+    <!-- Servicio 5 -->
+    <div class="servicio-box flex flex-col justify-center items-center text-center p-6 border bg-[#f79b33] border-black">
+      <img src={icon3.src} alt="Diseño gráfico" class="w-16 h-16 mb-4" />
+      <h3 class="text-2xl font-semibold">
+        <span class="block text-3xl text-[#042e36]">Maquetación</span>
+        <span class="block text-3xl text-[#042e36]">Editorial</span>
+      </h3>
+      <p class="text-zinc-800 text-sm mt-2">Diseño profesional para impresión y digital.</p>
+    </div>
+
+    <!-- Servicio 6 -->
+    <div class="servicio-box flex flex-col justify-center items-center text-center p-6 border bg-[#042e36] border-black">
+      <img src={icon6.src} alt="Soporte" class="w-16 h-16 mb-4" />
+      <h3 class="text-2xl font-semibold">
+        <span class="block text-3xl text-[#f79b33]">Consultoría</span>
+        <span class="block text-3xl text-[#f79b33]">de Marketing</span>
+      </h3>
+      <p class="text-white text-sm mt-2">Revisamos en qué puedes mejorar</p>
+    </div>
+
   </div>
+</div>
+
+
 
   <!-- Sección MARKETING -->
   <div
-    id="pantalla-marketing"
-    class="fixed pointer-events-none flex flex-col lg:flex-row items-center justify-center top-0 left-0 w-full h-screen opacity-0 z-30 text-center px-0"
-    style="background: #fbd04a"
-  >
-    <!-- Mitad izquierda: Imagen (arriba en mobile, izquierda en desktop) -->
-    <div class="w-full h-1/2 lg:w-1/2 lg:h-full flex-shrink-0">   
-     <img src={disenoImg.src} alt="Diseño" class="object-cover w-full h-full" />             
-    </div>
-    <!-- Mitad derecha: Contenido (abajo en mobile, derecha en desktop) -->
-    <div class="w-full h-1/2 lg:w-1/2 lg:h-full flex flex-col items-center justify-center relative px-4">
-     
-      <div class="relative z-10 flex flex-col items-center">
-        <span class="text-3xl sm:text-6xl font-bold text-[#042e36] mb-2 drop-shadow">
-          Marketing
-        </span>
-        <span class="text-base sm:text-4xl text-[#042e36]/80 px-6">
-          Estrategias digitales para crecer y conectar con tu audiencia
-        </span>
+  id="pantalla-marketing"
+  class="fixed pointer-events-none flex flex-col lg:flex-row items-center justify-center top-0 left-0 w-full h-screen opacity-0 z-30 text-center px-4"
+  style="background: #fefba4;"
+>
+  <!-- Contenedor de contenido -->
+  <div class="w-full h-1/2 lg:w-1/2 lg:h-full flex flex-col items-center justify-center relative px-4">
+    <div class="relative z-10 flex flex-col items-center max-w-2xl">
+      <h2 class="text-4xl sm:text-6xl font-bold text-[#042e36] mb-6 drop-shadow">
+        Por qué elegir <strong class="text-[#f79b33]">SQStudio</strong>
+      </h2>
+      <div class="text-base sm:text-2xl text-[#042e36]/90 leading-relaxed space-y-4">
+        <p>¿Te has estancado? ¿No sabes qué estrategia seguir para mejorar tu imagen?</p>
+        <p>¿Quieres competir como una empresa moderna y actualizada?</p>
+        <p>
+          En <strong>SQStudio</strong> somos especialistas en eso: ayudarte a dar el salto.
+          Creamos soluciones de marketing digital a tu medida, con una mirada fresca, creativa y enfocada en resultados.
+        </p>
+        <p>Queremos que tu marca se vea bien, funcione mejor y no se quede atrás.</p>
       </div>
     </div>
   </div>
+</div>
+
 
   <!-- Sección DESARROLLO WEB -->
 <div
   id="pantalla-desarrollo"
   class="fixed pointer-events-none flex flex-col lg:flex-row items-center justify-center top-0 left-0 w-full h-screen opacity-0 z-30 text-center px-0"
-  style="background: #fbd04a"
+  style="background: #fbd04a;"
 >
-  <!-- Mitad izquierda: Imagen (arriba en mobile, izquierda en desktop) -->
+  <!-- Imagen: arriba en móvil, izquierda en desktop -->
   <div class="w-full h-1/2 lg:w-1/2 lg:h-full flex-shrink-0">
-    <img src={webImg.src} alt="Desarrollo web" class="object-cover w-full h-full" />             
+    <img
+      src={webImg.src}
+      alt="Ejemplo de proyecto de desarrollo web"
+      class="object-cover w-full h-full"
+    />
   </div>
-  <!-- Mitad derecha: Contenido (abajo en mobile, derecha en desktop) -->
-  <div class="w-full h-1/2 lg:w-1/2 lg:h-full flex flex-col items-center justify-center relative px-4">
-    <div class="relative z-10 flex flex-col items-center">
-      <span class="text-3xl sm:text-6xl font-bold text-[#042e36] mb-2 drop-shadow">
-        Desarrollo web
-      </span>
-      <span class="text-base sm:text-4xl text-[#042e36]/80 px-6">
-        Creamos sitios modernos, rápidos y a medida para tu marca
-      </span>
+
+  <!-- Contenido: abajo en móvil, derecha en desktop -->
+  <div class="w-full h-1/2 lg:w-1/2 lg:h-full flex flex-col items-center justify-center relative px-6">
+    <div class="relative z-10 flex flex-col items-center max-w-xl">
+      <h2 class="text-3xl sm:text-5xl font-bold text-[#042e36] mb-4 drop-shadow-md">
+        ¿Quieres que tus proyectos se vean así?
+      </h2>
+      <p class="text-lg sm:text-xl text-[#042e36]/90 mb-6">
+        Mira lo que ya hicimos y encuentra la inspiración que necesitas.
+      </p>
+      <a
+        href="/proyectos"
+        class="bg-[#042e36] text-[#fbd04a] font-semibold rounded-lg px-6 py-3 hover:bg-[#5c5140] transition-all duration-300 text-xl shadow-lg"
+      >
+        Click aquí para ver nuestros proyectos
+      </a>
     </div>
   </div>
 </div>
+
 
   <!-- Sección CONTACTO -->
 <div
@@ -154,18 +219,6 @@ import Logo11 from "@/assets/logos/logo11.svg"
   class="fixed pointer-events-none flex flex-col items-center justify-center top-0 left-0 w-full h-screen z-30 text-center px-4 opacity-0"
   style="background: #042e36; color: #fbd04a;"
 >
-<!-- 
-<div class="w-full max-w-3xl bg-[#fefba4] rounded-xl shadow-lg p-8 flex flex-col gap-4 items-center mb-8">
-  <h2 class="text-2xl sm:text-3xl font-bold text-[#042e36] text-center mb-2">
-    ¿Por qué es importante tu branding?
-  </h2>
-  <p class="text-lg text-[#042e36]/90 text-center mb-4">
-    Una buena imagen de marca te ayuda a diferenciarte, conectar con tu público y transmitir confianza. Es la base para que tu marca crezca y sea recordada.
-  </p>
-  <a href="/branding" class="bg-[#fbd04a] text-[#042e36] font-semibold rounded-md px-6 py-3 hover:bg-[#fbd04a] hover:text-white transition text-lg">
-    Descubre más sobre branding
-  </a>
-</div> --> 
   <div class="w-full max-w-md bg-[#042e36]/80 rounded-xl shadow-lg p-6 flex flex-col gap-4 items-center">
     <span class="text-4xl sm:text-6xl font-bold mb-2 drop-shadow text-[#fbd04a]">
       Contáctanos
@@ -208,6 +261,13 @@ import Logo11 from "@/assets/logos/logo11.svg"
         class="mt-2 bg-[#fbd04a] text-[#042e36] font-semibold rounded-md px-4 py-2 hover:bg-[#ffe066] transition text-2xl"
       >
         Enviar
+      </button>
+      <button
+        type="button"
+        onclick="window.location.href='/proyectos'"
+        class="mt-6 bg-[#042e36] text-[#fbd04a] font-semibold rounded-md px-4 py-2 hover:text-[#766737] transition text-2xl"
+      >
+        Click aquí para ver nuestros proyectos
       </button>
     </form>
   </div>
@@ -375,7 +435,17 @@ import Logo11 from "@/assets/logos/logo11.svg"
     .to("#svg-diseno-4", { ...figureEnterProps }, "<0.3")
     .to("#svg-diseno-5", { ...figureEnterProps }, "<0.4")
     
-
+    .to(
+    ".servicio-box", 
+    {
+    opacity: 0,
+    y: 50,
+    duration: 0.8,
+    stagger: 0.2,
+    ease: "power3.out",
+    delay: 0.2
+    }
+  )
     // --- PANTALLA MARKETING ---
     .to(
       "#pantalla-marketing",
@@ -391,8 +461,6 @@ import Logo11 from "@/assets/logos/logo11.svg"
     .to("#svg-marketing-4", { ...figureEnterProps }, "<0.3")
     .to("#svg-marketing-5", { ...figureEnterProps }, "<0.4")
  
-    
-
     // --- PANTALLA DESARROLLO WEB ---
     .to(
       "#pantalla-desarrollo",
@@ -408,8 +476,6 @@ import Logo11 from "@/assets/logos/logo11.svg"
     .to("#svg-desarrollo-4", { ...figureEnterProps }, "<0.3")
     .to("#svg-desarrollo-5", { ...figureEnterProps }, "<0.4")
     
-    
-
     // --- PANTALLA CONTACTO ---
     .to(
       "#pantalla-contacto",
