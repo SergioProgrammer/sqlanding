@@ -23,7 +23,7 @@ import Logo10 from "@/assets/logos/logo10.svg"
 import Logo11 from "@/assets/logos/logo11.svg"
 ---
 <Layout>
-  <div id="intro-animation-container" class="fixed pointer-events-none top-0 left-0 w-full h-screen z-50">
+  <div id="intro-animation-container" class="fixed pointer-events-none top-0 left-0 w-full h-screen z-30">
     <section>
       <picture
         id="hero-key"
@@ -59,7 +59,7 @@ import Logo11 from "@/assets/logos/logo11.svg"
   </h2>
 
   <!-- Mensaje principal centrado -->
-  <span class="absolute z-10 text-3xl sm:text-5xl md:text-6xl font-mono text-[#f79b33] ">
+  <span class="absolute z-10 text-3xl sm:text-5xl md:text-6xl ml-8 font-mono text-[#f79b33] ">
     DISEÑO GRÁFICO Y DESARROLLO WEB
   </span>
 </div>
@@ -67,7 +67,7 @@ import Logo11 from "@/assets/logos/logo11.svg"
 
   <div
   id="after-hero"
-  class="fixed pointer-events-none flex flex-col items-center justify-center top-0 left-0 w-full h-screen opacity-0 z-40 text-center px-4"
+  class="fixed pointer-events-none flex flex-col items-center justify-center top-0 left-0 w-full h-screen opacity-0 z-50 text-center px-4"
   style="background: #042e36; color: #f79b33;"
 >
   <h2 class="absolute text-[12vw] lg:text-[12vw] font-extrabold text-[#09424e] leading-none pointer-events-none top-0 left-0 px-6 pt-8 text-left z-0">
@@ -90,7 +90,7 @@ import Logo11 from "@/assets/logos/logo11.svg"
   <!-- Sección DISEÑO GRÁFICO -->
 <div
   id="pantalla-diseno"
-  class="fixed top-0 left-0 w-full h-screen z-30 opacity-0 pointer-events-none"
+  class="fixed top-0 left-0 w-full h-screen z-60 opacity-0 pointer-events-none"
   style="background: #fefba4"
 >
   <div class="grid grid-cols-1 md:grid-cols-3 grid-rows-6 md:grid-rows-2 w-full h-full">
@@ -158,43 +158,35 @@ import Logo11 from "@/assets/logos/logo11.svg"
   </div>
 </div>
 
-
-
-
-
  <!-- Sección MARKETING -->
 <div
   id="pantalla-marketing"
-  class="fixed pointer-events-none flex flex-col lg:flex-row items-center justify-center top-0 left-0 w-full h-screen opacity-0 z-30 text-center px-4"
+  class="fixed pointer-events-none flex flex-col lg:flex-row items-center justify-center top-0 left-0 w-full h-screen opacity-0 z-70 text-center px-4"
   style="background: #fefba4;"
 >
   <div class="w-full h-full flex flex-col items-center justify-center px-6 py-12 bg-[#fefba4] relative">
-  <!-- Título grande de fondo alineado a la izquierda y arriba -->
-  <h2 class="absolute text-[12vw] lg:text-[12vw] font-extrabold text-[#fbf788] leading-none z-0 pointer-events-none top-0 left-0 px-6 pt-8 text-left">
-    POR QUÉ ELEGIR<br>SQStudio
-  </h2>
-    <!-- Texto en primer plano -->
-    <div class="max-w-xl font-mono text-right absolute bottom-50 right-15 z-10">
-  <p class="text-lg lg:text-2xl text-gray-800 mb-4">
-    ¿Te has estancado? ¿No sabes qué estrategia seguir para mejorar tu imagen?<br />
-    ¿Quieres competir como una empresa moderna y actualizada?
-  </p>
-  <p class="text-lg lg:text-2xl text-gray-800">
-    En <strong>SQStudio</strong> somos especialistas en eso: ayudarte a dar el salto.
-    Creamos soluciones de marketing digital a tu medida, con una mirada fresca, creativa y enfocada en resultados.<br /><br />
-    Queremos que tu marca se vea bien, funcione mejor y no se quede atrás.
-  </p>
-</div>
-
+      <!-- Título grande de fondo alineado a la izquierda y arriba -->
+      <h2 class="absolute text-[12vw] lg:text-[12vw] font-extrabold text-[#fbf788] leading-none z-0 pointer-events-none top-0 left-0 px-6 pt-8 text-left">
+        POR QUÉ ELEGIR<br>SQStudio
+      </h2>
+        <!-- Texto en primer plano -->
+        <div class="max-w-xl font-mono text-right absolute bottom-50 right-15 z-10">
+      <p class="text-lg lg:text-2xl text-gray-800 mb-4">
+        ¿Te has estancado? ¿No sabes qué estrategia seguir para mejorar tu imagen?<br />
+        ¿Quieres competir como una empresa moderna y actualizada?
+      </p>
+      <p class="text-lg lg:text-2xl text-gray-800">
+        En <strong>SQStudio</strong> somos especialistas en eso: ayudarte a dar el salto.
+        Creamos soluciones de marketing digital a tu medida, con una mirada fresca, creativa y enfocada en resultados.<br /><br />
+        Queremos que tu marca se vea bien, funcione mejor y no se quede atrás.
+      </p>
   </div>
 </div>
-
-
 
   <!-- Sección DESARROLLO WEB -->
 <div
   id="pantalla-desarrollo"
-  class="fixed pointer-events-none flex flex-col lg:flex-row items-center justify-center top-0 left-0 w-full h-screen opacity-0 z-30 text-center px-0"
+  class="fixed pointer-events-none flex flex-col lg:flex-row items-center justify-center top-0 left-0 w-full h-screen opacity-0 z-80 text-center px-0"
   style="background: #fbd04a;"
 >
   <!-- Imagen: arriba en móvil, izquierda en desktop -->
@@ -226,12 +218,10 @@ import Logo11 from "@/assets/logos/logo11.svg"
   </div>
 </div>
 
-
-  
   <!-- Sección CONTACTO con formulario centrado y estilo unificado -->
 <div
   id="pantalla-contacto"
-  class="fixed pointer-events-none top-0 left-0 w-full h-screen z-30 bg-[#042e36] text-[#fbd04a] flex items-center justify-center px-4"
+  class="fixed pointer-events-none top-0 left-0 w-full h-screen z-90 bg-[#042e36] text-[#fbd04a] flex items-center justify-center px-4"
 >
   <!-- Título grande de fondo alineado arriba a la izquierda -->
   <h2 class="absolute text-[12vw] lg:text-[12vw] font-extrabold text-[#09424e] leading-none z-0 pointer-events-none top-0 left-0 px-6 pt-8 text-left">
@@ -241,7 +231,7 @@ import Logo11 from "@/assets/logos/logo11.svg"
     <span class="text-4xl sm:text-6xl font-bold mb-2 drop-shadow text-[#fbd04a]">
       
     </span>
-    <span class="text-base sm:text-2xl mb-4 text-[#fbd04a]/80">
+    <span class="text-base font-mono sm:text-2xl mb-4 text-[#fbd04a]/80">
       ¿Tienes un proyecto o duda? Escríbenos y te responderemos pronto.
     </span>
     <form 
@@ -253,21 +243,21 @@ import Logo11 from "@/assets/logos/logo11.svg"
         type="text"
         name="name"
         placeholder="Nombre"
-        class="rounded-md px-4 py-2 bg-[#fefba4] text-[#042e36] placeholder-[#042e36]/60 focus:outline-none"
+        class="rounded-md px-4 py-2 bg-[#fefba4] font-mono text-[#042e36] placeholder-[#042e36]/60 focus:outline-none"
         required
       />
       <input
         type="email"
         name="email"
         placeholder="Correo electrónico"
-        class="rounded-md px-4 py-2 bg-[#fefba4] text-[#042e36] placeholder-[#042e36]/60 focus:outline-none"
+        class="rounded-md px-4 py-2 bg-[#fefba4] font-mono text-[#042e36] placeholder-[#042e36]/60 focus:outline-none"
         required
       />
       <textarea
         name="message"
         placeholder="Mensaje"
         rows="4"
-        class="rounded-md px-4 py-2 bg-[#fefba4] text-[#042e36] placeholder-[#042e36]/60 focus:outline-none resize-none"
+        class="rounded-md px-4 py-2 bg-[#fefba4] font-mono text-[#042e36] placeholder-[#042e36]/60 focus:outline-none resize-none"
         required
       ></textarea>
       <!-- captcha -->
@@ -276,16 +266,16 @@ import Logo11 from "@/assets/logos/logo11.svg"
       <input type="hidden" name="_next" value="https://sqstudio.es/gracias">
       <button
         type="submit"
-        class="mt-2 bg-[#fbd04a] text-[#042e36] font-semibold rounded-md px-4 py-2 hover:bg-[#ffe066] transition text-2xl"
+        class="mt-2 bg-[#fbd04a] text-[#042e36] font-mono rounded-md px-4 py-2 hover:bg-[#ffe066] transition text-2xl"
       >
         Enviar
       </button>
       <button
         type="button"
         onclick="window.location.href='/proyectos'"
-        class="mt-6 bg-[#042e36] text-[#fbd04a] font-semibold rounded-md px-4 py-2 hover:text-[#766737] transition text-2xl"
+        class="mt-6 bg-[#042e36] text-[#fbd04a] font-mono rounded-md px-4 py-2 hover:text-[#766737] transition text-2xl"
       >
-        Click aquí para ver nuestros proyectos
+        Haz Click aquí para ver nuestros proyectos
       </button>
     </form>
   </div>
@@ -450,7 +440,7 @@ import Logo11 from "@/assets/logos/logo11.svg"
       "#pantalla-marketing",
       {
         opacity: 1,
-        duration: 0.7,
+        duration: 0.3,
         onStart: () => activarPantalla("pantalla-marketing"),
       }
     )
@@ -459,39 +449,24 @@ import Logo11 from "@/assets/logos/logo11.svg"
     .to("#svg-marketing-3", { ...figureEnterProps }, "<0.2")
     .to("#svg-marketing-4", { ...figureEnterProps }, "<0.3")
     .to("#svg-marketing-5", { ...figureEnterProps }, "<0.4")
- 
     // --- PANTALLA DESARROLLO WEB ---
     .to(
       "#pantalla-desarrollo",
       {
         opacity: 1,
-        duration: 0.7,
+        duration: 0,
         onStart: () => activarPantalla("pantalla-desarrollo"),
       }
-    )
-    .to("#svg-desarrollo-1", { ...figureEnterProps }, "<")
-    .to("#svg-desarrollo-2", { ...figureEnterProps }, "<0.1")
-    .to("#svg-desarrollo-3", { ...figureEnterProps }, "<0.2")
-    .to("#svg-desarrollo-4", { ...figureEnterProps }, "<0.3")
-    .to("#svg-desarrollo-5", { ...figureEnterProps }, "<0.4")
-    
-    // --- PANTALLA CONTACTO ---
-    .to(
-      "#pantalla-contacto",
-      {
-        opacity: 1,
-        duration: 0.7,
-        onStart: () => activarPantalla("pantalla-contacto"),
-      }
-    )
-    .to(
-      "#footer",
-      {
-        opacity: 1,
-        duration: 0.7,
-      }
-    )
+    ) 
+    .to("#pantalla-contacto", { opacity: 0, duration: 0.2 })
 
+    // Espera el tiempo necesario... y luego muestra contacto al final
+    .to("#pantalla-contacto", {
+      opacity: 1,
+      duration: 0.7,
+      delay: 2, // ajusta si hace falta
+      onStart: () => activarPantalla("pantalla-contacto"),
+    }) 
     function activarPantalla(id: string) {
   document.querySelectorAll(".fixed").forEach(el => {
     el.classList.remove("pointer-events-auto");
