@@ -196,22 +196,23 @@ import Logo11 from "@/assets/logos/logo11.svg"
     />
   </div>
 
-  <!-- Contenido: abajo en móvil, derecha en desktop -->
-  <div class="w-full h-1/2 lg:w-1/2 lg:h-full flex flex-col items-center justify-center relative px-6">
-    <div class="relative z-10 flex flex-col items-center max-w-xl">
-      <h2 class="text-3xl sm:text-5xl font-bold text-[#042e36] mb-4 drop-shadow-md">
-        ¿Quieres que tus proyectos se vean así?
-      </h2>
-      <p class="text-lg sm:text-xl text-[#042e36]/90 mb-6">
-        Mira lo que ya hicimos y encuentra la inspiración que necesitas.
-      </p>
-      <a
-        href="/proyectos"
-        class="bg-[#042e36] text-[#fbd04a] font-semibold rounded-lg px-6 py-3 hover:bg-[#5c5140] transition-all duration-300 text-xl shadow-lg"
-      >
-        Click aquí para ver nuestros proyectos
-      </a>
-    </div>
+  <div class="w-full h-screen flex flex-col items-center justify-center px-6 py-12 bg-[#fbd04a] relative">
+  <!-- Título de fondo alineado a la izquierda -->
+  <h2 class="absolute text-[12vw] lg:text-[9vw] font-extrabold text-[#f8df70] leading-none z-0 pointer-events-none top-0 left-0 px-6 pt-8 text-left">
+    ¿QUIERES QUE<br>TUS PROYECTOS<br>SE VEAN ASÍ?
+  </h2>
+
+  <!-- Contenido principal en el 3/3 de la pantalla -->
+  <div class="absolute bottom-12 right-6 z-10 max-w-xl font-mono text-right">
+    <p class="text-lg sm:text-xl text-[#042e36]/90 mb-6">
+      Mira lo que ya hicimos y encuentra la inspiración que necesitas.
+    </p>
+    <a
+      href="/proyectos"
+      class="bg-[#042e36] text-[#fbd04a] font-semibold rounded-lg px-6 py-3 hover:bg-[#5c5140] transition-all duration-300 text-xl shadow-lg"
+    >
+      Click aquí para ver nuestros proyectos
+    </a>
   </div>
 </div>
 
