@@ -1,131 +1,92 @@
 ---
-import '../styles/global.css';
-import Footer from '../pages/footer.astro'; // Assuming Footer is designed for this color palette
-import diseño from '@/assets/2.webp';
-import web1 from '@/assets/web.png';
-import redes from '@/assets/8.webp';
+import Layout from "@/layouts/Layout.astro";
+import webImage from "@/assets/web.png";
+import screenA from "@/assets/diseño/web1.png";
+import screenB from "@/assets/2.webp";
+
+const blocks = [
+  {
+    title: "Arquitectura clara",
+    copy: "Reordenamos el contenido para que la propuesta se entienda en segundos y el recorrido sea más editorial que corporativo.",
+  },
+  {
+    title: "Diseño + desarrollo",
+    copy: "Evitamos la brecha entre una interfaz bonita y una implementación mediocre. Ambas capas se diseñan juntas.",
+  },
+  {
+    title: "Rendimiento y SEO",
+    copy: "Cada decisión visual se mantiene ligera para no sacrificar velocidad, indexación ni accesibilidad.",
+  },
+];
 ---
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cursos de Diseño y Web | SQ Studio</title>
-    <link rel="icon" type="image/svg+xml" href="/favicon.png" />
-    <meta name="description" content="Descubre nuestros cursos prácticos en diseño gráfico, branding y desarrollo web. Aprende con SQ Studio y potencia tu creatividad.">
-    <meta name="keywords" content="cursos diseño gráfico, cursos branding, cursos desarrollo web, SQ Studio, cursos online, creatividad, diseño, branding, web">
-    <meta name="author" content="SQ Studio">
-    <meta property="og:title" content="Cursos de Diseño y Web | SQ Studio">
-    <meta property="og:description" content="Descubre nuestros cursos prácticos en diseño gráfico, branding y desarrollo web. Aprende con SQ Studio y potencia tu creatividad.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://sqstudio.es/cursos">
 
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-      html { scroll-behavior: smooth; }
-      body {
-        font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-      }
-      body {
-          min-height: 100vh;
-          background-color: #042e36;
-          overflow-y: scroll;
-          overflow-x: hidden;
-      }
-      /* Custom utility for larger rounded corners not in default Tailwind */
-      .rounded-2xl-lg {
-        border-radius: 1.5rem; /* 24px */
-      }
-      /* Slightly larger height for images for better impact */
-      .h-image-lg {
-        height: 20rem; /* Adjust as needed, e.g., 320px */
-      }
-      @media (min-width: 768px) { /* md breakpoint */
-        .h-image-lg {
-          height: 24rem; /* Adjust for larger screens */
-        }
-      }
-    </style>
-</head>
-<body>
-  <section class="min-h-screen bg-[#fbd04a] py-16 px-4 md:px-12 flex flex-col items-center">
-    <h2 class="text-5xl sm:text-6xl font-extrabold text-[#042e36] text-center mb-16 md:mb-24 leading-tight">
-      Descubre Algunos Proyectos
-    </h2>
-
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-      
-      <div class="bg-white rounded-2xl-lg overflow-hidden shadow-2xl transition-transform duration-300 hover:scale-105 flex flex-col">
-        <img src={diseño.src} alt="Proyecto de Diseño Gráfico" class="w-full h-image-lg object-cover" />
-        <div class="bg-[#042e36] text-white p-6 flex flex-col flex-grow justify-between items-center text-center">
-          <h3 class="text-2xl font-bold mb-4">Diseño Gráfico</h3>
-          <p class="text-sm text-gray-300 mb-6">Creamos identidades visuales que impactan y comunican.</p>
-          <a href="/diseño" target="_blank" class="bg-[#fbd04a] text-[#042e36] px-8 py-3 rounded-full font-bold uppercase text-sm tracking-wide hover:bg-yellow-200 transition-colors duration-300 transform hover:scale-105">
-            Ver Proyectos
-          </a>
+<Layout
+  title="Desarrollo web | SQ Studio"
+  description="Diseño y desarrollo web premium para marcas que buscan una presencia más contemporánea."
+  url="https://sqstudio.es/web"
+>
+  <section class="page-hero">
+    <div class="site-shell page-hero__grid">
+      <div class="space-y-6" data-reveal>
+        <p class="eyebrow">Web</p>
+        <h1 class="section-title text-[var(--sq-cream)]">Interfaces sobrias, cinematográficas y construidas para convertir mejor.</h1>
+        <p class="section-copy">
+          La nueva dirección visual aplica a la capa digital: más aire, tipografía con autoridad, transición suave
+          entre bloques y un discurso más breve para que la experiencia se sienta superior.
+        </p>
+      </div>
+      <div class="page-hero__panel" data-reveal>
+        <div class="editorial-list">
+          {blocks.map((block) => (
+            <div class="editorial-item">
+              <strong>{block.title}</strong>
+              <p>{block.copy}</p>
+            </div>
+          ))}
         </div>
       </div>
-
-      <div class="bg-white rounded-2xl-lg overflow-hidden shadow-2xl transition-transform duration-300 hover:scale-105 flex flex-col">
-        <img src={web1.src} alt="Proyecto de Desarrollo Web" class="w-full h-image-lg object-cover" />
-        <div class="bg-[#042e36] text-white p-6 flex flex-col flex-grow justify-between items-center text-center">
-          <h3 class="text-2xl font-bold mb-4">Desarrollo Web</h3>
-          <p class="text-sm text-gray-300 mb-6">Plataformas intuitivas y funcionales que impulsan tu negocio.</p>
-          <a href="/web" target="_blank" class="bg-[#fbd04a] text-[#042e36] px-8 py-3 rounded-full font-bold uppercase text-sm tracking-wide hover:bg-yellow-200 transition-colors duration-300 transform hover:scale-105">
-            Ver Proyectos
-          </a>
-        </div>
-      </div>
-
-      <div class="bg-white rounded-2xl-lg overflow-hidden shadow-2xl transition-transform duration-300 hover:scale-105 flex flex-col">
-        <img src={redes.src} alt="Proyecto de Redes Sociales" class="w-full h-image-lg object-cover" />
-        <div class="bg-[#042e36] text-white p-6 flex flex-col flex-grow justify-between items-center text-center">
-          <h3 class="text-2xl font-bold mb-4">Redes Sociales</h3>
-          <p class="text-sm text-gray-300 mb-6">Estrategias de contenido que conectan y crecen tu comunidad.</p>
-          <a href="/redes" target="_blank" class="bg-[#fbd04a] text-[#042e36] px-8 py-3 rounded-full font-bold uppercase text-sm tracking-wide hover:bg-yellow-200 transition-colors duration-300 transform hover:scale-105">
-            Ver Proyectos
-          </a>
-        </div>
-      </div>
-       <div class="bg-white rounded-2xl-lg overflow-hidden shadow-2xl transition-transform duration-300 hover:scale-105 flex flex-col">
-        <img src={diseño.src} alt="Proyecto de Diseño Gráfico" class="w-full h-image-lg object-cover" />
-        <div class="bg-[#042e36] text-white p-6 flex flex-col flex-grow justify-between items-center text-center">
-          <h3 class="text-2xl font-bold mb-4">Diseño Gráfico</h3>
-          <p class="text-sm text-gray-300 mb-6">Creamos identidades visuales que impactan y comunican.</p>
-          <a href="/diseño" target="_blank" class="bg-[#fbd04a] text-[#042e36] px-8 py-3 rounded-full font-bold uppercase text-sm tracking-wide hover:bg-yellow-200 transition-colors duration-300 transform hover:scale-105">
-            Ver Proyectos
-          </a>
-        </div>
-      </div>
-
-      <div class="bg-white rounded-2xl-lg overflow-hidden shadow-2xl transition-transform duration-300 hover:scale-105 flex flex-col">
-        <img src={web1.src} alt="Proyecto de Desarrollo Web" class="w-full h-image-lg object-cover" />
-        <div class="bg-[#042e36] text-white p-6 flex flex-col flex-grow justify-between items-center text-center">
-          <h3 class="text-2xl font-bold mb-4">Desarrollo Web</h3>
-          <p class="text-sm text-gray-300 mb-6">Plataformas intuitivas y funcionales que impulsan tu negocio.</p>
-          <a href="/web" target="_blank" class="bg-[#fbd04a] text-[#042e36] px-8 py-3 rounded-full font-bold uppercase text-sm tracking-wide hover:bg-yellow-200 transition-colors duration-300 transform hover:scale-105">
-            Ver Proyectos
-          </a>
-        </div>
-      </div>
-
-      <div class="bg-white rounded-2xl-lg overflow-hidden shadow-2xl transition-transform duration-300 hover:scale-105 flex flex-col">
-        <img src={redes.src} alt="Proyecto de Redes Sociales" class="w-full h-image-lg object-cover" />
-        <div class="bg-[#042e36] text-white p-6 flex flex-col flex-grow justify-between items-center text-center">
-          <h3 class="text-2xl font-bold mb-4">Redes Sociales</h3>
-          <p class="text-sm text-gray-300 mb-6">Estrategias de contenido que conectan y crecen tu comunidad.</p>
-          <a href="/redes" target="_blank" class="bg-[#fbd04a] text-[#042e36] px-8 py-3 rounded-full font-bold uppercase text-sm tracking-wide hover:bg-yellow-200 transition-colors duration-300 transform hover:scale-105">
-            Ver Proyectos
-          </a>
-        </div>
-      </div>
-
     </div>
   </section>
-  <Footer />
-</body>
-</html>
 
+  <section class="section-pad">
+    <div class="site-shell grid gap-6 md:grid-cols-[1.15fr_0.85fr]">
+      <article class="media-card" data-reveal>
+        <img src={webImage.src} alt="Pantalla principal de proyecto web" loading="lazy" />
+        <div class="media-card__overlay">
+          <span class="media-card__label">Experiencia digital</span>
+          <h2 class="media-card__title">Hero full screen, navegación fija y ritmo visual más maduro.</h2>
+        </div>
+      </article>
 
+      <div class="grid gap-6">
+        <article class="media-card min-h-[16rem]" data-reveal>
+          <img src={screenA.src} alt="Detalle de diseño web" loading="lazy" />
+          <div class="media-card__overlay">
+            <span class="media-card__label">Detalle</span>
+            <h2 class="media-card__title">Interacción limpia y estado hover refinado.</h2>
+          </div>
+        </article>
 
+        <article class="section-frame p-6 md:p-8" data-reveal>
+          <p class="eyebrow">Sistema</p>
+          <p class="mt-6 text-3xl font-bold uppercase leading-none tracking-[-0.05em] text-[var(--sq-cream)] md:text-5xl">
+            Menos bloques pequeños. Más escenas amplias con jerarquía real.
+          </p>
+          <p class="section-copy mt-6">
+            Este cambio hace que la web se acerque más a una marca premium y menos a una landing genérica.
+          </p>
+        </article>
+      </div>
+    </div>
 
+    <div class="site-shell mt-6">
+      <article class="media-card min-h-[24rem]" data-reveal>
+        <img src={screenB.src} alt="Diseño visual aplicado en entorno digital" loading="lazy" />
+        <div class="media-card__overlay">
+          <span class="media-card__label">Conversión</span>
+          <h2 class="media-card__title">Claridad de mensaje, mejor contraste y CTA con más peso.</h2>
+        </div>
+      </article>
+    </div>
+  </section>
+</Layout>

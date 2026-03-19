@@ -1,482 +1,257 @@
 ---
-import Layout from "@/layouts/Layout.astro"
-// Imagenes
-import HeroKeyLogo from "@/assets/hero-key-logo.svg" 
-import webImg from "@/assets/2.webp";
+import Layout from "@/layouts/Layout.astro";
+import heroImage from "@/assets/web.png";
+import projectDesign from "@/assets/2.webp";
+import projectSocial from "@/assets/8.webp";
 import icon1 from "@/assets/icon1.png";
 import icon2 from "@/assets/icon2.png";
 import icon3 from "@/assets/icon3.png";
 import icon4 from "@/assets/icon4.png";
 import icon5 from "@/assets/icon5.png";
 import icon6 from "@/assets/icon6.png";
-// logos
-import Logo1 from "@/assets/logos/logo1.svg"
-import Logo2 from "@/assets/logos/logo2.svg"
-import Logo3 from "@/assets/logos/logo3.svg"
-import Logo4 from "@/assets/logos/logo4.svg"
-import Logo5 from "@/assets/logos/logo5.svg"
-import Logo6 from "@/assets/logos/logo6.svg" 
-//import Logo7 from "@/assets/logos/logo7.svg"
-import Logo8 from "@/assets/logos/logo8.svg"
-import Logo9 from "@/assets/logos/logo9.svg"
-import Logo10 from "@/assets/logos/logo10.svg"
-import Logo11 from "@/assets/logos/logo11.svg"
+import logo1 from "@/assets/logos/logo1.svg";
+import logo2 from "@/assets/logos/logo2.svg";
+import logo3 from "@/assets/logos/logo3.svg";
+import logo4 from "@/assets/logos/logo4.svg";
+import logo5 from "@/assets/logos/logo5.svg";
+import logo6 from "@/assets/logos/logo6.svg";
+import logo8 from "@/assets/logos/logo8.svg";
+import logo9 from "@/assets/logos/logo9.svg";
+import logo10 from "@/assets/logos/logo10.svg";
+import logo11 from "@/assets/logos/logo11.svg";
+
+const services = [
+  {
+    icon: icon1.src,
+    title: "Branding estratégico",
+    copy: "Arquitectura de marca, narrativa visual y sistemas que sostienen el crecimiento.",
+  },
+  {
+    icon: icon2.src,
+    title: "Experiencias web",
+    copy: "Sitios rápidos, claros y con presencia. Diseño y desarrollo alineados desde el inicio.",
+  },
+  {
+    icon: icon3.src,
+    title: "Editorial y campañas",
+    copy: "Piezas con criterio compositivo, jerarquía y una lectura más aspiracional que promocional.",
+  },
+  {
+    icon: icon4.src,
+    title: "Dirección de arte",
+    copy: "Unificamos imagen, tono, ritmo y ejecución para que cada punto de contacto hable igual de bien.",
+  },
+  {
+    icon: icon5.src,
+    title: "Contenido visual",
+    copy: "Assets para lanzamientos, redes y campañas que elevan la percepción de marca.",
+  },
+  {
+    icon: icon6.src,
+    title: "Consultoría creativa",
+    copy: "Detectamos fricción, afinamos el mensaje y definimos qué conviene construir primero.",
+  },
+];
+
+const logos = [logo1, logo2, logo3, logo4, logo5, logo6, logo8, logo9, logo10, logo11];
 ---
-<Layout>
-  <div id="intro-animation-container" class="fixed pointer-events-none top-0 left-0 w-full h-screen z-30">
-    <section>
-      <picture
-        id="hero-key"
-        class="h-screen scale-150 block overflow-hidden fixed w-full"
-      >
-        <div
-          id="hero-background-color"
-          class="w-full h-full absolute top-0 left-0"
-          style="background: #fefba4;" 
-        ></div>
-        <img
-          id="hero-key-logo"
-          src={HeroKeyLogo.src}
-          class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 max-w-[70vw] max-h-[30vh] sm:w-64 md:w-134 opacity-100 z-20"
-          alt="Initial Hero Logo"
-        />
-      </picture>
 
-      <div id="logo-mask" class="fixed top-0 left-0 w-full h-screen z-10">
+<Layout
+  title="SQ Studio | Estudio creativo y digital premium"
+  description="SQ Studio diseña marcas, webs y sistemas visuales con una estética contemporánea, precisa y orientada a negocio."
+>
+  <section class="hero-panel">
+    <div class="hero-panel__media">
+      <img src={heroImage.src} alt="Pantalla de proyecto digital de SQ Studio" loading="eager" />
+    </div>
+
+    <div class="site-shell hero-panel__grid">
+      <div class="space-y-8" data-reveal>
+        <p class="display-kicker">SQ Studio · Diseño, branding, web</p>
+        <h1 class="display-title max-w-5xl text-[var(--sq-cream)]">
+          Marcas y experiencias digitales con presencia premium.
+        </h1>
+        <p class="section-copy max-w-2xl text-lg md:text-xl">
+          Convertimos identidad, diseño y tecnología en una experiencia visual más precisa,
+          contemporánea y estratégica. Menos ruido. Más autoridad.
+        </p>
+        <div class="flex flex-col gap-3 sm:flex-row">
+          <a href="/contacto" class="button-primary">Empezar proyecto</a>
+          <a href="/proyectos" class="button-secondary">Ver trabajos</a>
+        </div>
+      </div>
+
+      <div class="section-frame p-6 md:p-8" data-reveal>
+        <p class="eyebrow">Qué hacemos</p>
+        <div class="editorial-list mt-6">
+          <div class="editorial-item">
+            <strong>Diseño con criterio</strong>
+            <p>Composición limpia, jerarquía clara y dirección de arte coherente en cada soporte.</p>
           </div>
-    </section>
-  </div>
+          <div class="editorial-item">
+            <strong>Web con intención</strong>
+            <p>Interfaces rápidas, accesibles y pensadas para convertir mejor sin perder sofisticación.</p>
+          </div>
+          <div class="editorial-item">
+            <strong>Marca que se sostiene</strong>
+            <p>Sistemas visuales preparados para crecer, no piezas aisladas que caducan rápido.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <!-- Mensaje final a pantalla completa -->
-<div
-  id="final-message"
-  class="fixed pointer-events-none flex justify-center items-center top-0 left-0 w-full h-screen z-40 opacity-0"
-  style="background: #042e36;"
->
-  <!-- Título grande de fondo alineado a la izquierda -->
-  <h2 class="absolute text-[12vw] lg:text-[12vw] sm:text-8xl sm:mb-0 font-extrabold text-[#09424e] leading-none pointer-events-none top-0 left-0 px-6 pt-8 text-left z-0">
-    DISEÑO Y <br> MODERNIDAD
-  </h2>
-
-  <!-- Mensaje principal centrado -->
-  <span class="absolute z-10 text-3xl sm:text-5xl md:text-6xl ml-8 font-mono text-[#f79b33] ">
-    DISEÑO GRÁFICO Y DESARROLLO WEB
-  </span>
-</div>
-
-
-  <div
-  id="after-hero"
-  class="fixed pointer-events-none flex flex-col items-center justify-center top-0 left-0 w-full h-screen opacity-0 z-50 text-center px-4"
-  style="background: #042e36; color: #f79b33;"
->
-  <h2 class="absolute text-[12vw] lg:text-[12vw] sm:text-8xl font-extrabold text-[#09424e] leading-none pointer-events-none top-0 left-0 px-6 pt-8 text-left z-0">
-    Confían<br> en nosotros
-  </h2>
-  <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8 place-items-center mt-32">
-    <img src={Logo1.src} alt="Logo 1" class="h-12 sm:h-16 grayscale hover:grayscale-0 transition duration-300" />
-    <img src={Logo2.src} alt="Logo 2" class="h-12 sm:h-16 grayscale hover:grayscale-0 transition duration-300" />
-    <img src={Logo3.src} alt="Logo 3" class="h-12 sm:h-16 grayscale hover:grayscale-0 transition duration-300" />
-    <img src={Logo4.src} alt="Logo 4" class="h-12 sm:h-16 grayscale hover:grayscale-0 transition duration-300" />
-    <img src={Logo5.src} alt="Logo 5" class="h-12 sm:h-16 grayscale hover:grayscale-0 transition duration-300" />
-    <img src={Logo6.src} alt="Logo 6" class="h-12 sm:h-16 grayscale hover:grayscale-0 transition duration-300" />
-    <!--<img src={Logo7.src} alt="Logo 7" class="h-12 sm:h-16 grayscale hover:grayscale-0 transition duration-300" />-->
-    <img src={Logo8.src} alt="Logo 8" class="h-12 sm:h-16 grayscale hover:grayscale-0 transition duration-300" />
-    <img src={Logo9.src} alt="Logo 9" class="h-12 sm:h-16 grayscale hover:grayscale-0 transition duration-300" />
-    <img src={Logo10.src} alt="Logo 10" class="h-12 sm:h-16 grayscale hover:grayscale-0 transition duration-300" />
-    <img src={Logo11.src} alt="Logo 11" class="h-16 sm:h-20 grayscale hover:grayscale-0 transition duration-300" />
-  </div>
-</div>
-  <!-- Sección DISEÑO GRÁFICO -->
-<div
-  id="pantalla-diseno"
-  class="fixed top-0 left-0 w-full h-screen z-60 opacity-0 pointer-events-none"
-  style="background: #fefba4"
->
-  <div class="grid grid-cols-1 md:grid-cols-3 grid-rows-6 md:grid-rows-2 w-full h-full">
-
-    <!-- Servicio 1 -->
-    <div class="servicio-box flex flex-col font-mono justify-center items-center text-center p-6 border bg-[#f79b33] border-black">
-      <img src={icon1.src} alt="Branding" class="w-16 h-16 md:w-24 md:h-24 mb-4" />
-      <h3 class="text-2xl md:text-4xl font-semibold">
-        <span class="block text-3xl md:text-5xl text-[#042e36]">Branding</span>
-        <span class="block text-3xl md:text-5xl text-[#042e36]">Estratégico</span>
-      </h3>
-      <p class="hidden md:block text-zinc-800 md:text-base mt-2">Creamos marcas con intención, no solo logos bonitos.</p>
+  <section class="section-pad">
+    <div class="site-shell grid gap-8 md:grid-cols-[0.9fr_1.1fr] md:items-end">
+      <div class="space-y-5" data-reveal>
+        <p class="eyebrow">Confianza</p>
+        <h2 class="section-title text-[var(--sq-cream)]">Trabajamos para marcas que necesitan elevar percepción y claridad.</h2>
+      </div>
+      <div class="grid-stats" data-reveal>
+        <div class="stat-card">
+          <strong>Branding</strong>
+          <span>Sistemas visuales consistentes para marcas nuevas o en fase de salto.</span>
+        </div>
+        <div class="stat-card">
+          <strong>Web</strong>
+          <span>Diseño y desarrollo en una misma mesa para evitar soluciones a medias.</span>
+        </div>
+        <div class="stat-card">
+          <strong>Contenido</strong>
+          <span>Activos editoriales, campañas y soportes que mantienen el mismo nivel.</span>
+        </div>
+      </div>
     </div>
 
-    <!-- Servicio 2 -->
-    <div class="servicio-box flex flex-col font-mono  justify-center items-center text-center p-6 border bg-[#042e36] border-black">
-      <img src={icon4.src} alt="Maquetación" class="w-16 h-16 md:w-24 md:h-24 mb-4" />
-      <h3 class="text-2xl md:text-4xl font-semibold">
-        <span class="block text-3xl md:text-5xl text-[#f79b33]">Diseño</span>
-        <span class="block text-3xl md:text-5xl text-[#f79b33]">Integral</span>
-      </h3>
-      <p class="hidden md:block text-white md:text-base mt-2">Identidad, piezas publicitarias y más.</p>
+    <div class="site-shell mt-10" data-reveal>
+      <div class="section-frame p-6 md:p-8">
+        <div class="logo-row">
+          {logos.map((logo) => <img src={logo.src} alt="Cliente SQ Studio" loading="lazy" />)}
+        </div>
+      </div>
     </div>
+  </section>
 
-    <!-- Servicio 3 -->
-    <div class="servicio-box flex flex-col font-mono justify-center items-center text-center p-6 border bg-[#f79b33] border-black">
-      <img src={icon2.src} alt="Web" class="w-16 h-16 md:w-24 md:h-24 mb-4" />
-      <h3 class="text-2xl md:text-4xl font-semibold">
-        <span class="block text-3xl md:text-5xl text-[#042e36]">Desarrollo</span>
-        <span class="block text-3xl md:text-5xl text-[#042e36]">Web</span>
-      </h3>
-      <p class="hidden md:block text-zinc-800 md:text-base mt-2">Webs modernas listas para vender.</p>
+  <section class="section-pad">
+    <div class="site-shell space-y-10">
+      <div class="space-y-5" data-reveal>
+        <p class="eyebrow">Servicios</p>
+        <h2 class="section-title text-[var(--sq-cream)]">Una oferta compacta, visual y ejecutada con rigor.</h2>
+        <p class="section-copy">
+          Reestructuramos la propuesta de SQ Studio para que se sienta menos “agencia con cajas” y
+          más estudio con dirección, foco y un estándar visual alto.
+        </p>
+      </div>
+
+      <div class="feature-grid" data-reveal>
+        {services.map((service, index) => (
+          <article
+            class={`surface-card ${index === 0 || index === 5 ? "md:col-span-6" : "md:col-span-3"}`}
+          >
+            <img src={service.icon} alt={service.title} class="mb-6 h-16 w-16 object-contain" loading="lazy" />
+            <h3>{service.title}</h3>
+            <p>{service.copy}</p>
+          </article>
+        ))}
+      </div>
     </div>
+  </section>
 
-    <!-- Servicio 4 -->
-    <div class="servicio-box flex flex-col font-mono  justify-center items-center text-center p-6 border bg-[#042e36] border-black">
-      <img src={icon5.src} alt="Campañas" class="w-16 h-16 md:w-24 md:h-24 mb-4" />
-      <h3 class="text-2xl md:text-4xl font-semibold">
-        <span class="block text-3xl md:text-5xl text-[#f79b33]">Campañas</span>
-        <span class="block text-3xl md:text-5xl text-[#f79b33]">Visuales</span>
-      </h3>
-      <p class="hidden md:block text-white md:text-base mt-2">Diseño que comunica y convierte.</p>
+  <section class="section-pad">
+    <div class="site-shell space-y-10">
+      <div class="grid gap-6 md:grid-cols-[0.8fr_1.2fr] md:items-end">
+        <div class="space-y-5" data-reveal>
+          <p class="eyebrow">Proyectos</p>
+          <h2 class="section-title text-[var(--sq-cream)]">Casos que priorizan impacto visual, lectura rápida y mejor percepción.</h2>
+        </div>
+        <p class="section-copy" data-reveal>
+          El nuevo enfoque da protagonismo a bloques grandes, imágenes con peso y copy más corto,
+          para construir una sensación editorial y tecnológica sin salirse de la identidad cromática actual.
+        </p>
+      </div>
+
+      <div class="grid gap-6 md:grid-cols-[1.2fr_0.8fr]" data-reveal>
+        <a href="/diseño" class="media-card">
+          <img src={projectDesign.src} alt="Proyecto de diseño de SQ Studio" loading="lazy" />
+          <div class="media-card__overlay">
+            <span class="media-card__label">Diseño gráfico</span>
+            <h3 class="media-card__title">Sistemas visuales que aguantan la mirada.</h3>
+          </div>
+        </a>
+
+        <div class="grid gap-6">
+          <a href="/web" class="media-card min-h-[13rem]">
+            <img src={heroImage.src} alt="Proyecto web de SQ Studio" loading="lazy" />
+            <div class="media-card__overlay">
+              <span class="media-card__label">Web</span>
+              <h3 class="media-card__title">Interfaces sobrias y rápidas.</h3>
+            </div>
+          </a>
+
+          <a href="/redes" class="media-card min-h-[13rem]">
+            <img src={projectSocial.src} alt="Proyecto visual para redes de SQ Studio" loading="lazy" />
+            <div class="media-card__overlay">
+              <span class="media-card__label">Contenido</span>
+              <h3 class="media-card__title">Campañas con narrativa y consistencia.</h3>
+            </div>
+          </a>
+        </div>
+      </div>
     </div>
+  </section>
 
-    <!-- Servicio 5 -->
-    <div class="servicio-box flex flex-col font-mono justify-center items-center text-center p-6 border bg-[#f79b33] border-black">
-      <img src={icon3.src} alt="Diseño gráfico" class="w-16 h-16 md:w-24 md:h-24 mb-4" />
-      <h3 class="text-2xl md:text-4xl font-semibold">
-        <span class="block text-3xl md:text-5xl text-[#042e36]">Maquetación</span>
-        <span class="block text-3xl md:text-5xl text-[#042e36]">Editorial</span>
-      </h3>
-      <p class="hidden md:block text-zinc-800 md:text-base mt-2">Diseño profesional para impresión y digital.</p>
+  <section class="section-pad">
+    <div class="site-shell grid gap-6 md:grid-cols-2">
+      <div class="section-frame p-6 md:p-8" data-reveal>
+        <p class="eyebrow">Filosofía</p>
+        <h2 class="section-title mt-4 text-[var(--sq-cream)]">Menos ornamento. Más decisión.</h2>
+        <p class="section-copy mt-6">
+          La referencia premium aquí no está en copiar una web externa, sino en adoptar una lógica:
+          aire, tensión tipográfica, ritmo vertical, control del contraste y una ejecución visual sin ruido.
+        </p>
+      </div>
+
+      <div class="section-frame p-6 md:p-8" data-reveal>
+        <p class="eyebrow">Proceso</p>
+        <div class="editorial-list mt-6">
+          <div class="editorial-item">
+            <strong>01 · Diagnóstico</strong>
+            <p>Detectamos qué resta claridad y qué limita la percepción actual de la marca.</p>
+          </div>
+          <div class="editorial-item">
+            <strong>02 · Sistema</strong>
+            <p>Definimos tono visual, jerarquía, grid, activos y patrones reutilizables.</p>
+          </div>
+          <div class="editorial-item">
+            <strong>03 · Lanzamiento</strong>
+            <p>Ejecutamos la experiencia final con foco en velocidad, accesibilidad y mantenimiento.</p>
+          </div>
+        </div>
+      </div>
     </div>
+  </section>
 
-    <!-- Servicio 6 -->
-    <div class="servicio-box flex flex-col font-mono  justify-center items-center text-center p-6 border bg-[#042e36] border-black">
-      <img src={icon6.src} alt="Soporte" class="w-16 h-16 md:w-24 md:h-24 mb-4" />
-      <h3 class="text-2xl md:text-4xl font-semibold">
-        <span class="block text-3xl md:text-5xl text-[#f79b33]">Consultoría</span>
-        <span class="block text-3xl md:text-5xl text-[#f79b33]">de Marketing</span>
-      </h3>
-      <p class="hidden md:block text-white md:text-base mt-2">Revisamos en qué puedes mejorar</p>
+  <section class="section-pad">
+    <div class="site-shell grid gap-8 md:grid-cols-[0.9fr_1.1fr] md:items-start">
+      <div class="space-y-5" data-reveal>
+        <p class="eyebrow">Contacto</p>
+        <h2 class="section-title text-[var(--sq-cream)]">Si tu marca necesita verse al nivel de tu ambición, hablemos.</h2>
+        <p class="section-copy">
+          Cuéntanos en qué punto estás y qué percepción quieres construir. La respuesta debe sentirse
+          más precisa, más premium y más coherente en todos tus canales.
+        </p>
+      </div>
+
+      <div class="section-frame p-6 md:p-8" data-reveal>
+        <form class="contact-form" action="https://formsubmit.co/saraquintanadg@gmail.com" method="POST">
+          <input type="text" name="name" placeholder="Nombre" required />
+          <input type="email" name="email" placeholder="Correo electrónico" required />
+          <textarea name="message" rows="5" placeholder="Cuéntanos el proyecto" required></textarea>
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="hidden" name="_next" value="https://sqstudio.es/gracias" />
+          <button type="submit" class="button-primary">Enviar solicitud</button>
+        </form>
+      </div>
     </div>
-
-  </div>
-</div>
-
- <!-- Sección MARKETING -->
-<div
-  id="pantalla-marketing"
-  class="fixed pointer-events-none flex flex-col lg:flex-row items-center justify-center top-0 left-0 w-full h-screen opacity-0 z-70 text-center px-4"
-  style="background: #fefba4;"
->
-  <div class="w-full h-full flex flex-col items-center justify-center px-6 py-12 bg-[#fefba4] relative">
-      <!-- Título grande de fondo alineado a la izquierda y arriba -->
-      <h2 class="absolute text-[12vw] lg:text-[12vw] font-extrabold text-[#fbf788] leading-none z-0 pointer-events-none top-0 left-0 px-6 pt-8 text-left">
-        POR QUÉ ELEGIR<br>SQStudio
-      </h2>
-        <!-- Texto en primer plano -->
-        <div class="max-w-xl font-mono text-right absolute bottom-50 right-15 z-10">
-      <p class="text-lg lg:text-2xl text-gray-800 mb-4">
-        ¿Te has estancado? ¿No sabes qué estrategia seguir para mejorar tu imagen?<br />
-        ¿Quieres competir como una empresa moderna y actualizada?
-      </p>
-      <p class="text-lg lg:text-2xl text-gray-800">
-        En <strong>SQStudio</strong> somos especialistas en eso: ayudarte a dar el salto.
-        Creamos soluciones de marketing digital a tu medida, con una mirada fresca, creativa y enfocada en resultados.<br /><br />
-        Queremos que tu marca se vea bien, funcione mejor y no se quede atrás.
-      </p>
-  </div>
-</div>
-
-  <!-- Sección DESARROLLO WEB -->
-<div
-  id="pantalla-desarrollo"
-  class="fixed pointer-events-none flex flex-col lg:flex-row items-center justify-center top-0 left-0 w-full h-screen opacity-0 z-80 text-center px-0"
-  style="background: #fbd04a;"
->
-  <!-- Imagen: arriba en móvil, izquierda en desktop -->
-  <div class="w-full h-1/2 lg:w-1/2 lg:h-full flex-shrink-0">
-    <img
-      src={webImg.src}
-      alt="Ejemplo de proyecto de desarrollo web"
-      class="object-cover w-full h-full"
-    />
-  </div>
-
-  <div class="w-full h-screen flex flex-col items-center justify-center px-6 py-12 bg-[#fbd04a] relative">
-  <!-- Título de fondo alineado a la izquierda -->
-  <h2 class="absolute text-[12vw] lg:text-[9vw] font-extrabold text-[#f8df70] leading-none z-0 pointer-events-none top-0 left-0 px-6 pt-8 text-left">
-    ¿QUIERES QUE<br>TUS PROYECTOS<br>SE VEAN ASÍ?
-  </h2>
-
-  <!-- Contenido principal en el 3/3 de la pantalla -->
-  <div class="absolute bottom-12 right-6 z-10 max-w-xl font-mono text-right">
-    <p class="text-lg sm:text-xl text-[#042e36]/90 mb-6">
-      Mira lo que ya hicimos y encuentra la inspiración que necesitas.
-    </p>
-    <a
-      href="/proyectos"
-      class="bg-[#042e36] text-[#fbd04a] font-semibold rounded-lg px-6 py-3 hover:bg-[#5c5140] transition-all duration-300 text-xl shadow-lg"
-    >
-      Mira algunos de nuestros proyectos ↓
-    </a>
-  </div>
-</div>
-
-  <!-- Sección CONTACTO con formulario centrado y estilo unificado -->
-<div
-  id="pantalla-contacto"
-  class="fixed pointer-events-none top-0 left-0 w-full h-screen z-90 bg-[#042e36] text-[#fbd04a] flex items-center justify-center px-4"
->
-  <!-- Título grande de fondo alineado arriba a la izquierda -->
-  <h2 class="absolute text-[12vw] lg:text-[12vw] font-extrabold text-[#09424e] leading-none z-0 pointer-events-none top-0 left-0 px-6 pt-8 text-left">
-    CONTÁCTANOS
-  </h2>
-  <div class="w-full max-w-md bg-[#042e36]/80 rounded-xl shadow-lg p-6 flex flex-col gap-4 items-center">
-    <span class="text-4xl sm:text-6xl font-bold mb-2 drop-shadow text-[#fbd04a]">
-      
-    </span>
-    <span class="text-base font-mono sm:text-2xl mb-4 text-[#fbd04a]/80">
-      ¿Tienes un proyecto o duda? Escríbenos y te responderemos pronto.
-    </span>
-    <form 
-      class="w-full flex flex-col gap-3"
-      action="https://formsubmit.co/saraquintanadg@gmail.com" 
-      method="POST"
-    >
-      <input
-        type="text"
-        name="name"
-        placeholder="Nombre"
-        class="rounded-md px-4 py-2 bg-[#fefba4] font-mono text-[#042e36] placeholder-[#042e36]/60 focus:outline-none"
-        required
-      />
-      <input
-        type="email"
-        name="email"
-        placeholder="Correo electrónico"
-        class="rounded-md px-4 py-2 bg-[#fefba4] font-mono text-[#042e36] placeholder-[#042e36]/60 focus:outline-none"
-        required
-      />
-      <textarea
-        name="message"
-        placeholder="Mensaje"
-        rows="4"
-        class="rounded-md px-4 py-2 bg-[#fefba4] font-mono text-[#042e36] placeholder-[#042e36]/60 focus:outline-none resize-none"
-        required
-      ></textarea>
-      <!-- captcha -->
-      <input type="hidden" name="_captcha" value="false">
-      <!-- redirección tras enviar -->
-      <input type="hidden" name="_next" value="https://sqstudio.es/gracias">
-      <button
-        type="submit"
-        class="mt-2 bg-[#fbd04a] text-[#042e36] font-mono rounded-md px-4 py-2 hover:bg-[#ffe066] transition text-2xl"
-      >
-        Enviar
-      </button>
-      <button
-        type="button"
-        onclick="window.location.href='/proyectos'"
-        class="mt-6 bg-[#042e36] text-[#fbd04a] font-mono rounded-md px-4 py-2 hover:text-[#766737] transition text-2xl"
-      >
-        Haz Click aquí para ver nuestros proyectos
-      </button>
-    </form>
-  </div>
-</div>
-
-
+  </section>
 </Layout>
-
-<style>
-  #logo-mask {
-    background: #fefba4; /* Color de fondo para la máscara */
-    mask-image: url("/logo-stack.svg");
-    mask-position: center 10%;
-    mask-repeat: no-repeat;
-    /* Optimización: valores más sensatos para desktop */
-    mask-size: clamp(5000vh, 2000%, 0vh); 
-  }
-
-  @media (max-width: 640px) {
-    #logo-mask {
-      /* Optimización: valores más pequeños para móviles */
-      mask-size: clamp(5000vh, 900%, 0vh); /* Reducido del 5000vh/900% */
-      mask-position: center 19%;
-    }
-  }
-
-  .fixed {
-    pointer-events: none;
-  }
-  .fixed.pointer-events-auto {
-    pointer-events: auto;
-  }
-</style>
-
-<script>
-  import { gsap } from "gsap"
-  import { ScrollTrigger } from "gsap/ScrollTrigger"
-
-  gsap.registerPlugin(ScrollTrigger)
-
-  // Define propiedades de animación comunes para las figuras
-  const figureEnterProps = {
-    opacity: 1,
-    scale: 1.1,
-    rotate: "random(-360, 360)",
-    x: "random(-50, 50)",
-    y: "random(-50, 50)",
-    duration: 1.5,
-    ease: "power3.out",
-  };
-
-  const figureExitProps = {
-    opacity: 0,
-    scale: 0.7,
-    rotate: "random(-180, 180)",
-    x: "random(-30, 30)",
-    y: "random(-30, 30)",
-    duration: 0.8,
-    ease: "power2.in",
-  };
-
-  // --- LÍNEA DE TIEMPO PARA TODA LA ANIMACIÓN ---
-  const tl = gsap.timeline({
-    ease: "power2.out",
-    scrollTrigger: {
-      trigger: "body",
-      start: "top top",
-      end: "bottom bottom", 
-      scrub: 1,
-      // markers: true,
-    },
-  });
-
-  // Animaciones iniciales: 
-  tl.to("#hero-key", { duration: 1, scale: 1 })
-    .to("#hero-key-logo", { opacity: 0, duration: 0.5 }, "<")
-    .to(
-      "#logo-mask", 
-      {
-        maskSize: "clamp(7vh, 25%, 0.5vh)",
-        duration: 1.5,
-      },
-      0.3
-    )
-    .to(
-      "#hero-key", 
-      {
-        opacity: 0,
-        duration: 0.7,
-      },
-      "<0.5"
-    )
-    .to(
-      "#intro-animation-container", 
-      {
-        opacity: 0,
-        pointerEvents: "none",
-        duration: 0.5,
-      },
-      ">"
-    );
-
-  tl.to(
-      "#final-message",
-      {
-        opacity: 1,
-        duration: 0.7,
-      }
-    )
-    .to(
-      "#final-message",
-      {
-        opacity: 0,
-        duration: 0.5,
-        delay: 0.7,
-      }
-    )
-    .to(
-      "#after-hero",
-      {
-        opacity: 1,
-        duration: 0.7,
-      }
-    )
-    .to(
-      "#after-hero",
-      {
-        opacity: 0,
-        duration: 0.5,
-        delay: 1.2,
-      }
-    )
-
-    // --- PANTALLA DISEÑO GRÁFICO ---
-    .to(
-      "#pantalla-diseno",
-      {
-        opacity: 1,
-        duration: 0.7,
-        onStart: () => activarPantalla("pantalla-diseno"),
-      }
-    )
-    .to("#svg-diseno-1", { ...figureEnterProps }, "<")
-    .to("#svg-diseno-2", { ...figureEnterProps }, "<0.1")
-    .to("#svg-diseno-3", { ...figureEnterProps }, "<0.2")
-    .to("#svg-diseno-4", { ...figureEnterProps }, "<0.3")
-    .to("#svg-diseno-5", { ...figureEnterProps }, "<0.4")
-    
-    .to(
-    ".servicio-box", 
-    {
-    opacity: 0,
-    y: 50,
-    duration: 0.8,
-    stagger: 0.2,
-    ease: "power3.out",
-    delay: 0.2
-    }
-  )
-    // --- PANTALLA MARKETING ---
-    .to(
-      "#pantalla-marketing",
-      {
-        opacity: 1,
-        duration: 0.3,
-        onStart: () => activarPantalla("pantalla-marketing"),
-      }
-    )
-    .to("#svg-marketing-1", { ...figureEnterProps }, "<")
-    .to("#svg-marketing-2", { ...figureEnterProps }, "<0.1")
-    .to("#svg-marketing-3", { ...figureEnterProps }, "<0.2")
-    .to("#svg-marketing-4", { ...figureEnterProps }, "<0.3")
-    .to("#svg-marketing-5", { ...figureEnterProps }, "<0.4")
-    // --- PANTALLA DESARROLLO WEB ---
-    .to(
-      "#pantalla-desarrollo",
-      {
-        opacity: 1,
-        duration: 0,
-        onStart: () => activarPantalla("pantalla-desarrollo"),
-      }
-    ) 
-    .to("#pantalla-contacto", { opacity: 0, duration: 0.2 })
-
-    // Espera el tiempo necesario... y luego muestra contacto al final
-    .to("#pantalla-contacto", {
-      opacity: 1,
-      duration: 0.7,
-      delay: 2, // ajusta si hace falta
-      onStart: () => activarPantalla("pantalla-contacto"),
-    }) 
-    function activarPantalla(id: string) {
-  document.querySelectorAll(".fixed").forEach(el => {
-    el.classList.remove("pointer-events-auto");
-    el.classList.add("pointer-events-none");
-  });
-  const pantalla = document.getElementById(id);
-  if (pantalla) {
-    pantalla.classList.remove("pointer-events-none");
-    pantalla.classList.add("pointer-events-auto");
-  }
-}
-
-</script>

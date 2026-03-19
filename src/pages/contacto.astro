@@ -1,75 +1,72 @@
 ---
-import '../styles/global.css';
+import Layout from "@/layouts/Layout.astro";
 ---
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/svg+xml" href="/favicon.png" />
-    <meta name="description" content="Contáctanos para proyectos de diseño gráfico, desarrollo web y marketing digital. Estamos aquí para ayudarte a hacer crecer tu marca.">
-    <meta name="keywords" content="contacto, diseño gráfico, desarrollo web, marketing digital, SQ Studio, proyectos creativos">
-    <meta name="author" content="SQ Studio">
-    <meta property="og:title" content="Contacto | SQ Studio">
-    <meta property="og:description" content="Contáctanos para proyectos de diseño gráfico, desarrollo web y marketing digital. Estamos aquí para ayudarte a hacer crecer tu marca.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://sqstudio.es/contacto">
-    
 
-  <title>Contacto | SQ Studio</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    html { scroll-behavior: smooth; }
-    body {
-      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-    }
-  </style>
-</head>
-<body class="bg-[#042e36] min-h-screen flex flex-col items-center justify-center px-4">
-  <main class="w-full flex flex-col items-center justify-center py-16">
-    <div class="w-full max-w-md bg-[#042e36]/80 rounded-xl shadow-lg p-8 flex flex-col gap-4 items-center">
-      <h1 class="text-5xl sm:text-6xl font-bold mb-2 drop-shadow text-[#fbd04a] text-center">
-        Contáctanos
-      </h1>
-      <p class="text-lg sm:text-2xl mb-4 text-[#fbd04a]/80 text-center">
-        ¿Tienes un proyecto o duda? Escríbenos y te responderemos pronto.
-      </p>
-      <form 
-        class="w-full flex flex-col gap-4"
-        action="https://formsubmit.co/saraquintanadg@gmail.com" 
-        method="POST"
-      >
-        <input
-          type="text"
-          name="name"
-          placeholder="Nombre"
-          class="rounded-md px-4 py-3 bg-[#fefba4] text-[#042e36] placeholder-[#042e36]/60 focus:outline-none text-lg"
-          required
-        />
-        <input
-          type="email"
-          name="email"
-          placeholder="Correo electrónico"
-          class="rounded-md px-4 py-3 bg-[#fefba4] text-[#042e36] placeholder-[#042e36]/60 focus:outline-none text-lg"
-          required
-        />
-        <textarea
-          name="message"
-          placeholder="Mensaje"
-          rows="4"
-          class="rounded-md px-4 py-3 bg-[#fefba4] text-[#042e36] placeholder-[#042e36]/60 focus:outline-none resize-none text-lg"
-          required
-        ></textarea>
-        <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_next" value="https://sqstudio.es/gracias">
-        <button
-          type="submit"
-          class="mt-2 bg-[#fbd04a] text-[#042e36] font-semibold rounded-md px-4 py-3 hover:bg-[#ffe066] transition text-2xl"
-        >
-          Enviar
-        </button>
-      </form>
+<Layout
+  title="Contacto | SQ Studio"
+  description="Habla con SQ Studio sobre branding, diseño y desarrollo web con una dirección visual premium."
+  url="https://sqstudio.es/contacto"
+>
+  <section class="page-hero">
+    <div class="site-shell page-hero__grid">
+      <div class="space-y-6" data-reveal>
+        <p class="eyebrow">Contacto</p>
+        <h1 class="section-title text-[var(--sq-cream)]">Diseñemos una presencia más precisa, más fuerte y más contemporánea.</h1>
+        <p class="section-copy">
+          Cuéntanos qué necesitas construir o rediseñar. Responderemos con foco estratégico, criterio visual
+          y una propuesta realista para llevar la marca a un estándar superior.
+        </p>
+      </div>
+
+      <div class="page-hero__panel" data-reveal>
+        <div class="editorial-list">
+          <div class="editorial-item">
+            <strong>Email</strong>
+            <p>saraquintanadg@gmail.com</p>
+          </div>
+          <div class="editorial-item">
+            <strong>Base</strong>
+            <p>Santa Cruz de Tenerife · Proyectos locales y remotos.</p>
+          </div>
+          <div class="editorial-item">
+            <strong>Enfoque</strong>
+            <p>Branding, dirección de arte, desarrollo web y sistemas visuales.</p>
+          </div>
+        </div>
+      </div>
     </div>
-  </main>
-</body>
-</html>
+  </section>
+
+  <section class="section-pad">
+    <div class="site-shell grid gap-8 md:grid-cols-[0.85fr_1.15fr]">
+      <div class="section-frame p-6 md:p-8" data-reveal>
+        <p class="eyebrow">Antes de empezar</p>
+        <div class="editorial-list mt-6">
+          <div class="editorial-item">
+            <strong>Qué buscas</strong>
+            <p>Rediseño, lanzamiento, nueva web, identidad visual o dirección creativa de campaña.</p>
+          </div>
+          <div class="editorial-item">
+            <strong>Qué revisamos</strong>
+            <p>Tono, percepción actual, fricción visual, contenido y necesidades técnicas reales.</p>
+          </div>
+          <div class="editorial-item">
+            <strong>Qué entregamos</strong>
+            <p>Un plan más claro, una presencia más sólida y una ejecución con criterio de marca.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-frame p-6 md:p-8" data-reveal>
+        <form class="contact-form" action="https://formsubmit.co/saraquintanadg@gmail.com" method="POST">
+          <input type="text" name="name" placeholder="Nombre" required />
+          <input type="email" name="email" placeholder="Correo electrónico" required />
+          <textarea name="message" rows="7" placeholder="¿Qué quieres construir o mejorar?" required></textarea>
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="hidden" name="_next" value="https://sqstudio.es/gracias" />
+          <button type="submit" class="button-primary">Enviar mensaje</button>
+        </form>
+      </div>
+    </div>
+  </section>
+</Layout>
