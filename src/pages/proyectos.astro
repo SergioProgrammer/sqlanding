@@ -1,71 +1,289 @@
 ---
 import Layout from "@/layouts/Layout.astro";
-import designImage from "@/assets/2.webp";
-import webImage from "@/assets/web.png";
-import socialImage from "@/assets/8.webp";
+
+const projects = [
+  {
+    id: "ader-la-palma",
+    title: "ADER",
+    discipline: "Cartelería",
+    client: "ADER La Palma / Emprende Rural La Palma",
+    summary:
+      "Línea gráfica adaptable para distintas iniciativas del programa Emprende Rural La Palma, aplicada a cartelería, soportes digitales y web.",
+    paragraphs: [
+      "ADER La Palma es una asociación de desarrollo rural que impulsa el emprendimiento, la formación y la innovación social en la isla, con especial foco en el sector primario y el crecimiento sostenible del territorio. Para este proyecto, el objetivo fue desarrollar una línea gráfica adaptable para diferentes iniciativas dentro del programa Emprende Rural La Palma, aplicada tanto en cartelería como en formatos digitales y web.",
+      "Era clave que cada pieza comunicara de forma clara e independiente, pero mantuviera coherencia dentro del conjunto, reforzando la identidad del programa. El resultado fue un sistema visual versátil que permite trasladar distintos mensajes, desde jornadas y mentorías hasta campañas específicas, conectando con el contexto rural y facilitando una comunicación accesible, atractiva y alineada con los valores de desarrollo local de La Palma.",
+    ],
+    images: ["/Fotos/foto1.png", "/Fotos/foto2.png", "/Fotos/foto3.png", "/Fotos/foto4.png", "/Fotos/foto5.png", "/Fotos/foto6.png"],
+  },
+  {
+    id: "jj-eventos",
+    title: "JJ Eventos",
+    discipline: "Cartelería",
+    client: "JJ Eventos",
+    summary:
+      "Cartel promocional para torneos de pádel con una composición de alto impacto, fotografía deportiva y tipografía protagonista.",
+    paragraphs: [
+      "JJ Eventos es una pequeña empresa ubicada en Canarias especializada en la organización de torneos y eventos de pádel, enfocada en generar experiencias dinámicas y accesibles para jugadores de distintos niveles. Para este proyecto, el objetivo fue diseñar una pieza gráfica en formato cartel capaz de captar la atención de forma inmediata y comunicar de manera clara toda la información clave del evento.",
+      "Se trabajó una composición visual potente, combinando fotografía, tipografía de gran impacto y una paleta cromática vibrante para reforzar el carácter deportivo y competitivo. El resultado es un diseño pensado para su difusión tanto en entornos físicos como digitales, que conecta con el público objetivo y transmite energía, cercanía y profesionalidad dentro del contexto del pádel amateur en Canarias.",
+    ],
+    images: ["/Fotos/foto7.png"],
+  },
+  {
+    id: "ciab-carteleria",
+    title: "CIAB",
+    discipline: "Cartelería",
+    client: "CIAB (Centro Internacional de Agricultura Biológica)",
+    summary:
+      "Sistema gráfico para jornadas, cursos y sesiones formativas sobre agricultura sostenible, biodiversidad y control biológico en Canarias.",
+    paragraphs: [
+      "CIAB es una entidad centrada en la investigación, formación y divulgación en torno a la agricultura sostenible, la biodiversidad y el control biológico en Canarias. Para este proyecto, se desarrolló una serie de piezas de cartelería destinadas a comunicar diferentes jornadas, cursos y sesiones formativas vinculadas a estos ámbitos.",
+      "El objetivo fue crear una línea gráfica coherente capaz de adaptarse a distintos contenidos, desde talleres específicos hasta programas formativos más amplios, manteniendo una identidad visual clara y reconocible. A través del uso de recursos gráficos vinculados a la naturaleza, una paleta cromática diferenciada por temática y una jerarquía tipográfica ordenada, los carteles facilitan la lectura y refuerzan el carácter divulgativo y científico de las iniciativas.",
+      "Estos materiales incluyen, por ejemplo, jornadas sobre infraestructuras ecológicas adaptadas a Canarias, cursos sobre biodiversidad y sostenibilidad agrícola y sesiones centradas en el control de plagas mediante biodiversidad vegetal, lo que refuerza la necesidad de un sistema gráfico flexible pero coherente entre piezas.",
+    ],
+    images: ["/Fotos/foto8.png", "/Fotos/foto9.png", "/Fotos/foto10.png"],
+  },
+  {
+    id: "icia-carteleria",
+    title: "ICIA",
+    discipline: "Cartelería",
+    client: "ICIA (Instituto Canario de Investigaciones Agrarias)",
+    summary:
+      "Piezas de cartelería para jornadas científicas, formaciones y materiales divulgativos vinculados a distintas líneas de investigación agraria.",
+    paragraphs: [
+      "El ICIA es un organismo público dedicado a la investigación, transferencia de conocimiento y desarrollo del sector agrícola en Canarias, con especial foco en sostenibilidad, biodiversidad e innovación agraria. Para este proyecto, se diseñó una serie de piezas de cartelería orientadas a comunicar jornadas científicas, formaciones y materiales divulgativos vinculados a distintas líneas de investigación del instituto.",
+      "El objetivo fue construir una identidad visual coherente capaz de adaptarse a contenidos diversos, desde eventos técnicos hasta publicaciones especializadas, manteniendo claridad informativa y rigor científico. A través del uso de fotografía vinculada al entorno agrícola, recursos gráficos ilustrativos y una jerarquía tipográfica clara, los diseños facilitan la comprensión de la información y refuerzan el carácter técnico y divulgativo de las piezas.",
+      "Estos materiales incluyen desde jornadas científicas especializadas, como las dedicadas al cultivo del aguacate, hasta publicaciones técnicas sobre biodiversidad y control biológico, lo que evidencia la necesidad de un lenguaje gráfico flexible pero consistente entre piezas.",
+    ],
+    images: ["/Fotos/foto11.png", "/Fotos/foto12.png", "/Fotos/foto13.png"],
+  },
+  {
+    id: "la-orotava",
+    title: "Ayuntamiento de La Orotava",
+    discipline: "Cartelería",
+    client: "Ayuntamiento de La Orotava",
+    summary:
+      "Cartel institucional para la iniciativa Alcorques Vivos, con un enfoque claro, accesible y conectado con el mensaje ecológico.",
+    paragraphs: [
+      "El Ayuntamiento de La Orotava es una institución pública dedicada a la gestión y dinamización del municipio, promoviendo iniciativas culturales, medioambientales y de participación ciudadana. Para este proyecto, el objetivo fue diseñar una pieza de cartelería centrada en la sensibilización y divulgación en torno al entorno urbano y la biodiversidad, concretamente a través de la iniciativa Alcorques Vivos.",
+      "Se trabajó una propuesta visual clara y accesible, combinando ilustración y una paleta cromática vinculada a lo natural para reforzar el mensaje ecológico y su conexión con el espacio público. La composición prioriza la legibilidad y la jerarquía de la información, facilitando su difusión tanto en formato físico como digital.",
+    ],
+    images: ["/Fotos/foto14.png"],
+  },
+  {
+    id: "ycod-invitational",
+    title: "Ycod Invitational",
+    discipline: "Diseño ropa",
+    client: "Equipo CrossFit - Ycod Invitational",
+    summary:
+      "Diseño de camisetas para competición con una gráfica de alto impacto, pensada para reforzar identidad de equipo en un entorno deportivo.",
+    paragraphs: [
+      "Diseño de camisetas para un equipo participante en la competición Ycod Invitational, con el objetivo de crear una identidad visual potente y reconocible dentro del entorno competitivo. La propuesta se centra en una ilustración de alto impacto en la espalda, con una estética dinámica que transmite fuerza, intensidad y cohesión de equipo.",
+      "Se trabajó sobre prenda negra con una paleta reducida para potenciar el contraste y la visibilidad, integrando el naming del evento. El resultado es una pieza funcional y visualmente distintiva que refuerza la identidad del equipo durante la competición.",
+    ],
+    images: ["/Fotos/foto15.png", "/Fotos/foto16.png", "/Fotos/foto17.jpg"],
+  },
+  {
+    id: "entrena-facil",
+    title: "Entrena Fácil",
+    discipline: "Diseño web",
+    client: "Entrena Fácil",
+    summary:
+      "Diseño web claro, directo y funcional para un proyecto de entrenamiento personal online y presencial.",
+    paragraphs: [
+      "Entrena Fácil es un proyecto de entrenamiento personal online y presencial enfocado en hacer el fitness más accesible, práctico y fácil de integrar en el día a día. Para este proyecto, el objetivo fue trasladar esa idea a un entorno web claro, directo y funcional, capaz de comunicar sus servicios de forma cercana y ordenada.",
+      "La propuesta se centró en una estructura visual limpia, una jerarquía de contenidos sencilla y una identidad digital alineada con el mensaje de la marca: entrenamiento fácil, resultados reales. El resultado es un diseño web pensado para generar confianza, facilitar la navegación y conectar con un público amplio interesado en mejorar sus hábitos y su rendimiento de una forma más accesible.",
+    ],
+    images: ["/Fotos/foto18.png"],
+  },
+  {
+    id: "icia-infografias",
+    title: "ICIA",
+    discipline: "Diseño infografías",
+    client: "Instituto Canario de Investigaciones Agrarias (ICIA)",
+    summary:
+      "Infografías técnicas para divulgación científica agrícola, con una línea gráfica limpia y didáctica.",
+    paragraphs: [
+      "Diseño de infografías técnicas orientadas a la divulgación científica en el ámbito agrícola, con el objetivo de traducir información compleja en piezas visuales claras y accesibles.",
+      "Se trabajó una línea gráfica limpia y didáctica, apoyada en ilustraciones vectoriales y una jerarquía visual que facilita la comprensión rápida de los contenidos, como la cuantificación de daños en cultivos o la comparación de plagas en palmeras. El resultado son materiales visuales que combinan rigor técnico y claridad comunicativa, pensados para su uso tanto en contextos profesionales como divulgativos.",
+    ],
+    images: ["/Fotos/foto19.png", "/Fotos/foto20.png"],
+  },
+  {
+    id: "ciab-maquetacion",
+    title: "CIAB",
+    discipline: "Maquetación",
+    client: "Cabildo Insular de La Palma (CIAB)",
+    summary:
+      "Diseño editorial para documentos técnicos y formativos del ámbito agrícola y medioambiental, con foco en claridad y coherencia visual.",
+    paragraphs: [
+      "Maquetación de documentos técnicos y formativos vinculados al ámbito agrícola y medioambiental, con el objetivo de estructurar contenidos extensos de forma clara, ordenada y visualmente coherente.",
+      "Se desarrolló un sistema de diseño editorial que facilita la lectura mediante jerarquías tipográficas, uso estratégico del color y organización modular de la información, aplicado tanto a guías técnicas como a materiales formativos. El resultado son publicaciones profesionales, funcionales y accesibles, adaptadas a la comunicación institucional y a la transferencia de conocimiento en el sector agrario.",
+    ],
+    images: ["/Fotos/foto21.png", "/Fotos/foto22.png", "/Fotos/foto23.png", "/Fotos/foto24.png"],
+  },
+  {
+    id: "icia-maquetacion",
+    title: "ICIA",
+    discipline: "Maquetación",
+    client: "Instituto Canario de Investigaciones Agrarias (ICIA)",
+    summary:
+      "Sistema visual para presentaciones, eventos, informes técnicos, pósteres científicos y manuales aplicados al contexto agrícola e institucional.",
+    paragraphs: [
+      "Desarrollo de una identidad visual específica para presentaciones institucionales, aplicada al proyecto Alcorques Vivos. El objetivo fue unificar criterios gráficos y reforzar la coherencia y profesionalidad en la comunicación del Instituto en contextos oficiales. Se diseñó una línea visual completa, con paleta de color, recursos gráficos y composición en Adobe Illustrator, y posteriormente el sistema fue adaptado a Canva para facilitar su uso y escalabilidad por parte del equipo interno.",
+      "También se desarrolló el diseño gráfico y la maquetación de materiales para la Jornada Técnica de Biodiversidad, con una pieza visual basada en ilustración botánica, paleta natural y jerarquía clara de la información, incluyendo recursos como códigos QR para ampliar el acceso a contenidos adicionales.",
+      "El trabajo se extendió a informes técnicos orientados a la comunicación científica en el ámbito agrícola, incluyendo documentos específicos sobre trips en cultivos, donde se estructuraron textos, tablas, gráficos e imágenes con una retícula clara para facilitar consulta e interpretación.",
+      "Finalmente, se diseñaron y maquetaron un póster científico para congresos y jornadas especializadas y el manual científico “Diseño de áreas de biodiversidad en los agrosistemas de Canarias y su efecto sobre el control biológico de plagas”, orientado a la transferencia de conocimiento al sector agrícola.",
+    ],
+    images: [
+      "/Fotos/foto25.png",
+      "/Fotos/foto26.png",
+      "/Fotos/foto27.png",
+      "/Fotos/foto28.png",
+      "/Fotos/foto29.png",
+      "/Fotos/foto30.png",
+      "/Fotos/foto31.png",
+      "/Fotos/foto32.png",
+      "/Fotos/foto33.png",
+      "/Fotos/foto34.png",
+      "/Fotos/foto35.png",
+      "/Fotos/foto36.png",
+    ],
+  },
+  {
+    id: "logotipos",
+    title: "Diseño de logotipos",
+    discipline: "Diseño de identidad",
+    client: "Sorha, Clínica Marcos Estética Capilar, ProcesIA, ULL, Congreso de Nefrología Pediátrica de Tenerife y UNED",
+    summary:
+      "Desarrollo de identidades visuales y logotipos adaptados a contextos muy distintos, con foco en síntesis, versatilidad y memorabilidad.",
+    paragraphs: [
+      "Desarrollo de identidades visuales a través del diseño de logotipos adaptados a distintos proyectos y contextos. Se trabaja desde el concepto hasta la ejecución final, buscando soluciones gráficas simples, reconocibles y coherentes con los valores de cada marca.",
+      "Cada propuesta se construye a partir de una síntesis visual clara, cuidando la tipografía, el color y la forma para garantizar versatilidad y correcta aplicación en diferentes soportes. El resultado son identidades sólidas, memorables y funcionales.",
+    ],
+    images: [
+      "/Fotos/foto37.png",
+      "/Fotos/foto38.webp",
+      "/Fotos/foto39.png",
+      "/Fotos/foto40.png",
+      "/Fotos/foto41.png",
+      "/Fotos/foto42.png",
+    ],
+  },
+  {
+    id: "catavs",
+    title: "CATAVS",
+    discipline: "Diseño imagen gráfica",
+    client: "I Congreso Internacional Sordera, Discapacidad Auditiva y Sordoceguera (CATAVS)",
+    summary:
+      "Identidad gráfica completa del congreso, aplicada a cartelería, material promocional y web, con un sistema visual accesible y consistente.",
+    paragraphs: [
+      "Desarrollo completo de la identidad gráfica del congreso, aplicando un sistema visual coherente y accesible en todos los soportes. Se diseñó el logotipo y una línea gráfica basada en una paleta violeta, reforzando el carácter institucional y la temática del evento.",
+      "La identidad se trasladó a múltiples piezas: cartelería, flyers, roll-ups, acreditaciones, certificados y material promocional, manteniendo consistencia visual en todos los formatos. Además, se diseñó y desarrolló la web del congreso, asegurando una navegación clara, accesible y alineada con la imagen gráfica.",
+      "El resultado es una identidad sólida y reconocible que unifica toda la comunicación del evento, tanto en entorno físico como digital.",
+    ],
+    images: ["/Fotos/foto43.png", "/Fotos/foto44.png", "/Fotos/foto45.png", "/Fotos/foto46.png", "/Fotos/foto47.png", "/Fotos/foto48.png"],
+  },
+];
+
+const featuredProjects = projects.slice(0, 3);
 ---
 
 <Layout
   title="Proyectos | SQ Studio"
-  description="Proyectos y verticales de SQ Studio: branding, diseño gráfico, web y contenido visual."
+  description="Selección de proyectos de SQ Studio en cartelería, web, editorial, infografía e identidad visual."
   url="https://sqstudio.es/proyectos"
 >
   <section class="page-hero">
     <div class="site-shell page-hero__grid">
       <div class="space-y-6" data-reveal>
         <p class="eyebrow">Proyectos</p>
-        <h1 class="section-title text-[var(--sq-cream)]">Trabajo visual con estructura, tensión y una lectura más editorial.</h1>
+        <h1 class="section-title text-[var(--sq-cream)]">Portfolio aplicado a cartelería, web, editorial e identidad visual.</h1>
         <p class="section-copy">
-          Reordenamos el portfolio para que se entienda mejor qué hace SQ Studio y cómo se traduce eso
-          en piezas, experiencias y sistemas de marca más sólidos.
+          Una selección de proyectos desarrollados para instituciones, congresos, marcas y programas
+          formativos, manteniendo el mismo lenguaje visual y la estructura actual de la web.
         </p>
       </div>
       <div class="page-hero__panel" data-reveal>
         <div class="editorial-list">
           <div class="editorial-item">
-            <strong>Diseño</strong>
-            <p>Identidad, editorial, campañas y soportes con más intención compositiva.</p>
+            <strong>Cartelería</strong>
+            <p>Piezas para jornadas, eventos y campañas con jerarquía clara y adaptación a distintos soportes.</p>
           </div>
           <div class="editorial-item">
-            <strong>Web</strong>
-            <p>Interfaces que equilibran claridad, rendimiento y presencia premium.</p>
+            <strong>Editorial y maquetación</strong>
+            <p>Informes, manuales, presentaciones e infografías con foco en claridad técnica y lectura fluida.</p>
           </div>
           <div class="editorial-item">
-            <strong>Contenido</strong>
-            <p>Piezas para redes y lanzamientos que sostienen la percepción de la marca.</p>
+            <strong>Web e identidad</strong>
+            <p>Diseño digital y sistemas visuales que conectan presencia de marca y funcionalidad.</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="section-pad">
-    <div class="site-shell grid gap-6">
-      <a href="/diseño" class="media-card" data-reveal>
-        <img src={designImage.src} alt="Proyecto de diseño gráfico" loading="lazy" />
+  <section class="section-pad pt-0">
+    <div class="site-shell grid gap-6 md:grid-cols-[1.2fr_0.8fr]">
+      <a href={`#${featuredProjects[0].id}`} class="media-card" data-reveal>
+        <img src={featuredProjects[0].images[0]} alt={`${featuredProjects[0].title} - ${featuredProjects[0].discipline}`} loading="eager" />
         <div class="media-card__overlay">
-          <span class="media-card__label">Diseño gráfico</span>
-          <h2 class="media-card__title">Sistemas visuales y piezas con peso de marca.</h2>
+          <span class="media-card__label">{featuredProjects[0].discipline}</span>
+          <h2 class="media-card__title">{featuredProjects[0].title}</h2>
         </div>
       </a>
 
-      <div class="grid gap-6 md:grid-cols-2">
-        <a href="/web" class="media-card" data-reveal>
-          <img src={webImage.src} alt="Proyecto web" loading="lazy" />
-          <div class="media-card__overlay">
-            <span class="media-card__label">Desarrollo web</span>
-            <h2 class="media-card__title">Experiencias digitales con orden y presencia.</h2>
-          </div>
-        </a>
-
-        <a href="/redes" class="media-card" data-reveal>
-          <img src={socialImage.src} alt="Proyecto visual para redes" loading="lazy" />
-          <div class="media-card__overlay">
-            <span class="media-card__label">Contenido y campañas</span>
-            <h2 class="media-card__title">Narrativa visual adaptable a cada canal.</h2>
-          </div>
-        </a>
+      <div class="grid gap-6">
+        {featuredProjects.slice(1).map((project) => (
+          <a href={`#${project.id}`} class="media-card min-h-[13rem]" data-reveal>
+            <img src={project.images[0]} alt={`${project.title} - ${project.discipline}`} loading="lazy" />
+            <div class="media-card__overlay">
+              <span class="media-card__label">{project.discipline}</span>
+              <h2 class="media-card__title">{project.title}</h2>
+            </div>
+          </a>
+        ))}
       </div>
+    </div>
+  </section>
+
+  <section class="section-pad">
+    <div class="site-shell grid gap-6">
+      {projects.map((project) => (
+        <article id={project.id} class="section-frame p-6 md:p-8" data-reveal>
+          <div class="grid gap-8 md:grid-cols-[0.9fr_1.1fr] md:items-start">
+            <div class="space-y-5">
+              <p class="eyebrow">{project.discipline}</p>
+              <div class="space-y-3">
+                <h2 class="section-title text-[var(--sq-cream)]">{project.title}</h2>
+                <p class="section-copy max-w-none">
+                  <strong class="text-[var(--sq-cream)]">Client:</strong> {project.client}
+                </p>
+              </div>
+              <p class="section-copy">{project.summary}</p>
+            </div>
+
+            <div class="editorial-list">
+              {project.paragraphs.map((paragraph) => (
+                <div class="editorial-item">
+                  <p>{paragraph}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div class={`mt-8 grid gap-6 ${project.images.length === 1 ? "md:grid-cols-1" : project.images.length === 2 ? "md:grid-cols-2" : "md:grid-cols-2 xl:grid-cols-3"}`}>
+            {project.images.map((image, imageIndex) => (
+              <article class="media-card min-h-[18rem]">
+                <img src={image} alt={`${project.title} imagen ${imageIndex + 1}`} loading="lazy" />
+                <div class="media-card__overlay">
+                  <span class="media-card__label">{project.discipline}</span>
+                  <h3 class="media-card__title">{project.title}</h3>
+                </div>
+              </article>
+            ))}
+          </div>
+        </article>
+      ))}
     </div>
   </section>
 </Layout>
