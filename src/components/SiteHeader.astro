@@ -11,37 +11,33 @@ const links = [
 ---
 
 <header class="site-header" data-site-header>
-  <div class="site-shell">
-    <div class="site-header__inner">
-      <div class="flex items-center justify-between gap-6 px-5 py-4 md:px-6">
-        <a href="/" class="flex items-center gap-3 uppercase tracking-[0.2em]">
-          <span class="flex h-10 items-center">
-            <img src={logo.src} alt="SQ Studio" class="h-7 w-auto md:h-8" />
-          </span>
-          <span class="text-sm font-bold text-white"></span>
-        </a>
+  <div class="site-shell flex items-center justify-between gap-6 px-5 py-4 md:px-6">
+    <a href="/" class="flex items-center gap-3 uppercase tracking-[0.2em]">
+      <span class="flex h-10 items-center">
+        <img src={logo.src} alt="SQ Studio" class="h-7 w-auto md:h-8" />
+      </span>
+      <span class="text-sm font-bold text-white"></span>
+    </a>
 
-        <nav class="hidden items-center gap-8 text-sm uppercase tracking-[0.16em] text-[rgba(254,251,164,0.72)] md:flex">
+    <nav class="hidden items-center gap-8 text-sm uppercase tracking-[0.16em] text-[rgba(254,251,164,0.72)] md:flex">
+      {links.map((link) => (
+        <a href={link.href} class="transition hover:text-[var(--sq-gold)]">{link.label}</a>
+      ))}
+    </nav>
+
+    <a href="/contacto" class="button-secondary hidden md:inline-flex">Iniciar Proyecto</a>
+
+    <details class="relative md:hidden" data-nav-menu>
+      <summary class="list-none cursor-pointer rounded-full border border-[rgba(254,251,164,0.16)] px-4 py-2 text-xs font-bold uppercase tracking-[0.16em] text-[var(--sq-cream)]">
+        Menú
+      </summary>
+      <div class="absolute right-0 top-[calc(100%+0.75rem)] min-w-56 border border-[rgba(254,251,164,0.14)] bg-[rgba(2,19,23,0.95)] p-3 backdrop-blur">
+        <nav class="flex flex-col gap-2 text-sm uppercase tracking-[0.14em] text-[rgba(254,251,164,0.76)]">
           {links.map((link) => (
-            <a href={link.href} class="transition hover:text-[var(--sq-gold)]">{link.label}</a>
+            <a href={link.href} class="rounded px-3 py-2 transition hover:bg-[rgba(254,251,164,0.05)] hover:text-[var(--sq-gold)]">{link.label}</a>
           ))}
         </nav>
-
-        <a href="/contacto" class="button-secondary hidden md:inline-flex">Iniciar Proyecto</a>
-
-        <details class="relative md:hidden" data-nav-menu>
-          <summary class="list-none cursor-pointer rounded-full border border-[rgba(254,251,164,0.16)] px-4 py-2 text-xs font-bold uppercase tracking-[0.16em] text-[var(--sq-cream)]">
-            Menú
-          </summary>
-          <div class="absolute right-0 top-[calc(100%+0.75rem)] min-w-56 border border-[rgba(254,251,164,0.14)] bg-[rgba(2,19,23,0.95)] p-3 backdrop-blur">
-            <nav class="flex flex-col gap-2 text-sm uppercase tracking-[0.14em] text-[rgba(254,251,164,0.76)]">
-              {links.map((link) => (
-                <a href={link.href} class="rounded px-3 py-2 transition hover:bg-[rgba(254,251,164,0.05)] hover:text-[var(--sq-gold)]">{link.label}</a>
-              ))}
-            </nav>
-          </div>
-        </details>
       </div>
-    </div>
+    </details>
   </div>
 </header>

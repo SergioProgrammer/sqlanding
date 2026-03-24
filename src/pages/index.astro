@@ -71,12 +71,8 @@ const logos = [logo1, logo2, logo3, logo4, logo5, logo6, logo8, logo9, logo10, l
         <h1 class="display-title max-w-5xl text-[var(--sq-cream)]">
           Marcas y experiencias digitales con presencia premium.
         </h1>
-        <p class="section-copy max-w-2xl text-lg md:text-xl">
-          Convertimos identidad, diseño y tecnología en una experiencia visual más precisa,
-          contemporánea y estratégica. Menos ruido. Más autoridad.
-        </p>
+       
         <div class="flex flex-col gap-3 sm:flex-row">
-          <a href="/contacto" class="button-primary">Empezar proyecto</a>
           <a href="/proyectos" class="button-secondary">Ver trabajos</a>
         </div>
       </div>
@@ -148,7 +144,12 @@ const logos = [logo1, logo2, logo3, logo4, logo5, logo6, logo8, logo9, logo10, l
           <article
             class={`surface-card ${index === 0 || index === 5 ? "md:col-span-6" : "md:col-span-3"}`}
           >
-            <img src={service.icon} alt={service.title} class="mb-6 h-16 w-16 object-contain" loading="lazy" />
+            <img
+              src={service.icon}
+              alt={service.title}
+              class="service-icon mb-6 h-16 w-16 object-contain"
+              loading="lazy"
+            />
             <h3>{service.title}</h3>
             <p>{service.copy}</p>
           </article>

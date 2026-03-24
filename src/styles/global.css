@@ -240,16 +240,15 @@ img {
     backdrop-filter 180ms ease;
 }
 
-.site-header.is-scrolled .site-header__inner {
-  border-color: rgba(254, 251, 164, 0.18);
+.site-header.is-scrolled {
   background: rgba(2, 19, 23, 0.82);
   backdrop-filter: blur(18px);
+  border-bottom: 1px solid rgba(254, 251, 164, 0.12);
 }
 
-.site-header__inner {
-  margin-top: 1rem;
-  border: 1px solid transparent;
-  background: rgba(2, 19, 23, 0.38);
+.service-icon {
+  filter: brightness(0) invert(1);
+  opacity: 1;
 }
 
 .hero-panel {
