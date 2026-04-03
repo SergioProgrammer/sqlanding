@@ -1,0 +1,40 @@
+---
+interface Props {
+  eyebrow?: string;
+  title: string;
+  description: string;
+  primaryHref: string;
+  primaryLabel: string;
+  secondaryHref?: string;
+  secondaryLabel?: string;
+}
+
+const {
+  eyebrow = "Revisión",
+  title,
+  description,
+  primaryHref,
+  primaryLabel,
+  secondaryHref,
+  secondaryLabel,
+} = Astro.props;
+---
+
+<section class="section-pad">
+  <div class="site-shell">
+    <div class="section-frame lead-magnet p-6 md:p-8" data-reveal>
+      <div class="lead-magnet__copy">
+        <p class="eyebrow">{eyebrow}</p>
+        <h2 class="section-title mt-4 text-[var(--sq-cream)]">{title}</h2>
+        <p class="section-copy mt-6 max-w-3xl">{description}</p>
+      </div>
+
+      <div class="lead-magnet__actions mt-8 flex flex-col gap-3 sm:flex-row">
+        <a href={primaryHref} class="button-primary">{primaryLabel}</a>
+        {secondaryHref && secondaryLabel && (
+          <a href={secondaryHref} class="button-secondary">{secondaryLabel}</a>
+        )}
+      </div>
+    </div>
+  </div>
+</section>

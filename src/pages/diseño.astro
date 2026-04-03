@@ -1,78 +1,27 @@
 ---
 import Layout from "@/layouts/Layout.astro";
-import d1 from "@/assets/diseño/1.webp";
-import d2 from "@/assets/diseño/padel.png";
-import d3 from "@/assets/diseño/2.webp";
-import d4 from "@/assets/diseño/3.webp";
-import d5 from "@/assets/diseño/4.webp";
-import d6 from "@/assets/diseño/6.webp";
-import d7 from "@/assets/diseño/9.webp";
-import d8 from "@/assets/diseño/10.webp";
-import d9 from "@/assets/diseño/18.webp";
-import d10 from "@/assets/diseño/20.webp";
-import d11 from "@/assets/diseño/21.webp";
-
-const gallery = [
-  { image: d1.src, title: "Maquetación editorial", copy: "Piezas largas con claridad, ritmo y una lectura más cuidada." },
-  { image: d2.src, title: "Campaña visual", copy: "Mensajes directos, color controlado y jerarquía de impacto." },
-  { image: d3.src, title: "Sistema gráfico", copy: "Recursos preparados para escalar en múltiples soportes." },
-  { image: d4.src, title: "Rebranding", copy: "Actualización de percepción sin perder reconocimiento." },
-  { image: d5.src, title: "Soportes promocionales", copy: "Aplicaciones consistentes que elevan el valor percibido." },
-  { image: d6.src, title: "Branding visual", copy: "Dirección de arte alineada con el posicionamiento." },
-  { image: d7.src, title: "Piezas editoriales", copy: "Diseño limpio, legible y construido desde la composición." },
-  { image: d8.src, title: "Comunicación de marca", copy: "Un mismo tono visual aplicado con control y continuidad." },
-  { image: d9.src, title: "Packaging y campañas", copy: "Soluciones más aspiracionales y menos convencionales." },
-  { image: d10.src, title: "Presentación comercial", copy: "Narrativas visuales que hacen más claro lo importante." },
-  { image: d11.src, title: "Dirección creativa", copy: "Conjunto visual coherente, elegante y usable." },
-];
 ---
 
 <Layout
-  title="Diseño gráfico | SQ Studio"
-  description="Selección de diseño gráfico, branding y dirección de arte de SQ Studio."
+  title="Diseño gráfico profesional y dirección de arte | SQ Studio"
+  description="Diseño gráfico profesional, editorial y dirección de arte para marcas que necesitan piezas claras, memorables y coherentes."
   url="https://sqstudio.es/diseño"
+  canonical="https://sqstudio.es/diseno-grafico"
+  robots="noindex, follow"
+  redirectTo="/diseno-grafico"
 >
   <section class="page-hero">
-    <div class="site-shell page-hero__grid">
-      <div class="space-y-6" data-reveal>
-        <p class="eyebrow">Diseño gráfico</p>
-        <h1 class="section-title text-[var(--sq-cream)]">Diseño que se lee rápido, se recuerda mejor y sostiene la marca.</h1>
-        <p class="section-copy">
-          Esta galería se ha redirigido a un lenguaje más limpio y premium para que el trabajo respire,
-          gane jerarquía y deje de sentirse como una simple colección de tarjetas.
+    <div class="site-shell">
+      <div class="section-frame p-8 md:p-12" data-reveal>
+        <p class="eyebrow">Redirección</p>
+        <h1 class="section-title mt-6 text-[var(--sq-cream)]">Esta página se ha movido a diseño gráfico profesional.</h1>
+        <p class="section-copy mt-6">
+          Si no eres redirigido automáticamente, puedes continuar desde la nueva URL principal del servicio.
         </p>
-      </div>
-      <div class="page-hero__panel" data-reveal>
-        <div class="editorial-list">
-          <div class="editorial-item">
-            <strong>Editorial</strong>
-            <p>Maquetación, ritmo tipográfico y control de composición.</p>
-          </div>
-          <div class="editorial-item">
-            <strong>Branding</strong>
-            <p>Identidad, rebranding y aplicación coherente sobre múltiples piezas.</p>
-          </div>
-          <div class="editorial-item">
-            <strong>Campañas</strong>
-            <p>Visuales más claros, más tensos y más memorables.</p>
-          </div>
+        <div class="mt-8">
+          <a href="/diseno-grafico" class="button-primary">Ir a diseño gráfico profesional</a>
         </div>
       </div>
-    </div>
-  </section>
-
-  <section class="section-pad">
-    <div class="site-shell grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-      {gallery.map((item) => (
-        <article class="media-card min-h-[24rem]" data-reveal>
-          <img src={item.image} alt={item.title} loading="lazy" />
-          <div class="media-card__overlay">
-            <span class="media-card__label">SQ Studio</span>
-            <h2 class="media-card__title">{item.title}</h2>
-            <p class="mt-3 max-w-md text-sm leading-7 text-[rgba(254,251,164,0.72)]">{item.copy}</p>
-          </div>
-        </article>
-      ))}
     </div>
   </section>
 </Layout>

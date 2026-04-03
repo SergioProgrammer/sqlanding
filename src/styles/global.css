@@ -52,6 +52,18 @@ img {
   max-width: 100%;
 }
 
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 .skip-link {
   position: absolute;
   left: 1rem;
@@ -451,9 +463,50 @@ img {
   border-color: rgba(247, 155, 51, 0.36);
 }
 
+.article-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(18rem, 0.7fr);
+  gap: 2rem;
+  align-items: start;
+}
+
+.prose-panel {
+  border: 1px solid var(--sq-line);
+  background: rgba(254, 251, 164, 0.04);
+  padding: 1.75rem;
+}
+
+.prose-section + .prose-section {
+  margin-top: 2rem;
+}
+
+.prose-section h2 {
+  margin: 0 0 1rem;
+  color: var(--sq-cream);
+  font-size: clamp(1.6rem, 2.2vw, 2.4rem);
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.prose-section p {
+  margin: 0 0 1rem;
+  color: var(--sq-copy);
+  line-height: 1.85;
+  font-size: 1.02rem;
+}
+
+.lead-magnet {
+  display: grid;
+  gap: 1rem;
+  background:
+    linear-gradient(180deg, rgba(8, 42, 48, 0.92), rgba(2, 19, 23, 0.98)),
+    radial-gradient(circle at top right, rgba(251, 208, 74, 0.14), transparent 28%);
+}
+
 @media (max-width: 960px) {
   .hero-panel__grid,
   .page-hero__grid,
+  .article-grid,
   .grid-stats,
   .logo-row {
     grid-template-columns: 1fr;

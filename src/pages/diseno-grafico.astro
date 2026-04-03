@@ -1,0 +1,190 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import LeadMagnet from "@/components/LeadMagnet.astro";
+
+const items = [
+  {
+    title: "Qué hacemos",
+    copy: "Diseño gráfico profesional para campañas, editorial, soportes comerciales y sistemas visuales que deben mantener coherencia.",
+  },
+  {
+    title: "Para quién es",
+    copy: "Para marcas que necesitan materiales más claros, memorables y alineados con una estrategia de percepción más seria.",
+  },
+  {
+    title: "Cómo trabajamos",
+    copy: "Partimos del posicionamiento y bajamos esa lógica a piezas concretas con jerarquía, ritmo y continuidad visual.",
+  },
+];
+
+const faqs = [
+  {
+    question: "¿Qué tipo de piezas incluye este servicio?",
+    answer: "Puede incluir editorial, presentaciones, campañas, materiales institucionales, soportes promocionales y aplicaciones gráficas ligadas a la marca.",
+  },
+  {
+    question: "¿Sirve si ya tengo identidad visual?",
+    answer: "Sí. Muchas veces el problema no es la identidad en sí, sino cómo se aplica en piezas reales del día a día.",
+  },
+  {
+    question: "¿Se conecta con branding y web?",
+    answer: "Sí. El objetivo es que todo forme parte del mismo sistema y no se diseñe como capas independientes.",
+  },
+];
+
+const schemas = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: "Diseño gráfico profesional",
+    serviceType: "Diseño gráfico profesional",
+    provider: {
+      "@type": "ProfessionalService",
+      name: "SQ Studio",
+      url: "https://sqstudio.es/",
+    },
+    areaServed: "ES",
+    url: "https://sqstudio.es/diseno-grafico",
+    description: "Servicio de diseño gráfico profesional para marcas y empresas que necesitan campañas, piezas editoriales y soportes claros, consistentes y memorables.",
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Inicio", item: "https://sqstudio.es/" },
+      { "@type": "ListItem", position: 2, name: "Diseño gráfico", item: "https://sqstudio.es/diseno-grafico" },
+    ],
+  },
+];
+---
+
+<Layout
+  title="Diseño gráfico profesional para marcas y empresas | SQ Studio"
+  description="Servicio de diseño gráfico profesional para marcas y empresas que necesitan campañas, piezas editoriales y soportes claros, consistentes y memorables."
+  url="https://sqstudio.es/diseno-grafico"
+  schemas={schemas}
+>
+  <article>
+    <section class="page-hero">
+      <div class="site-shell page-hero__grid">
+        <div class="space-y-6" data-reveal>
+          <p class="eyebrow">Diseño gráfico</p>
+          <h1 class="section-title text-[var(--sq-cream)]">Diseño gráfico profesional para marcas que necesitan comunicar mejor.</h1>
+          <p class="section-copy">
+            Diseñamos piezas y sistemas gráficos que mejoran legibilidad, percepción y coherencia en campañas,
+            soportes editoriales y materiales comerciales.
+          </p>
+        </div>
+
+        <div class="page-hero__panel" data-reveal>
+          <div class="editorial-list">
+            {items.map((item) => (
+              <div class="editorial-item">
+                <strong>{item.title}</strong>
+                <p>{item.copy}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-pad">
+      <div class="site-shell space-y-10">
+        <div class="space-y-5" data-reveal>
+          <p class="eyebrow">Qué hacemos</p>
+          <h2 class="section-title text-[var(--sq-cream)]">Piezas con criterio visual y valor real para la marca.</h2>
+          <p class="section-copy">
+            No se trata de producir piezas aisladas. Se trata de construir un lenguaje gráfico que sostenga mejor
+            campañas, documentos, eventos y materiales de venta.
+          </p>
+        </div>
+
+        <div class="feature-grid" data-reveal>
+          <article class="surface-card md:col-span-4">
+            <h3>Editorial</h3>
+            <p>Maquetación, estructura y ritmo visual para contenidos largos o técnicos.</p>
+          </article>
+          <article class="surface-card md:col-span-4">
+            <h3>Campañas</h3>
+            <p>Piezas promocionales y visuales de lanzamiento con más claridad y mejor lectura.</p>
+          </article>
+          <article class="surface-card md:col-span-4">
+            <h3>Sistemas</h3>
+            <p>Recursos gráficos que permiten mantener coherencia entre soportes y equipos.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-pad">
+      <div class="site-shell grid gap-6 md:grid-cols-2">
+        <div class="section-frame p-6 md:p-8" data-reveal>
+          <p class="eyebrow">Para quién es</p>
+          <h2 class="section-title mt-4 text-[var(--sq-cream)]">Para marcas, instituciones y empresas que necesitan piezas mejor resueltas.</h2>
+          <p class="section-copy mt-6">
+            Encaja especialmente cuando el volumen de soportes crece y ya no basta con diseñar cada material
+            como un caso aislado sin sistema ni continuidad.
+          </p>
+        </div>
+
+        <div class="section-frame p-6 md:p-8" data-reveal>
+          <p class="eyebrow">Cómo trabajamos</p>
+          <div class="editorial-list mt-6">
+            <div class="editorial-item">
+              <strong>01 · Contexto</strong>
+              <p>Revisamos objetivo, público, canal y relación con el sistema de marca existente.</p>
+            </div>
+            <div class="editorial-item">
+              <strong>02 · Dirección</strong>
+              <p>Definimos jerarquía, composición y criterios visuales para cada tipología de pieza.</p>
+            </div>
+            <div class="editorial-item">
+              <strong>03 · Aplicación</strong>
+              <p>Trasladamos el sistema a soportes reales con una ejecución consistente y usable.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-pad">
+      <div class="site-shell grid gap-6 md:grid-cols-[1.1fr_0.9fr]">
+        <div class="section-frame p-6 md:p-8" data-reveal>
+          <p class="eyebrow">Resultados</p>
+          <h2 class="section-title mt-4 text-[var(--sq-cream)]">Más orden, más impacto visual y una percepción mucho más consistente.</h2>
+          <p class="section-copy mt-6">
+            Cuando el diseño gráfico responde a un criterio claro, las piezas comunican mejor, se reconocen antes
+            y refuerzan la autoridad de la marca en cada soporte.
+          </p>
+          <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+            <a href="/proyectos#catavs" class="button-secondary">Ver proyecto relacionado</a>
+            <a href="/branding" class="button-primary">Conectar con branding estratégico</a>
+          </div>
+        </div>
+
+        <div class="section-frame p-6 md:p-8" data-reveal>
+          <p class="eyebrow">FAQ</p>
+          <div class="editorial-list mt-6">
+            {faqs.map((faq) => (
+              <div class="editorial-item">
+                <strong>{faq.question}</strong>
+                <p>{faq.answer}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <LeadMagnet
+      eyebrow="Revisión visual"
+      title="Si necesitas diseño gráfico con más criterio, lo revisamos."
+      description="Podemos ayudarte a detectar qué piezas hacen falta, cómo ordenarlas y cómo conectarlas con la marca, la web y el resto del sistema visual."
+      primaryHref="/contacto"
+      primaryLabel="Solicitar revisión visual"
+      secondaryHref="/blog/disenador-vs-estudio-de-diseno"
+      secondaryLabel="Leer diseñador vs estudio de diseño"
+    />
+  </article>
+</Layout>

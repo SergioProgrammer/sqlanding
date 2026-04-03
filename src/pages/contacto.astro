@@ -1,20 +1,49 @@
 ---
 import Layout from "@/layouts/Layout.astro";
+
+const schemas = [
+  {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    name: "Contacto SQ Studio",
+    url: "https://sqstudio.es/contacto",
+    description: "Página de contacto de SQ Studio para branding estratégico, diseño gráfico y diseño web profesional.",
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Inicio",
+        item: "https://sqstudio.es/",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Contacto",
+        item: "https://sqstudio.es/contacto",
+      },
+    ],
+  },
+];
 ---
 
 <Layout
-  title="Contacto | SQ Studio"
-  description="Habla con SQ Studio sobre branding, diseño y desarrollo web con una dirección visual premium."
+  title="Contacto | Branding estratégico, diseño gráfico y web | SQ Studio"
+  description="Habla con SQ Studio sobre branding estratégico, diseño gráfico y diseño web profesional para proyectos en España y en remoto."
   url="https://sqstudio.es/contacto"
+  schemas={schemas}
 >
   <section class="page-hero">
     <div class="site-shell page-hero__grid">
       <div class="space-y-6" data-reveal>
         <p class="eyebrow">Contacto</p>
-        <h1 class="section-title text-[var(--sq-cream)]">Diseñemos una presencia más precisa, más fuerte y más contemporánea.</h1>
+        <h1 class="section-title text-[var(--sq-cream)]">Hablemos de tu branding, tu diseño web o tu sistema visual.</h1>
         <p class="section-copy">
-          Cuéntanos qué necesitas construir o rediseñar. Responderemos con foco estratégico, criterio visual
-          y una propuesta realista para llevar la marca a un estándar superior.
+          Cuéntanos qué necesitas construir o rediseñar. Trabajamos desde Santa Cruz de Tenerife para proyectos
+          en España y en remoto, con foco estratégico, criterio visual y una propuesta realista.
         </p>
       </div>
 

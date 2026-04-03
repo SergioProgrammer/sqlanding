@@ -9,6 +9,12 @@ interface Props {
   ogTitle?: string;
   ogDescription?: string;
   url?: string;
+  canonical?: string;
+  image?: string;
+  robots?: string;
+  ogType?: string;
+  schemas?: Record<string, unknown>[];
+  redirectTo?: string;
 }
 
 const {
@@ -16,8 +22,49 @@ const {
   description = "SQ Studio diseña marcas, webs y sistemas visuales con una dirección creativa precisa, contemporánea y orientada a conversión.",
   ogTitle = title,
   ogDescription = description,
-  url = "https://sqstudio.es/",
+  url = Astro.url ? new URL(Astro.url.pathname, Astro.site ?? "https://sqstudio.es").toString() : "https://sqstudio.es/",
+  canonical = url,
+  image = new URL("/og-image.svg", Astro.site ?? "https://sqstudio.es").toString(),
+  robots = "index, follow",
+  ogType = "website",
+  schemas = [],
+  redirectTo,
 } = Astro.props;
+
+const siteUrl = Astro.site?.toString() ?? "https://sqstudio.es";
+const baseSchemas = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: "SQ Studio",
+    url: siteUrl,
+    description,
+    inLanguage: "es-ES",
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    name: "SQ Studio",
+    url: siteUrl,
+    image,
+    description,
+    areaServed: ["ES", "Remote"],
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Santa Cruz de Tenerife",
+      addressCountry: "ES",
+    },
+    sameAs: ["https://instagram.com/sqstudiodm"],
+    serviceType: [
+      "Branding estratégico",
+      "Diseño web profesional",
+      "Desarrollo web a medida",
+      "Diseño gráfico profesional",
+    ],
+  },
+];
+
+const allSchemas = [...baseSchemas, ...schemas];
 ---
 
 <!doctype html>
@@ -26,18 +73,25 @@ const {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/svg+xml" href="/logo-stack.svg" />
+    <link rel="canonical" href={canonical} />
     <title>{title}</title>
     <meta name="description" content={description} />
+    <meta name="robots" content={robots} />
     <meta name="author" content="SQ Studio" />
+    {redirectTo && <meta http-equiv="refresh" content={`0;url=${redirectTo}`} />}
+    <meta property="og:site_name" content="SQ Studio" />
     <meta property="og:title" content={ogTitle} />
     <meta property="og:description" content={ogDescription} />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content={url} />
-    <meta property="og:image" content="https://sqstudio.es/og-image.jpg" />
+    <meta property="og:type" content={ogType} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={image} />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={ogTitle} />
     <meta name="twitter:description" content={ogDescription} />
-    <meta name="twitter:image" content="https://sqstudio.es/og-image.jpg" />
+    <meta name="twitter:image" content={image} />
+    {allSchemas.map((schema) => (
+      <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+    ))}
   </head>
   <body>
     <a class="skip-link" href="#content">Saltar al contenido</a>

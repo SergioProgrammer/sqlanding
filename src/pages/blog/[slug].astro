@@ -1,0 +1,159 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import LeadMagnet from "@/components/LeadMagnet.astro";
+import { blogPosts, getBlogPostBySlug } from "@/data/blog";
+
+export const getStaticPaths = () =>
+  blogPosts.map((post) => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+
+const { post } = Astro.props;
+const relatedPosts = blogPosts.filter((entry) => entry.slug !== post.slug).slice(0, 3);
+const currentPost = getBlogPostBySlug(post.slug) ?? post;
+const schemas = [
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: currentPost.title,
+    description: currentPost.description,
+    datePublished: currentPost.publishDate,
+    dateModified: currentPost.publishDate,
+    inLanguage: "es-ES",
+    mainEntityOfPage: `https://sqstudio.es/blog/${currentPost.slug}`,
+    author: {
+      "@type": "Organization",
+      name: "SQ Studio",
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "SQ Studio",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://sqstudio.es/logo-stack.svg",
+      },
+    },
+    image: "https://sqstudio.es/og-image.svg",
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Inicio", item: "https://sqstudio.es/" },
+      { "@type": "ListItem", position: 2, name: "Blog", item: "https://sqstudio.es/blog" },
+      { "@type": "ListItem", position: 3, name: currentPost.title, item: `https://sqstudio.es/blog/${currentPost.slug}` },
+    ],
+  },
+];
+---
+
+<Layout
+  title={`${currentPost.title} | SQ Studio`}
+  description={currentPost.description}
+  url={`https://sqstudio.es/blog/${currentPost.slug}`}
+  ogType="article"
+  schemas={schemas}
+>
+  <article>
+    <section class="page-hero">
+      <div class="site-shell page-hero__grid">
+        <div class="space-y-6" data-reveal>
+          <p class="eyebrow">{currentPost.eyebrow}</p>
+          <h1 class="section-title text-[var(--sq-cream)]">{currentPost.title}</h1>
+          <p class="section-copy">{currentPost.excerpt}</p>
+          <div class="flex gap-4 text-xs uppercase tracking-[0.14em] text-[rgba(254,251,164,0.52)]">
+            <span>{currentPost.readingTime}</span>
+            <span>{currentPost.publishDate}</span>
+          </div>
+        </div>
+
+        <div class="page-hero__panel" data-reveal>
+          <div class="editorial-list">
+            <div class="editorial-item">
+              <strong>Relacionado</strong>
+              <p>
+                <a href="/branding">Branding estratégico</a> · <a href="/diseno-web">Diseño web profesional</a> · <a href="/desarrollo-web">Desarrollo web a medida</a>
+              </p>
+            </div>
+            <div class="editorial-item">
+              <strong>Siguiente paso</strong>
+              <p>Si quieres revisar tu caso concreto, podemos aterrizarlo en una propuesta realista.</p>
+            </div>
+            <div class="editorial-item">
+              <strong>Acción</strong>
+              <p><a href={currentPost.ctaHref}>{currentPost.ctaLabel}</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-pad">
+      <div class="site-shell article-grid">
+        <div class="prose-panel" data-reveal>
+          {currentPost.sections.map((section) => (
+            <section class="prose-section">
+              <h2>{section.heading}</h2>
+              {section.paragraphs.map((paragraph) => (
+                <p>{paragraph}</p>
+              ))}
+            </section>
+          ))}
+        </div>
+
+        <aside class="section-frame p-6 md:p-8" data-reveal>
+          <p class="eyebrow">Relacionado</p>
+          <div class="editorial-list mt-6">
+            <div class="editorial-item">
+              <strong>Siguiente paso</strong>
+              <p>Si quieres aterrizar este tema a tu caso real, podemos revisarlo contigo.</p>
+            </div>
+            <div class="editorial-item">
+              <strong>Servicio</strong>
+              <p><a href={currentPost.ctaHref}>{currentPost.ctaLabel}</a></p>
+            </div>
+            <div class="editorial-item">
+              <strong>Archivo</strong>
+              <p><a href="/blog">Volver al blog</a></p>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <LeadMagnet
+      eyebrow="Revisión"
+      title="Si este tema toca un problema real de tu marca o tu web, podemos revisarlo."
+      description="Aterrizamos lo que has leído a tu contexto concreto para detectar qué frena la claridad, la percepción o la conversión y qué conviene priorizar."
+      primaryHref={currentPost.ctaHref}
+      primaryLabel={currentPost.ctaLabel}
+      secondaryHref="/contacto"
+      secondaryLabel="Hablar con SQ Studio"
+    />
+
+    <section class="section-pad">
+      <div class="site-shell space-y-8">
+        <div class="space-y-5" data-reveal>
+          <p class="eyebrow">Seguir leyendo</p>
+          <h2 class="section-title text-[var(--sq-cream)]">Más contenido relacionado con branding, web y captación.</h2>
+        </div>
+
+        <div class="grid gap-6 md:grid-cols-3">
+          {relatedPosts.map((entry) => (
+            <article class="surface-card" data-reveal>
+              <p class="media-card__label">{entry.eyebrow}</p>
+              <h3 class="mt-4 text-2xl font-bold uppercase leading-none tracking-[-0.05em] text-[var(--sq-cream)]">
+                <a href={`/blog/${entry.slug}`}>{entry.title}</a>
+              </h3>
+              <p class="mt-5">{entry.excerpt}</p>
+              <div class="mt-8">
+                <a href={`/blog/${entry.slug}`} class="button-secondary">Leer artículo</a>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  </article>
+</Layout>

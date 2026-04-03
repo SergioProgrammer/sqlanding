@@ -1,20 +1,62 @@
 ---
 import Layout from "@/layouts/Layout.astro";
+import LeadMagnet from "@/components/LeadMagnet.astro";
+
+const faqs = [
+  {
+    question: "¿Cuándo tiene sentido invertir en branding estratégico?",
+    answer: "Tiene sentido cuando la marca necesita diferenciarse mejor, ordenar su propuesta o dejar de depender de piezas inconexas.",
+  },
+  {
+    question: "¿Sirve si ya existe un logo?",
+    answer: "Sí. Muchas marcas no necesitan empezar de cero, sino construir un sistema alrededor de lo que ya tienen.",
+  },
+  {
+    question: "¿Se conecta con web y diseño gráfico?",
+    answer: "Sí. El branding debería funcionar como base para la web, las campañas y cualquier soporte futuro.",
+  },
+];
+
+const schemas = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: "Branding estratégico",
+    serviceType: "Branding estratégico",
+    provider: {
+      "@type": "ProfessionalService",
+      name: "SQ Studio",
+      url: "https://sqstudio.es/",
+    },
+    areaServed: "ES",
+    url: "https://sqstudio.es/branding",
+    description: "Servicio de branding estratégico para empresas y marcas que necesitan diferenciarse, ordenar su mensaje y sostener una presencia coherente.",
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Inicio", item: "https://sqstudio.es/" },
+      { "@type": "ListItem", position: 2, name: "Branding", item: "https://sqstudio.es/branding" },
+    ],
+  },
+];
 ---
 
 <Layout
-  title="Branding | SQ Studio"
-  description="Dirección de marca y branding estratégico para construir una presencia más consistente y premium."
+  title="Branding estratégico para empresas y marcas | SQ Studio"
+  description="Branding estratégico para empresas y marcas que necesitan diferenciarse, ordenar su mensaje y sostener una presencia coherente."
   url="https://sqstudio.es/branding"
+  schemas={schemas}
 >
   <section class="page-hero">
     <div class="site-shell page-hero__grid">
       <div class="space-y-6" data-reveal>
         <p class="eyebrow">Branding</p>
-        <h1 class="section-title text-[var(--sq-cream)]">Una marca fuerte no depende solo del logo. Depende del sistema completo.</h1>
+        <h1 class="section-title text-[var(--sq-cream)]">Branding estratégico para marcas que necesitan claridad, diferenciación y coherencia.</h1>
         <p class="section-copy">
-          El branding correcto mejora la percepción, ordena el discurso y hace que cada canal se sienta
-          parte de una misma dirección. Esa es la capa que ahora también estructura esta web.
+          El branding correcto mejora la percepción, ordena el discurso y hace que cada canal trabaje a favor
+          del negocio. No es solo identidad visual: es dirección, sistema y consistencia real.
         </p>
       </div>
       <div class="page-hero__panel" data-reveal>
@@ -37,31 +79,100 @@ import Layout from "@/layouts/Layout.astro";
   </section>
 
   <section class="section-pad">
-    <div class="site-shell grid gap-6 md:grid-cols-3">
-      <article class="surface-card" data-reveal>
-        <h2>Posicionamiento</h2>
-        <p>Definimos qué lugar quiere ocupar la marca y qué percepción debe construir para sostenerlo.</p>
-      </article>
-      <article class="surface-card" data-reveal>
-        <h2>Lenguaje visual</h2>
-        <p>Organizamos color, tipografía, composición y ritmo para que el sistema tenga continuidad real.</p>
-      </article>
-      <article class="surface-card" data-reveal>
-        <h2>Aplicación</h2>
-        <p>Trasladamos la identidad a web, piezas, redes y soportes con un estándar unificado.</p>
-      </article>
-    </div>
-
-    <div class="site-shell mt-6">
-      <div class="section-frame p-6 md:p-8" data-reveal>
-        <p class="eyebrow">Resultado</p>
-        <p class="mt-6 max-w-4xl text-3xl font-bold uppercase leading-none tracking-[-0.05em] text-[var(--sq-cream)] md:text-6xl">
-          Más claridad, más autoridad y una sensación de marca que ya no se queda corta frente a lo que ofrece.
+    <div class="site-shell space-y-10">
+      <div class="space-y-5" data-reveal>
+        <p class="eyebrow">Qué hacemos</p>
+        <h2 class="section-title text-[var(--sq-cream)]">Posicionamiento, sistema visual y aplicación real.</h2>
+        <p class="section-copy">
+          El trabajo de branding tiene que servir para que la marca se entienda mejor, se vea más sólida
+          y pueda mantener el mismo estándar en web, campañas y materiales comerciales.
         </p>
-        <div class="mt-8">
-          <a href="/contacto" class="button-primary">Quiero revisar mi marca</a>
+      </div>
+
+      <div class="grid gap-6 md:grid-cols-3">
+        <article class="surface-card" data-reveal>
+          <h3>Posicionamiento</h3>
+          <p>Definimos qué lugar quiere ocupar la marca y qué percepción debe construir para sostenerlo.</p>
+        </article>
+        <article class="surface-card" data-reveal>
+          <h3>Lenguaje visual</h3>
+          <p>Organizamos color, tipografía, composición y ritmo para que el sistema tenga continuidad real.</p>
+        </article>
+        <article class="surface-card" data-reveal>
+          <h3>Aplicación</h3>
+          <p>Trasladamos la identidad a web, piezas, redes y soportes con un estándar unificado.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-pad">
+    <div class="site-shell grid gap-6 md:grid-cols-2">
+      <div class="section-frame p-6 md:p-8" data-reveal>
+        <p class="eyebrow">Para quién es</p>
+        <h2 class="section-title mt-4 text-[var(--sq-cream)]">Para empresas que necesitan una marca más clara y más coherente.</h2>
+        <p class="section-copy mt-6">
+          Suele ser especialmente útil cuando el negocio quiere subir nivel, vender servicios con más valor
+          o dejar atrás una imagen demasiado genérica o inconsistente.
+        </p>
+      </div>
+
+      <div class="section-frame p-6 md:p-8" data-reveal>
+        <p class="eyebrow">Cómo trabajamos</p>
+        <div class="editorial-list mt-6">
+          <div class="editorial-item">
+            <strong>01 · Diagnóstico</strong>
+            <p>Revisamos percepción, contexto competitivo y puntos de fricción actuales.</p>
+          </div>
+          <div class="editorial-item">
+            <strong>02 · Sistema</strong>
+            <p>Construimos un marco visual y verbal que la marca pueda sostener con continuidad.</p>
+          </div>
+          <div class="editorial-item">
+            <strong>03 · Aplicación</strong>
+            <p>Llevamos la identidad a web, materiales y piezas reales para que no se quede en teoría.</p>
+          </div>
         </div>
       </div>
     </div>
   </section>
+
+  <section class="section-pad">
+    <div class="site-shell grid gap-6 md:grid-cols-[1.1fr_0.9fr]">
+      <div class="section-frame p-6 md:p-8" data-reveal>
+        <p class="eyebrow">Resultados</p>
+        <h2 class="section-title mt-4 text-[var(--sq-cream)]">Más claridad, más autoridad y una sensación de marca mejor construida.</h2>
+        <p class="section-copy mt-6">
+          El resultado no es solo visual. Es una marca que gana coherencia, transmite más control y puede crecer
+          sin perder tono ni dirección entre canales.
+        </p>
+        <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+          <a href="/proyectos#catavs" class="button-secondary">Ver proyecto de identidad visual</a>
+          <a href="/diseno-grafico" class="button-primary">Ver diseño gráfico profesional</a>
+        </div>
+      </div>
+
+      <div class="section-frame p-6 md:p-8" data-reveal>
+        <p class="eyebrow">FAQ</p>
+        <div class="editorial-list mt-6">
+          {faqs.map((faq) => (
+            <div class="editorial-item">
+              <strong>{faq.question}</strong>
+              <p>{faq.answer}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <LeadMagnet
+    eyebrow="Revisión de marca"
+    title="Si tu marca necesita un sistema más sólido, lo revisamos."
+    description="Podemos analizar posicionamiento, coherencia visual y aplicación real para definir si necesitas un ajuste puntual o un trabajo de branding más amplio."
+    primaryHref="/contacto"
+    primaryLabel="Quiero revisar mi marca"
+    secondaryHref="/blog/que-incluye-un-branding-completo"
+    secondaryLabel="Leer qué incluye un branding completo"
+  />
 </Layout>

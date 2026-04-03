@@ -1,0 +1,190 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import LeadMagnet from "@/components/LeadMagnet.astro";
+
+const points = [
+  {
+    title: "Qué hacemos",
+    copy: "Diseñamos webs profesionales con estructura clara, copy enfocado y una experiencia visual alineada con el posicionamiento de la marca.",
+  },
+  {
+    title: "Para quién es",
+    copy: "Para negocios que necesitan una web corporativa o comercial capaz de explicar mejor su propuesta y captar más contactos cualificados.",
+  },
+  {
+    title: "Cómo trabajamos",
+    copy: "Partimos de estrategia, ordenamos arquitectura y después construimos una interfaz sobria, rápida y preparada para crecer.",
+  },
+];
+
+const faqs = [
+  {
+    question: "¿Qué diferencia hay entre una web bonita y una web profesional?",
+    answer: "La web profesional no solo se ve bien. Ordena el mensaje, transmite confianza, mejora conversión y se construye con una base técnica más sólida.",
+  },
+  {
+    question: "¿Sirve para negocios de servicios?",
+    answer: "Sí. Es uno de los casos donde más valor aporta, porque la claridad de la propuesta y la percepción de marca influyen directamente en la captación.",
+  },
+  {
+    question: "¿Incluye SEO base?",
+    answer: "Sí. La estructura, los metadatos, la jerarquía semántica y el enlazado interno se plantean desde el inicio para no dejar el SEO como parche final.",
+  },
+];
+
+const schemas = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: "Diseño web profesional",
+    serviceType: "Diseño web profesional",
+    provider: {
+      "@type": "ProfessionalService",
+      name: "SQ Studio",
+      url: "https://sqstudio.es/",
+    },
+    areaServed: "ES",
+    url: "https://sqstudio.es/diseno-web",
+    description: "Servicio de diseño web profesional para marcas y negocios que necesitan una web clara, estratégica y orientada a captar leads.",
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Inicio", item: "https://sqstudio.es/" },
+      { "@type": "ListItem", position: 2, name: "Diseño web", item: "https://sqstudio.es/diseno-web" },
+    ],
+  },
+];
+---
+
+<Layout
+  title="Diseño web profesional para negocios y marcas | SQ Studio"
+  description="Servicio de diseño web profesional para marcas y negocios que necesitan una web clara, estratégica y orientada a captar leads."
+  url="https://sqstudio.es/diseno-web"
+  schemas={schemas}
+>
+  <article>
+    <section class="page-hero">
+      <div class="site-shell page-hero__grid">
+        <div class="space-y-6" data-reveal>
+          <p class="eyebrow">Diseño web</p>
+          <h1 class="section-title text-[var(--sq-cream)]">Diseño web profesional para marcas y negocios que necesitan vender con más claridad.</h1>
+          <p class="section-copy">
+            Diseñamos webs con estructura estratégica, jerarquía real y una capa visual capaz de reforzar
+            la percepción del negocio sin caer en soluciones genéricas.
+          </p>
+        </div>
+
+        <div class="page-hero__panel" data-reveal>
+          <div class="editorial-list">
+            {points.map((point) => (
+              <div class="editorial-item">
+                <strong>{point.title}</strong>
+                <p>{point.copy}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-pad">
+      <div class="site-shell space-y-10">
+        <div class="space-y-5" data-reveal>
+          <p class="eyebrow">Qué hacemos</p>
+          <h2 class="section-title text-[var(--sq-cream)]">Diseño web orientado a posicionamiento, confianza y captación.</h2>
+          <p class="section-copy">
+            No planteamos la web como un escaparate vacío. La planteamos como una pieza comercial que debe explicar,
+            diferenciar y llevar al usuario hacia una siguiente acción clara.
+          </p>
+        </div>
+
+        <div class="feature-grid" data-reveal>
+          <article class="surface-card md:col-span-4">
+            <h3>Arquitectura</h3>
+            <p>Ordenamos contenidos, jerarquías y recorridos para que la propuesta se entienda en segundos.</p>
+          </article>
+          <article class="surface-card md:col-span-4">
+            <h3>Interfaz</h3>
+            <p>Diseñamos una experiencia limpia, contemporánea y coherente con el nivel de la marca.</p>
+          </article>
+          <article class="surface-card md:col-span-4">
+            <h3>SEO base</h3>
+            <p>La estructura semántica y el enlazado interno se trabajan desde el diseño, no al final.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-pad">
+      <div class="site-shell grid gap-6 md:grid-cols-2">
+        <div class="section-frame p-6 md:p-8" data-reveal>
+          <p class="eyebrow">Para quién es</p>
+          <h2 class="section-title mt-4 text-[var(--sq-cream)]">Para empresas que ya no quieren una web correcta, sino una web útil.</h2>
+          <p class="section-copy mt-6">
+            Encaja especialmente en negocios de servicios, estudios, consultoras y marcas que necesitan dejar
+            de sonar genéricas y empezar a captar con mejor contexto.
+          </p>
+        </div>
+
+        <div class="section-frame p-6 md:p-8" data-reveal>
+          <p class="eyebrow">Cómo trabajamos</p>
+          <div class="editorial-list mt-6">
+            <div class="editorial-item">
+              <strong>01 · Diagnóstico</strong>
+              <p>Revisamos objetivo, competencia, puntos de fricción y capacidad real de captación.</p>
+            </div>
+            <div class="editorial-item">
+              <strong>02 · Estructura</strong>
+              <p>Definimos páginas, bloques, mensajes y CTAs con intención comercial y SEO.</p>
+            </div>
+            <div class="editorial-item">
+              <strong>03 · Diseño</strong>
+              <p>Construimos una experiencia visual sobria, sólida y alineada con la marca.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-pad">
+      <div class="site-shell grid gap-6 md:grid-cols-[1.1fr_0.9fr]">
+        <div class="section-frame p-6 md:p-8" data-reveal>
+          <p class="eyebrow">Resultados</p>
+          <h2 class="section-title mt-4 text-[var(--sq-cream)]">Más claridad, más percepción de valor y una base mejor preparada para captar.</h2>
+          <p class="section-copy mt-6">
+            Cuando la web está bien planteada, el negocio se explica mejor, el usuario entiende más rápido
+            y la marca deja de perder fuerza por falta de estructura.
+          </p>
+          <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+            <a href="/proyectos#entrena-facil" class="button-secondary">Ver proyecto relacionado</a>
+            <a href="/desarrollo-web" class="button-primary">Ver desarrollo web a medida</a>
+          </div>
+        </div>
+
+        <div class="section-frame p-6 md:p-8" data-reveal>
+          <p class="eyebrow">FAQ</p>
+          <div class="editorial-list mt-6">
+            {faqs.map((faq) => (
+              <div class="editorial-item">
+                <strong>{faq.question}</strong>
+                <p>{faq.answer}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <LeadMagnet
+      eyebrow="Auditoría web"
+      title="Si necesitas una web profesional, revisamos qué conviene construir."
+      description="Podemos analizar estructura, mensajes, jerarquía y puntos de conversión para definir si tu proyecto necesita diseño web, desarrollo a medida o una reorganización más profunda."
+      primaryHref="/contacto"
+      primaryLabel="Solicitar auditoría web"
+      secondaryHref="/blog/cuanto-cuesta-una-web-profesional"
+      secondaryLabel="Leer cuánto cuesta una web profesional"
+    />
+  </article>
+</Layout>

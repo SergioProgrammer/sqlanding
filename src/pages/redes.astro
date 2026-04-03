@@ -6,18 +6,18 @@ import d9 from "@/assets/diseño/18.webp";
 ---
 
 <Layout
-  title="Contenido y redes | SQ Studio"
-  description="Contenido visual, campañas y dirección creativa para canales digitales."
+  title="Contenido visual y diseño para redes | SQ Studio"
+  description="Contenido visual, campañas y diseño para redes orientados a mantener consistencia de marca y mejorar percepción digital."
   url="https://sqstudio.es/redes"
 >
   <section class="page-hero">
     <div class="site-shell page-hero__grid">
       <div class="space-y-6" data-reveal>
         <p class="eyebrow">Contenido visual</p>
-        <h1 class="section-title text-[var(--sq-cream)]">Campañas y piezas para redes con más consistencia y menos improvisación.</h1>
+        <h1 class="section-title text-[var(--sq-cream)]">Contenido visual y diseño para redes con criterio, consistencia y dirección de marca.</h1>
         <p class="section-copy">
           Aquí la prioridad es que el canal digital mantenga el mismo nivel que la web o la identidad:
-          una narrativa visual clara, elegante y sostenida en el tiempo.
+          una narrativa visual clara, elegante y sostenida en el tiempo para marcas que no quieren improvisar.
         </p>
       </div>
       <div class="page-hero__panel" data-reveal>
@@ -40,12 +40,13 @@ import d9 from "@/assets/diseño/18.webp";
   </section>
 
   <section class="section-pad">
+    <h2 class="sr-only">Servicios de contenido visual y campañas</h2>
     <div class="site-shell grid gap-6 md:grid-cols-[1fr_1fr]">
       <article class="media-card" data-reveal>
-        <img src={socialImage.src} alt="Contenido visual para redes" loading="lazy" />
+        <img src={socialImage.src} alt="Contenido visual para redes" loading="lazy" decoding="async" width={socialImage.width} height={socialImage.height} />
         <div class="media-card__overlay">
           <span class="media-card__label">Social</span>
-          <h2 class="media-card__title">Piezas más limpias, ritmo visual más fuerte.</h2>
+          <h3 class="media-card__title">Piezas más limpias, ritmo visual más fuerte.</h3>
         </div>
       </article>
       <article class="section-frame p-6 md:p-8" data-reveal>
@@ -69,19 +70,32 @@ import d9 from "@/assets/diseño/18.webp";
 
     <div class="site-shell mt-6 grid gap-6 md:grid-cols-2">
       <article class="media-card min-h-[22rem]" data-reveal>
-        <img src={d4.src} alt="Pieza visual de campaña" loading="lazy" />
+        <img src={d4.src} alt="Pieza visual de campaña" loading="lazy" decoding="async" width={d4.width} height={d4.height} />
         <div class="media-card__overlay">
           <span class="media-card__label">Campaña</span>
-          <h2 class="media-card__title">Dirección de arte unificada.</h2>
+          <h3 class="media-card__title">Dirección de arte unificada.</h3>
         </div>
       </article>
       <article class="media-card min-h-[22rem]" data-reveal>
-        <img src={d9.src} alt="Diseño para soportes digitales" loading="lazy" />
+        <img src={d9.src} alt="Diseño para soportes digitales" loading="lazy" decoding="async" width={d9.width} height={d9.height} />
         <div class="media-card__overlay">
           <span class="media-card__label">Aplicación</span>
-          <h2 class="media-card__title">Más continuidad entre marca, web y canal social.</h2>
+          <h3 class="media-card__title">Más continuidad entre marca, web y canal social.</h3>
         </div>
       </article>
+    </div>
+    <div class="site-shell mt-6">
+      <div class="section-frame p-6 md:p-8" data-reveal>
+        <p class="eyebrow">Conectar canales</p>
+        <p class="section-copy mt-6 max-w-3xl">
+          Cuando branding, web y contenido visual se diseñan por separado, la marca pierde fuerza. Aquí la idea es
+          conectar campañas y canales con el mismo sistema.
+        </p>
+        <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+          <a href="/branding" class="button-secondary">Ver branding estratégico</a>
+          <a href="/contacto" class="button-primary">Hablar sobre contenido visual</a>
+        </div>
+      </div>
     </div>
   </section>
 </Layout>

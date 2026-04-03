@@ -1,0 +1,25 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#02191E"/>
+  <circle cx="964" cy="84" r="220" fill="#F79B33" fill-opacity="0.18"/>
+  <circle cx="176" cy="568" r="248" fill="#FBD04A" fill-opacity="0.08"/>
+  <rect x="56" y="56" width="1088" height="518" rx="28" fill="url(#panel)" stroke="rgba(254,251,164,0.18)"/>
+  <path d="M120 150H328" stroke="#FBD04A" stroke-width="2"/>
+  <text x="120" y="132" fill="#FBD04A" font-family="Helvetica Neue, Arial, sans-serif" font-size="24" font-weight="700" letter-spacing="6">
+    SQ STUDIO
+  </text>
+  <text x="120" y="290" fill="#FEFBA4" font-family="Helvetica Neue, Arial, sans-serif" font-size="92" font-weight="700">
+    Diseño, branding
+  </text>
+  <text x="120" y="392" fill="#FEFBA4" font-family="Helvetica Neue, Arial, sans-serif" font-size="92" font-weight="700">
+    y experiencias web
+  </text>
+  <text x="120" y="486" fill="rgba(254,251,164,0.78)" font-family="Helvetica Neue, Arial, sans-serif" font-size="34">
+    Estudio creativo estratégico para marcas que quieren crecer con claridad.
+  </text>
+  <defs>
+    <linearGradient id="panel" x1="600" y1="56" x2="600" y2="574" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#082A30" stop-opacity="0.92"/>
+      <stop offset="1" stop-color="#021317" stop-opacity="0.98"/>
+    </linearGradient>
+  </defs>
+</svg>

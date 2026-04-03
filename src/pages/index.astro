@@ -1,5 +1,6 @@
 ---
 import Layout from "@/layouts/Layout.astro";
+import LeadMagnet from "@/components/LeadMagnet.astro";
 import heroImage from "@/assets/web.png";
 import icon1 from "@/assets/icon1.png";
 import icon2 from "@/assets/icon2.png";
@@ -22,32 +23,44 @@ const services = [
   {
     icon: icon1.src,
     title: "Branding estratégico",
-    copy: "Arquitectura de marca, narrativa visual y sistemas que sostienen el crecimiento.",
+    copy: "Arquitectura de marca, narrativa visual y sistemas que sostienen el crecimiento de empresas y marcas con ambición.",
+    href: "/branding",
+    cta: "Explorar branding estratégico",
   },
   {
     icon: icon2.src,
-    title: "Experiencias web",
-    copy: "Sitios rápidos, claros y con presencia. Diseño y desarrollo alineados desde el inicio.",
+    title: "Diseño web profesional",
+    copy: "Webs rápidas, claras y orientadas a conversión. Diseño y desarrollo alineados desde el inicio.",
+    href: "/diseno-web",
+    cta: "Ver diseño web profesional",
   },
   {
     icon: icon3.src,
-    title: "Editorial y campañas",
-    copy: "Piezas con criterio compositivo, jerarquía y una lectura más aspiracional que promocional.",
+    title: "Diseño gráfico y editorial",
+    copy: "Piezas con criterio compositivo, jerarquía clara y una lectura más estratégica que promocional.",
+    href: "/diseno-grafico",
+    cta: "Ver diseño gráfico",
   },
   {
     icon: icon4.src,
     title: "Dirección de arte",
-    copy: "Unificamos imagen, tono, ritmo y ejecución para que cada punto de contacto hable igual de bien.",
+    copy: "Unificamos imagen, tono, ritmo y ejecución para que cada punto de contacto refuerce el mismo posicionamiento.",
+    href: "/diseno-grafico",
+    cta: "Explorar dirección de arte",
   },
   {
     icon: icon5.src,
-    title: "Contenido visual",
-    copy: "Assets para lanzamientos, redes y campañas que elevan la percepción de marca.",
+    title: "Contenido visual para marcas",
+    copy: "Assets para lanzamientos, redes y campañas que elevan percepción, consistencia y reconocimiento.",
+    href: "/redes",
+    cta: "Ver contenido visual",
   },
   {
     icon: icon6.src,
     title: "Consultoría creativa",
-    copy: "Detectamos fricción, afinamos el mensaje y definimos qué conviene construir primero.",
+    copy: "Detectamos fricción, afinamos el mensaje y definimos qué conviene construir primero para vender mejor.",
+    href: "/contacto",
+    cta: "Solicitar una revisión",
   },
 ];
 
@@ -78,23 +91,36 @@ const featuredProjects = [
 ---
 
 <Layout
-  title="SQ Studio | Estudio creativo y digital premium"
-  description="SQ Studio diseña marcas, webs y sistemas visuales con una estética contemporánea, precisa y orientada a negocio."
+  title="SQ Studio | Diseño web profesional, branding estratégico y diseño gráfico"
+  description="SQ Studio es un estudio estratégico de branding, diseño gráfico y diseño web profesional para marcas y negocios en España."
 >
   <section class="hero-panel">
     <div class="hero-panel__media">
-      <img src={heroImage.src} alt="Pantalla de proyecto digital de SQ Studio" loading="eager" />
+      <img
+        src={heroImage.src}
+        alt="Pantalla de proyecto digital de SQ Studio"
+        loading="eager"
+        fetchpriority="high"
+        decoding="async"
+        width={heroImage.width}
+        height={heroImage.height}
+      />
     </div>
 
     <div class="site-shell hero-panel__grid">
       <div class="space-y-8" data-reveal>
-        <p class="display-kicker">SQ Studio · Diseño, branding, web</p>
+        <p class="display-kicker">SQ Studio · Branding estratégico, diseño web y diseño gráfico</p>
         <h1 class="display-title max-w-5xl text-[var(--sq-cream)]">
-          Marcas y experiencias digitales con presencia premium.
+          Estudio estratégico de branding, diseño gráfico y diseño web profesional.
         </h1>
+        <p class="section-copy max-w-2xl">
+          Ayudamos a marcas y negocios en España a ordenar su posicionamiento, mejorar su presencia digital
+          y convertir mejor con branding estratégico, diseño gráfico y desarrollo web a medida.
+        </p>
        
         <div class="flex flex-col gap-3 sm:flex-row">
-          <a href="/proyectos" class="button-secondary">Ver trabajos</a>
+          <a href="/contacto" class="button-primary">Solicitar una auditoría</a>
+          <a href="/proyectos" class="button-secondary">Ver proyectos</a>
         </div>
       </div>
 
@@ -102,16 +128,16 @@ const featuredProjects = [
         <p class="eyebrow">Qué hacemos</p>
         <div class="editorial-list mt-6">
           <div class="editorial-item">
-            <strong>Diseño con criterio</strong>
-            <p>Composición limpia, jerarquía clara y dirección de arte coherente en cada soporte.</p>
+            <strong>Branding estratégico</strong>
+            <p>Definimos posicionamiento, narrativa y sistema visual para que la marca gane claridad y autoridad.</p>
           </div>
           <div class="editorial-item">
-            <strong>Web con intención</strong>
-            <p>Interfaces rápidas, accesibles y pensadas para convertir mejor sin perder sofisticación.</p>
+            <strong>Diseño web profesional</strong>
+            <p>Diseñamos y desarrollamos webs rápidas, accesibles y orientadas a captación sin perder sofisticación.</p>
           </div>
           <div class="editorial-item">
-            <strong>Marca que se sostiene</strong>
-            <p>Sistemas visuales preparados para crecer, no piezas aisladas que caducan rápido.</p>
+            <strong>Diseño gráfico que sostiene negocio</strong>
+            <p>Creamos piezas, campañas y soportes que refuerzan percepción, consistencia y decisión de compra.</p>
           </div>
         </div>
       </div>
@@ -122,20 +148,20 @@ const featuredProjects = [
     <div class="site-shell grid gap-8 md:grid-cols-[0.9fr_1.1fr] md:items-end">
       <div class="space-y-5" data-reveal>
         <p class="eyebrow">Confianza</p>
-        <h2 class="section-title text-[var(--sq-cream)]">Trabajamos para marcas que necesitan elevar percepción y claridad.</h2>
+        <h2 class="section-title text-[var(--sq-cream)]">Trabajamos para marcas y negocios que necesitan vender con más claridad y mejor percepción.</h2>
       </div>
       <div class="grid-stats" data-reveal>
         <div class="stat-card">
           <strong>Branding</strong>
-          <span>Sistemas visuales consistentes para marcas nuevas o en fase de salto.</span>
+          <span>Branding estratégico para empresas que necesitan una marca más sólida y diferenciada.</span>
         </div>
         <div class="stat-card">
           <strong>Web</strong>
-          <span>Diseño y desarrollo en una misma mesa para evitar soluciones a medias.</span>
+          <span>Diseño web profesional y desarrollo web a medida en una misma mesa.</span>
         </div>
         <div class="stat-card">
           <strong>Contenido</strong>
-          <span>Activos editoriales, campañas y soportes que mantienen el mismo nivel.</span>
+          <span>Diseño gráfico, campañas y activos editoriales con criterio visual y foco comercial.</span>
         </div>
       </div>
     </div>
@@ -149,14 +175,24 @@ const featuredProjects = [
     </div>
   </section>
 
+  <LeadMagnet
+    eyebrow="Auditoría"
+    title="Si quieres detectar qué está frenando tu marca o tu web, podemos revisarlo."
+    description="Analizamos estructura, claridad del mensaje, percepción visual y puntos de fricción para ayudarte a decidir qué conviene mejorar primero."
+    primaryHref="/contacto"
+    primaryLabel="Solicitar una auditoría"
+    secondaryHref="/diseno-web"
+    secondaryLabel="Ver diseño web profesional"
+  />
+
   <section class="section-pad">
     <div class="site-shell space-y-10">
       <div class="space-y-5" data-reveal>
         <p class="eyebrow">Servicios</p>
-        <h2 class="section-title text-[var(--sq-cream)]">Una oferta compacta, visual y ejecutada con rigor.</h2>
+        <h2 class="section-title text-[var(--sq-cream)]">Servicios de branding, diseño gráfico y desarrollo web orientados a resultados.</h2>
         <p class="section-copy">
-          Reestructuramos la propuesta de SQ Studio para que se sienta menos “agencia con cajas” y
-          más estudio con dirección, foco y un estándar visual alto.
+          SQ Studio opera como estudio estratégico para marcas que necesitan una presencia más clara,
+          una web mejor enfocada y un sistema visual capaz de sostener crecimiento real.
         </p>
       </div>
 
@@ -173,6 +209,9 @@ const featuredProjects = [
             />
             <h3>{service.title}</h3>
             <p>{service.copy}</p>
+            <a href={service.href} class="mt-6 inline-flex text-sm font-bold uppercase tracking-[0.12em] text-[var(--sq-gold)] transition hover:text-[var(--sq-orange)]">
+              {service.cta}
+            </a>
           </article>
         ))}
       </div>
@@ -184,7 +223,7 @@ const featuredProjects = [
       <div class="grid gap-6 md:grid-cols-[0.8fr_1.2fr] md:items-end">
         <div class="space-y-5" data-reveal>
           <p class="eyebrow">Proyectos</p>
-          <h2 class="section-title text-[var(--sq-cream)]">Proyectos reales en cartelería, web, editorial e identidad visual.</h2>
+          <h2 class="section-title text-[var(--sq-cream)]">Proyectos reales de diseño web, branding estratégico y diseño gráfico.</h2>
         </div>
         <p class="section-copy" data-reveal>
           La selección reúne trabajos para instituciones, congresos, marcas y programas formativos,
@@ -257,10 +296,10 @@ const featuredProjects = [
     <div class="site-shell grid gap-8 md:grid-cols-[0.9fr_1.1fr] md:items-start">
       <div class="space-y-5" data-reveal>
         <p class="eyebrow">Contacto</p>
-        <h2 class="section-title text-[var(--sq-cream)]">Si tu marca necesita verse al nivel de tu ambición, hablemos.</h2>
+        <h2 class="section-title text-[var(--sq-cream)]">Si necesitas branding estratégico o una web profesional, hablemos.</h2>
         <p class="section-copy">
-          Cuéntanos en qué punto estás y qué percepción quieres construir. La respuesta debe sentirse
-          más precisa, más premium y más coherente en todos tus canales.
+          Cuéntanos qué quieres mejorar: marca, diseño gráfico o desarrollo web. Trabajamos desde Santa Cruz de Tenerife
+          para proyectos en España y en remoto.
         </p>
       </div>
 
