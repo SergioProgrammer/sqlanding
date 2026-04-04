@@ -1,5 +1,6 @@
 ---
 import "../styles/global.css";
+import CookieBanner from "../components/CookieBanner.astro";
 import SiteHeader from "../components/SiteHeader.astro";
 import SiteFooter from "../components/SiteFooter.astro";
 
@@ -100,6 +101,7 @@ const allSchemas = [...baseSchemas, ...schemas];
       <slot />
     </main>
     <SiteFooter />
+    <CookieBanner />
     <script is:inline>
       const observer = new IntersectionObserver(
         (entries) => {
@@ -128,6 +130,86 @@ const allSchemas = [...baseSchemas, ...schemas];
         link.addEventListener("click", () => {
           link.closest("details")?.removeAttribute("open");
         });
+      });
+
+      const cookieBanner = document.querySelector("[data-cookie-banner]");
+      const acceptAllCookiesButton = document.querySelector("[data-cookie-accept-all]");
+      const saveCookiesButton = document.querySelector("[data-cookie-save]");
+      const rejectCookiesButton = document.querySelector("[data-cookie-reject]");
+      const cookieOptions = document.querySelectorAll("[data-cookie-option]");
+      const cookieConsentKey = "sqstudio-cookie-consent";
+      const defaultConsent = {
+        necessary: true,
+        preferences: false,
+        analytics: false,
+        marketing: false,
+      };
+
+      const hideCookieBanner = () => {
+        if (!cookieBanner) return;
+        cookieBanner.setAttribute("hidden", "");
+      };
+
+      const showCookieBanner = () => {
+        if (!cookieBanner) return;
+        cookieBanner.removeAttribute("hidden");
+      };
+
+      const applyConsentToInputs = (consent) => {
+        cookieOptions.forEach((option) => {
+          const key = option.getAttribute("data-cookie-option");
+          if (!key) return;
+          option.checked = Boolean(consent[key]);
+        });
+      };
+
+      const getConsentFromInputs = () => ({
+        necessary: true,
+        preferences: Boolean(document.querySelector('[data-cookie-option="preferences"]')?.checked),
+        analytics: Boolean(document.querySelector('[data-cookie-option="analytics"]')?.checked),
+        marketing: Boolean(document.querySelector('[data-cookie-option="marketing"]')?.checked),
+      });
+
+      const persistConsent = (consent) => {
+        try {
+          window.localStorage.setItem(cookieConsentKey, JSON.stringify(consent));
+        } catch {}
+      };
+
+      try {
+        const storedConsent = window.localStorage.getItem(cookieConsentKey);
+        if (!storedConsent) {
+          applyConsentToInputs(defaultConsent);
+          showCookieBanner();
+        } else {
+          applyConsentToInputs({ ...defaultConsent, ...JSON.parse(storedConsent) });
+        }
+      } catch {
+        applyConsentToInputs(defaultConsent);
+        showCookieBanner();
+      }
+
+      acceptAllCookiesButton?.addEventListener("click", () => {
+        const consent = {
+          necessary: true,
+          preferences: true,
+          analytics: true,
+          marketing: true,
+        };
+        applyConsentToInputs(consent);
+        persistConsent(consent);
+        hideCookieBanner();
+      });
+
+      saveCookiesButton?.addEventListener("click", () => {
+        persistConsent(getConsentFromInputs());
+        hideCookieBanner();
+      });
+
+      rejectCookiesButton?.addEventListener("click", () => {
+        applyConsentToInputs(defaultConsent);
+        persistConsent(defaultConsent);
+        hideCookieBanner();
       });
     </script>
   </body>

@@ -1,341 +1,232 @@
-# Plan SEO y Captación para `sqstudio.es`
+# Plan de Cookies y Consentimiento Real para `sqstudio.es`
 
 ## Objetivo
-Transformar la web actual en una máquina de captación de leads, sin alterar la estética, mediante:
+Pasar del banner actual, que hoy funciona como capa visual y guarda preferencias en `localStorage`, a un sistema real de consentimiento que controle de verdad qué scripts se cargan, qué datos se recogen y bajo qué categorías se activan.
 
-- SEO técnico sólido
-- Arquitectura orientada a búsqueda
-- Landings específicas de alta intención
-- Blog para captación de tráfico
-- Interlinking estratégico
-- Mejora de conversión
+## Estado actual
+- Ya existe banner de cookies con categorías:
+  - técnicas
+  - preferencias
+  - analítica
+  - marketing
+- Ya existen páginas legales:
+  - `/politica-cookies`
+  - `/politica-privacidad`
+  - `/aviso-legal`
+- El consentimiento se guarda en `localStorage`.
+- El sistema todavía no bloquea ni habilita herramientas reales de terceros.
+- No hay analítica ni marketing conectados a partir del consentimiento.
+- No existe reapertura del panel de cookies desde un botón persistente.
 
-## 1. Estrategia SEO (base crítica)
+## Problema actual
+Aunque el usuario puede elegir categorías, esa elección todavía no controla nada real. Ahora mismo:
 
-### 1.1 Keywords objetivo
-Core (intención comercial alta)
-- diseño web profesional
-- desarrollo web a medida
-- branding estratégico
-- estudio de diseño gráfico
-Long-tail (oportunidad real)
-- cuánto cuesta una web profesional
-- branding para empresas
-- diseño web para negocios
-- estudio de diseño en España
+- no se cargan scripts en función del consentimiento
+- no se bloquean etiquetas de analítica o marketing
+- no se actualiza ningún estado para Google Consent Mode
+- no hay integración con GTM, GA4, Meta Pixel u otras herramientas
 
-### 1.2 Intención de búsqueda
-- Comercial -> páginas de servicio
-- Informacional -> blog
-- Navegacional -> marca
+Conclusión:
+el sistema es visualmente correcto, pero todavía no funciona como gestor real de consentimiento.
 
-### 1.3 Posicionamiento estratégico
-SQ Studio no debe posicionarse como:
+## Objetivo técnico real
+Conseguir que:
 
-- diseñador freelance
-- portfolio visual
+- las cookies técnicas sigan activas por defecto
+- las categorías opcionales solo se activen tras consentimiento explícito
+- ningún script de analítica o marketing cargue antes de aceptar
+- el usuario pueda reabrir y modificar su decisión cuando quiera
+- el sitio quede preparado para medir tráfico, conversiones y campañas de forma controlada
 
-Debe posicionarse como:
+## Arquitectura recomendada
 
-- estudio estratégico
-- partner de negocio
-- diseño orientado a resultados
+### 1. Fuente única de consentimiento
+Crear una utilidad centralizada para:
 
-Esto debe reflejarse en:
+- leer consentimiento guardado
+- guardarlo de forma consistente
+- actualizarlo
+- consultar si una categoría está permitida
 
-- H1
-- copy de home
-- metadatos
+Ejemplo de estructura:
 
-## 2. Estado actual detectado
-- Metadatos básicos presentes.
-- Sin canonical global.
-- Sin `robots.txt`.
-- Sin sitemap.
-- Sin `JSON-LD`.
-- Sin control de indexación en páginas como `/gracias`.
-- Arquitectura débil a nivel SEO.
-- Falta intención de búsqueda en headings.
-- No hay estrategia de contenido.
-
-Diagnóstico técnico actual del proyecto:
-- [`src/layouts/Layout.astro`](/Users/sergiosandovalpacheco/Desktop/sqlanding/src/layouts/Layout.astro) ya incluye `title`, `description`, Open Graph y Twitter Cards, pero la capa SEO sigue siendo básica.
-- [`astro.config.mjs`](/Users/sergiosandovalpacheco/Desktop/sqlanding/astro.config.mjs) no define `site`, así que la base para canonical/sitemap está incompleta.
-- No existe `public/robots.txt`.
-- No existe sitemap generado.
-- No hay schemas de `schema.org`.
-- La imagen social configurada apunta a `https://sqstudio.es/og-image.jpg`, pero ese archivo no está en `public/`.
-- [`src/pages/gracias.astro`](/Users/sergiosandovalpacheco/Desktop/sqlanding/src/pages/gracias.astro) y probablemente [`src/pages/working.astro`](/Users/sergiosandovalpacheco/Desktop/sqlanding/src/pages/working.astro) no deberían indexarse.
-
-## 3. Prioridad 1 · SEO técnico base
-- Definir `site` en [`astro.config.mjs`](/Users/sergiosandovalpacheco/Desktop/sqlanding/astro.config.mjs).
-- Implementar sitemap automático.
-- Crear `robots.txt`.
-- Añadir canonical global.
-- Añadir control de robots por página.
-- Marcar `/gracias` como `noindex, follow`.
-- Revisar `/working` y no indexarla si es temporal.
-- Añadir Open Graph completo y consistente.
-- Crear imagen OG real en `public/`.
-
-## 4. Prioridad 2 · SEO semántico
-- Alinear `title`, `description` y `H1` con keywords reales.
-- Garantizar estructura:
-- 1 H1
-- H2 por secciones
-- H3 de apoyo
-- Mejorar el copy de home para responder con claridad:
-- qué haces
-- para quién
-- dónde operas
-- Introducir keywords de forma natural.
-- Añadir contexto de servicios y propuesta de valor.
-
-Aplicación directa al proyecto actual:
-- Revisar [`src/pages/index.astro`](/Users/sergiosandovalpacheco/Desktop/sqlanding/src/pages/index.astro) para que la home deje más claro que SQ Studio vende servicios estratégicos y no solo una presencia visual premium.
-- Replantear titulares y metadatos de [`src/pages/web.astro`](/Users/sergiosandovalpacheco/Desktop/sqlanding/src/pages/web.astro), [`src/pages/branding.astro`](/Users/sergiosandovalpacheco/Desktop/sqlanding/src/pages/branding.astro), [`src/pages/diseño.astro`](/Users/sergiosandovalpacheco/Desktop/sqlanding/src/pages/diseño.astro) y [`src/pages/redes.astro`](/Users/sergiosandovalpacheco/Desktop/sqlanding/src/pages/redes.astro) para acercarlos a intención comercial real.
-
-## 5. Prioridad 3 · Arquitectura SEO (clave)
-
-### 5.1 Crear landings específicas
-Obligatorias:
-
-- `/diseno-web`
-- `/desarrollo-web`
-- `/branding`
-- `/diseno-grafico`
-
-Opcionales:
-
-- `/diseno-web-espana`
-- `/estudio-diseno`
-
-Nota para este proyecto:
-- Ya existe [`src/pages/branding.astro`](/Users/sergiosandovalpacheco/Desktop/sqlanding/src/pages/branding.astro), así que la decisión es si se reutiliza esa URL como landing principal o se rehace su enfoque sin cambiar el diseño base.
-- Conviene evitar duplicidad semántica entre `/web` y `/diseno-web` o entre `/diseño` y `/diseno-grafico`. Hay que decidir qué URL será principal y cuál redirige o se reconvierte.
-
-### 5.2 Estructura de cada landing
-```html
-<article>
-  <h1>Servicio + keyword</h1>
-
-  <section>
-    <h2>Qué hacemos</h2>
-  </section>
-
-  <section>
-    <h2>Para quién es</h2>
-  </section>
-
-  <section>
-    <h2>Cómo trabajamos</h2>
-  </section>
-
-  <section>
-    <h2>Resultados</h2>
-  </section>
-
-  <section>
-    <h2>FAQ</h2>
-  </section>
-
-  <section>
-    <h2>CTA</h2>
-  </section>
-</article>
+```ts
+type CookieConsent = {
+  necessary: true;
+  preferences: boolean;
+  analytics: boolean;
+  marketing: boolean;
+};
 ```
 
+Funciones recomendadas:
+
+- `getCookieConsent()`
+- `setCookieConsent(consent)`
+- `hasConsent(category)`
+- `openCookiePreferences()`
+
+## 2. Bloqueo real de scripts
+No cargar herramientas de terceros directamente en el layout si dependen de consentimiento.
+
+En su lugar:
+
+- comprobar primero el consentimiento
+- inyectar scripts solo si la categoría correspondiente está aceptada
+
+Ejemplo:
+
+```js
+const consent = getCookieConsent();
+
+if (consent.analytics) {
+  loadGoogleAnalytics();
+}
+
+if (consent.marketing) {
+  loadMetaPixel();
+}
+```
+
+## 3. Herramientas previstas
+
+### Analítica
+- Google Analytics 4
+- Microsoft Clarity
+
+### Gestión de etiquetas
+- Google Tag Manager
+
+### Marketing
+- Meta Pixel
+- Google Ads conversion tracking
+- otras etiquetas futuras, si se añaden
+
+## 4. Implementación recomendada por capas
+
+### Fase 1 · Infraestructura de consentimiento
+- Extraer la lógica del banner actual a una utilidad reusable.
+- Mantener `localStorage` como base inicial.
+- Añadir eventos custom del navegador para avisar cuando cambia el consentimiento.
+- Crear un botón persistente en footer tipo `Configurar cookies`.
+- Permitir reabrir el panel y cambiar la selección.
+
+### Fase 2 · Google Tag Manager
+- Integrar GTM como capa de gestión central.
+- No disparar etiquetas opcionales hasta que el consentimiento lo permita.
+- Preparar el sitio para centralizar futuras herramientas sin tocar el layout cada vez.
+
+### Fase 3 · Consent Mode v2
+- Implementar Google Consent Mode v2.
+- Definir estado por defecto denegado para categorías opcionales.
+- Actualizar estado cuando el usuario acepte o rechace.
+- Alinear especialmente:
+  - `analytics_storage`
+  - `ad_storage`
+  - `ad_user_data`
+  - `ad_personalization`
+
+### Fase 4 · Herramientas reales
+- Cargar GA4 solo si `analytics = true`.
+- Cargar Clarity solo si `analytics = true`.
+- Cargar Meta Pixel solo si `marketing = true`.
+- Cargar Google Ads solo si `marketing = true`.
+
+### Fase 5 · Eventos
+Medir al menos:
+
+- envío de formulario
+- clic en CTA principal
+- clic en `Solicitar auditoría`
+- navegación a páginas de servicio
+- scroll profundo en artículos del blog
+- visualización de `/gracias`
+
+## 5. Requisitos legales mínimos
+Para un uso razonable en España / UE:
+
+- no cargar analítica ni marketing antes de aceptación
+- permitir rechazar tan fácil como aceptar
+- permitir cambiar preferencias después
+- explicar claramente categorías y finalidad
+- mantener política de cookies accesible
+
+## 6. Qué no hacer
+- No cargar GA4 por defecto “y ya preguntar después”.
+- No disparar Meta Pixel antes de consentimiento de marketing.
+- No esconder el botón de rechazo.
+- No dejar el panel sin una forma posterior de reconfiguración.
+- No mezclar cookies técnicas con marketing en una única aceptación obligatoria.
+
+## 7. Estructura técnica sugerida
+
+### Archivos recomendados
+- `src/lib/cookie-consent.ts`
+- `src/components/CookieBanner.astro`
+- `src/components/CookiePreferencesButton.astro`
+- `src/lib/tracking/load-ga.ts`
+- `src/lib/tracking/load-meta-pixel.ts`
+- `src/lib/tracking/load-clarity.ts`
+
+### Responsabilidades
+- `cookie-consent.ts`: lectura, escritura y validación del estado
+- `CookieBanner.astro`: interfaz
+- `CookiePreferencesButton.astro`: reapertura
+- `load-*.ts`: carga condicional de herramientas
+
+## 8. Estrategia recomendada de despliegue
+
+### Paso 1
+Implementar primero la capa de consentimiento real sin herramientas externas activas.
+
 Objetivo:
+- asegurar que la lógica de aceptación, rechazo y reapertura funciona bien
 
-- posicionar búsquedas comerciales
-- aumentar tiempo en página
-- mejorar conversión
-
-## 6. Prioridad 4 · Blog SEO
-
-### 6.1 Crear sistema de blog
-Rutas:
-
-- `/blog`
-- `/blog/[slug]`
-
-### 6.2 Crear artículos iniciales
-- cuánto cuesta una web profesional
-- qué incluye un branding completo
-- errores al diseñar una web
-- cuánto tarda hacer una web
-- diseñador vs estudio de diseño
-
-### 6.3 Requisitos de contenido
-- 800-1200 palabras
-- keywords naturales
-- estructura clara
-- CTA hacia servicios
-- enlaces internos
+### Paso 2
+Conectar GTM y Consent Mode.
 
 Objetivo:
-- captar tráfico informacional con intención comercial latente
-- madurar visitas frías
-- derivar tráfico hacia landings de servicio
+- dejar listo el framework de control antes de medir usuarios reales
 
-## 7. Prioridad 5 · Interlinking (muy importante)
-
-### Estrategia
-- Home -> servicios con anchors SEO.
-- Servicios -> proyectos relacionados.
-- Blog -> servicios.
-- Proyectos -> contacto.
-
-Evitar:
-
-- ver más
-- click aquí
-
-Usar:
-
-- diseño web profesional
-- branding estratégico
+### Paso 3
+Activar GA4.
 
 Objetivo:
+- empezar a recoger tráfico y eventos de forma básica
 
-- distribuir autoridad
-- mejorar posicionamiento
-- guiar conversión
-
-Aplicación práctica:
-- Revisar anchors en [`src/pages/index.astro`](/Users/sergiosandovalpacheco/Desktop/sqlanding/src/pages/index.astro) para que no todo quede en CTAs genéricos.
-- Añadir conexiones semánticas entre [`src/pages/proyectos.astro`](/Users/sergiosandovalpacheco/Desktop/sqlanding/src/pages/proyectos.astro) y futuras landings de servicio.
-
-## 8. Prioridad 6 · Datos estructurados
-Añadir:
-
-- `ProfessionalService`
-- `WebSite`
-- `ContactPage`
-- `BreadcrumbList` si aplica
+### Paso 4
+Activar marketing si realmente vas a hacer campañas.
 
 Objetivo:
+- evitar meter píxeles innecesarios si aún no hay inversión publicitaria
 
-- mejorar comprensión de Google
-- enriquecer resultados
+## 9. Checklist de implementación
+- [ ] Crear utilidad central de consentimiento
+- [ ] Unificar formato de consentimiento guardado
+- [ ] Añadir reapertura del panel
+- [ ] Añadir botón persistente `Configurar cookies`
+- [ ] Integrar GTM
+- [ ] Implementar Consent Mode v2
+- [ ] Bloquear GA4 hasta consentimiento analítico
+- [ ] Bloquear Clarity hasta consentimiento analítico
+- [ ] Bloquear Meta Pixel hasta consentimiento marketing
+- [ ] Crear eventos de conversión básicos
+- [ ] Revisar textos legales finales
+- [ ] Verificar funcionamiento en modo incógnito
 
-Implementación sugerida:
-- Inyectar schemas desde [`src/layouts/Layout.astro`](/Users/sergiosandovalpacheco/Desktop/sqlanding/src/layouts/Layout.astro) y ampliar por página cuando haga falta.
+## 10. Resultado esperado
+- Consentimiento real y no solo visual
+- Carga controlada de scripts
+- Base legal y técnica más sólida
+- Seguimiento fiable de usuarios y conversiones
+- Preparación correcta para SEO, analítica y campañas
 
-## 9. Prioridad 7 · Imágenes y media
-- Revisar `alt` descriptivos.
-- Optimizar peso.
-- Usar formatos eficientes.
-- No hacer lazy load en la imagen LCP.
-- Definir `width` y `height`.
-- Usar imágenes stock coherentes con estética solo si se incorporan nuevas piezas de apoyo.
+## 11. Siguiente implementación recomendada
+Cuando se ejecute este plan, el primer paso práctico debería ser:
 
-Objetivo:
+1. crear `cookie-consent.ts`
+2. añadir botón de reapertura del panel
+3. preparar GTM + Consent Mode
+4. conectar GA4 con consentimiento analítico
 
-- mejorar rendimiento
-- mejorar SEO
-
-Aplicación actual:
-- Revisar hero y bloques visuales principales en [`src/pages/index.astro`](/Users/sergiosandovalpacheco/Desktop/sqlanding/src/pages/index.astro) y [`src/pages/web.astro`](/Users/sergiosandovalpacheco/Desktop/sqlanding/src/pages/web.astro).
-
-## 10. Prioridad 8 · Core Web Vitals
-Optimizar:
-
-- LCP (<2.5s)
-- CLS (sin saltos)
-- TTFB
-
-Especial foco en:
-
-- hero
-- imágenes grandes
-
-## 11. Prioridad 9 · Conversión
-Crear componente reutilizable:
-
-- Lead Magnet
-- auditoría gratuita
-- revisión de web
-
-Debe:
-
-- tener CTA claro
-- copy persuasivo
-- integrarse en:
-- home
-- servicios
-- blog
-
-Objetivo:
-- convertir tráfico SEO en leads reales
-- elevar la intención comercial de la web
-
-## 12. Prioridad 10 · SEO local
-Definir ámbito:
-
-- España
-- remoto
-
-Unificar en:
-
-- metadata
-- schema
-- footer
-
-Añadir NAP si aplica.
-
-## 13. Prioridad 11 · Medición
-- Google Search Console
-- enviar sitemap
-- revisar indexación
-- analizar queries
-- monitorizar Core Web Vitals
-
-## 14. Fases de implementación
-
-### Fase 1 (rápido impacto)
-- `site` config
-- sitemap
-- robots
-- canonical
-- OG
-- noindex
-
-### Fase 2
-- metadatos
-- headings
-- interlinking
-- home
-
-### Fase 3
-- landings SEO
-- blog
-- contenido
-
-### Fase 4
-- `JSON-LD`
-- imágenes
-- performance
-
-## 15. Checklist
-- [ ] Configurar `site`
-- [ ] Crear sitemap
-- [ ] Crear `robots.txt`
-- [ ] Añadir canonical
-- [ ] Configurar `noindex`
-- [ ] Optimizar metadata
-- [ ] Ajustar headings
-- [ ] Crear landings
-- [ ] Crear blog
-- [ ] Añadir interlinking
-- [ ] Implementar `JSON-LD`
-- [ ] Optimizar imágenes
-- [ ] Crear OG image
-- [ ] Conectar Search Console
-
-## Resultado esperado
-- Mejor indexación.
-- Mayor tráfico cualificado.
-- Posicionamiento en keywords comerciales.
-- Aumento de leads.
-- Web escalable sin cambiar diseño.
+Ese sería el punto donde la capa de cookies empezaría a ser real de verdad.

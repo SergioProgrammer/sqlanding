@@ -268,7 +268,7 @@ img {
   min-height: 100vh;
   display: grid;
   align-items: end;
-  padding: 8rem 0 2rem;
+  padding: 6.5rem 0 2rem;
 }
 
 .hero-panel::before {
@@ -303,7 +303,7 @@ img {
 }
 
 .page-hero {
-  padding: 9rem 0 4rem;
+  padding: 7.5rem 0 4rem;
 }
 
 .page-hero__grid {
@@ -503,6 +503,86 @@ img {
     radial-gradient(circle at top right, rgba(251, 208, 74, 0.14), transparent 28%);
 }
 
+.cookie-banner {
+  position: fixed;
+  inset: auto 0 1rem 0;
+  z-index: 140;
+  pointer-events: none;
+}
+
+.cookie-banner[hidden] {
+  display: none;
+}
+
+.cookie-banner__inner {
+  display: flex;
+  justify-content: center;
+}
+
+.cookie-banner__panel {
+  width: min(100%, 58rem);
+  pointer-events: auto;
+  box-shadow: 0 20px 80px rgba(0, 0, 0, 0.28);
+}
+
+.cookie-banner__title {
+  margin: 0;
+  color: var(--sq-cream);
+  font-size: clamp(1.15rem, 2vw, 1.5rem);
+  font-weight: 700;
+  line-height: 1.25;
+  text-transform: uppercase;
+  letter-spacing: -0.03em;
+}
+
+.cookie-banner__copy {
+  margin: 0;
+  max-width: 46rem;
+  color: var(--sq-copy);
+  line-height: 1.7;
+}
+
+.cookie-banner__link {
+  color: var(--sq-gold);
+}
+
+.cookie-banner__preferences {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.cookie-option {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 1rem;
+  align-items: start;
+  border: 1px solid rgba(254, 251, 164, 0.12);
+  background: rgba(254, 251, 164, 0.03);
+  padding: 1rem;
+}
+
+.cookie-option input {
+  width: 1.15rem;
+  height: 1.15rem;
+  accent-color: var(--sq-orange);
+}
+
+.cookie-option__title {
+  display: block;
+  color: var(--sq-cream);
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.cookie-option__copy {
+  display: block;
+  margin-top: 0.35rem;
+  color: var(--sq-copy);
+  line-height: 1.6;
+}
+
 @media (max-width: 960px) {
   .hero-panel__grid,
   .page-hero__grid,
@@ -525,6 +605,10 @@ img {
   }
 
   .hero-panel {
-    padding-top: 7rem;
+    padding-top: 6rem;
+  }
+
+  .cookie-banner {
+    inset: auto 0 0.75rem 0;
   }
 }
